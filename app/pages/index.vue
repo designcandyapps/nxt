@@ -25,8 +25,8 @@ onMounted(()=>{
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
 
-      <!—div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
-      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div></div—>
+      <!--div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
+      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div></div-->
 
     <div class="g">
       <div id="t" style="border:3px solid red;"></div>
