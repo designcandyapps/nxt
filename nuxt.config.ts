@@ -15,7 +15,12 @@ export default defineNuxtConfig({
     }
   },
   app: {head:{
-    script:[{src:"https://pinfluents.com/inc/jq.js"},{src:"https://pinfluents.com/_BCK/4/jqP3.js"}] //jqK.js
+    link:[{rel:'stylesheet',href:'/ct.css'}],
+    script:[
+      {src:'https://pinfluents.com/inc/jq.js'},
+      {src:'https://pinfluents.com/inc/colorthief.js'},
+      {src:'https://pinfluents.com/_BCK/4/jqP3.js'},
+    ],
   }},
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
