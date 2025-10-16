@@ -26,7 +26,7 @@ onMounted(()=>{
     <ULandingHero v-if="page.hero" v-bind="page.hero">
 
       <!--div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
-      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div></div-->
+      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div></div>
 
     <div class="g">
       <div id="t" style="border:3px solid red;"></div>
@@ -44,7 +44,7 @@ onMounted(()=>{
     <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
     <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
     <ULandingSection :title="page.bottom.title" :links="page.bottom.links"><UPageGrid><ULandingCard v-for="(item,index) of page.bottom.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
-    <Slider />
+    <Slider /-->
   </div>
 </template>
 
