@@ -22,8 +22,12 @@ onMounted(()=>{
 </script>
 
 <template>
-  <main>
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
+  <div>
+    <ULandingHero v-if="page.hero" v-bind="page.hero">
+
+      <!—div id="pv"><input id="pho" v-model="pho"></div><div id="z"><ColorThief /></div>
+      <div class="g"><input id="prompt" v-model="prompt"><div id="response" v-if="response">{{response}}</div></div—>
+
     <div class="g">
       <div id="t" style="border:3px solid red;"></div>
       <div id="y" style="border:3px solid green;">s</div>
@@ -33,7 +37,15 @@ onMounted(()=>{
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <div id="response" v-if="response">{{response}}</div>
     </div>
-  </main>
+
+      <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
+    </ULandingHero>
+    <ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <ULandingSection :title="page.bottom.title" :links="page.bottom.links"><UPageGrid><ULandingCard v-for="(item,index) of page.bottom.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+    <Slider />
+  </div>
 </template>
 
 <script lang="ts">
