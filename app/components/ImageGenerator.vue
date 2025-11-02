@@ -6,7 +6,7 @@ export default{
     const generateImage=async()=>{image.value="";
       const response=await fetch("https://api.openai.com/v1/images/generations",{
         method:"POST",headers:{"Content-Type":"application/json",
-        Authorization:`Bearer `
+        Authorization:`Bearer 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`
       },
       body:JSON.stringify({prompt:document.querySelector("#prompt").value,n:1,size:"256x256"})});
       const data=await response.json(); alert("RES2A: "+JSON.stringify(data));
