@@ -94,4 +94,4 @@ export default defineEventHandler(async(event)=>{
     messages:body.messages,
   })
   return completion.choices[0].message
-})
+});
