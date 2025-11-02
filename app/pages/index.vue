@@ -16,9 +16,9 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    const pr=document.querySelector("#pr").value; alert("PR: "+pr);
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+    const prompt=document.querySelector("#prompt").value; alert("PR: "+prompt);
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },600)
 });
 </script>
@@ -28,7 +28,7 @@ onMounted(()=>{
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-        <div id="response" v-if="response" style="border:3px solid red">{{response}}</div><!--ImageGenerator /-->
+        <div id="response" v-if="response">{{response}}</div><!--ImageGenerator /-->
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -42,11 +42,11 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{pr:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){setTimeout(()=>{this.send()},300)},
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       document.querySelector("#t").innerText=this.response;
     },
