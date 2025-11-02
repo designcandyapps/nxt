@@ -7,7 +7,7 @@ export default defineEventHandler(async(event)=>{
       Authorization:`Bearer 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`
     },
     body:JSON.stringify({
-      model:"gpt-3.5-turbo",
+      model:"gpt-5",
       messages:[{role:"user",content:body.message}],
     }),
   });
