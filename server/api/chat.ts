@@ -1,4 +1,20 @@
-import {OpenAI} from "openai";
+import { OpenAI } from "openai";
+export default defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const completion = await client.chat.completions.create({
+    model: "gpt-5", // ✅ Upgraded to GPT-5
+    messages: body.messages,
+  });
+  return completion.choices[0].message;
+});
+
+
+
+
+
+
+/*import {OpenAI} from "openai";
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const ar=await fetch("https://api.openai.com/v1/chat/completions",{
@@ -10,7 +26,7 @@ export default defineEventHandler(async(event)=>{
     body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:body.message}]}),
   });
   const data=await ar.json(); return{reply:data.choices[0].message.content};
-});
+});*/
 
 
 
