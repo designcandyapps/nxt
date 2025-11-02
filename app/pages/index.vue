@@ -19,7 +19,7 @@ onMounted(()=>{
     const prompt=document.querySelector("#prompt").value; alert("PR1: "+prompt);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  },600)
+  },1600)
 });
 </script>
 
@@ -44,7 +44,7 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{prompt:"",response:null}},
-  mounted(){setTimeout(()=>{this.send()},300)},
+  mounted(){setTimeout(()=>{this.send()},1300)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
