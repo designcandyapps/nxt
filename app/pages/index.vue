@@ -26,10 +26,10 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="tz" style="position:absolute; z-index:10; top:1px; left:1px; border:10px solid black;">sa</div>
+      <div id="tz" style="position:absolute; z-index:10; top:1px; left:1px; border:3px solid black;"><ImageGenerator /></div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-        <div id="response" v-if="response">{{response}}</div><!--ImageGenerator /-->
+        <div id="response" v-if="response">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -44,7 +44,7 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{prompt:"",response:null}},
-  mounted(){setTimeout(()=>{this.send()},1300)},
+  //mounted(){setTimeout(()=>{this.send()},1300)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
