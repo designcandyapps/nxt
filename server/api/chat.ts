@@ -5,7 +5,7 @@ export default defineEventHandler(async(event)=>{
     method:"POST",
     headers:{
       "Content-Type": "application/json",
-      Authorization: `Bearer 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`,
+      Authorization: `Bearer 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`,
     },
     body:JSON.stringify({
       model: "gpt-3.5-turbo",
