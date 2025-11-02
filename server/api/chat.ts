@@ -1,3 +1,26 @@
+import {OpenAI} from "openai";
+export default defineEventHandler(async(event)=>{
+  const body=await readBody(event);
+  const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
+    method:"POST",
+    headers:{
+      "Content-Type": "application/json",
+      Authorization: `Bearer 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`,
+    },
+    body:JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [{role:"user",content:body.message}],
+    }),
+  });
+  const data=await apiResponse.json();
+  return{reply:data.choices[0].message.content};
+});
+
+
+
+
+
+
 /*import { OpenAI } from "openai";
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -85,7 +108,7 @@ main();*/
 
 
 
-import {OpenAI} from "openai"
+/*import {OpenAI} from "openai"
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event)
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY})
@@ -94,4 +117,4 @@ export default defineEventHandler(async(event)=>{
     messages:body.messages,
   })
   return completion.choices[0].message
-});
+});*/
