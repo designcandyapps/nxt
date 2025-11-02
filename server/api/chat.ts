@@ -1,3 +1,22 @@
+import OpenAI from "openai";
+const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY});
+async function generateText(prompt){
+  const response=await client.chat.completions.create({
+    model:"gpt-5",
+    messages:[
+      {role:"system",content:"Candy unicorns"},
+      {role:"user",content:prompt},
+    ],
+  });
+console.log(response.choices[0].message.content);
+}
+generateText("Write a poem about candy.");
+
+
+
+
+
+
 /*export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
@@ -29,7 +48,7 @@ const main = async () => {
 };
 main();*/
 
-import {OpenAI} from "openai"
+/*import {OpenAI} from "openai"
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event)
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY})
@@ -38,4 +57,4 @@ export default defineEventHandler(async(event)=>{
     messages:body.messages,
   })
   return completion.choices[0].message
-})
+})*/
