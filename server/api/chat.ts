@@ -1,4 +1,4 @@
-import {OpenAI} from "openai";
+//import {OpenAI} from "openai";
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
