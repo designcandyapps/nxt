@@ -26,7 +26,7 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="zt" style="position:absolute; z-index:10; top:1px; left:1px; border:7px solid red;"><ImageGenerator /></div>
+      <div id="zt" style="position:absolute; z-index:10; top:1px; left:1px; border:7px solid red;">Ig</div>
       <div id="tz" style="position:absolute; z-index:10; top:1px; left:1px; border:7px solid black;"></div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:7px solid blue;"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
