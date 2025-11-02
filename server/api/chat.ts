@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
 
 
 
-import {OpenAI} from "openai";
+/*import {OpenAI} from "openai";
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const ar=await fetch("https://api.openai.com/v1/chat/completions",{
@@ -26,7 +26,7 @@ export default defineEventHandler(async(event)=>{
     body:JSON.stringify({model:"gpt-3.5-turbo",messages:[{role:"user",content:body.message}]}),
   });
   const data=await ar.json(); return{reply:data.choices[0].message.content};
-});
+});*/
 
 
 
@@ -85,7 +85,7 @@ main();*/
 
 
 
-/*import {OpenAI} from "openai"
+import {OpenAI} from "openai"
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event)
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY})
@@ -94,4 +94,4 @@ export default defineEventHandler(async(event)=>{
     messages:body.messages,
   })
   return completion.choices[0].message
-})*/
+})
