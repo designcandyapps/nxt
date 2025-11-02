@@ -1,4 +1,4 @@
-export default defineEventHandler(async(event)=>{
+/*export default defineEventHandler(async(event)=>{
   const body=await readBody(event);
   const apiResponse=await fetch("https://api.openai.com/v1/chat/completions",{
     method:"POST",
@@ -13,18 +13,7 @@ export default defineEventHandler(async(event)=>{
   });
   const data=await apiResponse.json();
   return{reply:data.choices[0].message.content};
-});
-
-
-
-
-
-
-
-
-
-
-
+});*/
 
 
 
@@ -40,7 +29,7 @@ const main = async () => {
 };
 main();*/
 
-/*import {OpenAI} from "openai"
+import {OpenAI} from "openai"
 export default defineEventHandler(async(event)=>{
   const body=await readBody(event)
   const client=new OpenAI({apiKey:process.env.OPENAI_API_KEY})
@@ -49,4 +38,4 @@ export default defineEventHandler(async(event)=>{
     messages:body.messages,
   })
   return completion.choices[0].message
-})*/
+})
