@@ -50,7 +50,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-      alert(document.querySelector("R1: "+"#tz").innerText); alert("R2: "+document.querySelector("#zt").innerText);
+      alert("R1: "+document.querySelector("#tz").innerText); alert("R2: "+document.querySelector("#zt").innerText);
       document.querySelector("#tz").innerText=this.response;
     },
   },
