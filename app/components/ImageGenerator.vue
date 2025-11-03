@@ -9,7 +9,7 @@ export default{
         Authorization:`Bearer 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`
       },
       body:JSON.stringify({prompt:document.querySelector("#prompt").value,n:1,size:"256x256"})});
-      const data=await response.json(); alert("RES2A: "+JSON.stringify(data));
+      const data=await response.json(); alert("RES2Ab: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){image.value=data.data[0].url;
       document.querySelector("#v").firstChild.style.backgroundImage="url("+image.value+")";}
     }
