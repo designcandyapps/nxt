@@ -31,7 +31,7 @@ async function fetchGetty(query){
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
         <input id="pho" v-model="pho" style="border:3px solid green;">
         <input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div><ImageGenerator />
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -46,7 +46,7 @@ async function fetchGetty(query){
 <script lang="ts">
 export default{
   data(){return{prompt:"",response:null}},
-  mounted(){setTimeout(()=>{this.send()},9800)},
+  //mounted(){setTimeout(()=>{this.send()},9800)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
