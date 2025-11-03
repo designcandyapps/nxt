@@ -31,7 +31,7 @@ async function fetchGetty(query){
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
         <input id="pho" v-model="pho" style="border:3px solid green;">
         <input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div><ImageGenerator />
+        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
