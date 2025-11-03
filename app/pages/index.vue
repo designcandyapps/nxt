@@ -14,13 +14,13 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-onMounted(()=>{
+/*onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; alert("PR1: "+prompt);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },5800)
-});
+});*/
 </script>
 
 <template>
