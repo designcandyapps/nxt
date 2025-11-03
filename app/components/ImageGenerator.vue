@@ -1,7 +1,7 @@
 <template><div v-if="image"><img id="i" :src="image"></div></template>
 <script>
 export default{
-  mounted(){setTimeout(()=>{this.generateImage()},9800)},
+  mounted(){setTimeout(()=>{this.generateImage()},7800)},
   setup(){
     const prompt=ref(""); const image=ref("");
     const generateImage=async()=>{image.value="";
