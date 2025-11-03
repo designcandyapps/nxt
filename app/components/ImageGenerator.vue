@@ -3,7 +3,7 @@
 export default{
   mounted(){setTimeout(()=>{this.generateImage()},300)},
   setup(){
-   setTimeout(()=>{
+   //setTimeout(()=>{
     const prompt=ref(""); const image=ref("");
     const generateImage=async()=>{image.value="";
       const response=await fetch("https://api.openai.com/v1/images/generations",{
@@ -14,7 +14,7 @@ export default{
       const data=await response.json(); alert("RES2Ab: "+JSON.stringify(data));
       if(data&&data.data&&data.data.length>0){image.value=data.data[0].url;
       document.querySelector("#v").firstChild.style.backgroundImage="url("+image.value+")";}
-   },2300);
+   //},2300);
     }
     return{prompt,image,generateImage};
   },
