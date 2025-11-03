@@ -17,7 +17,7 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; alert("PR1: "+prompt);
-    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },1600)
 });
@@ -27,7 +27,7 @@ onMounted(()=>{
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div id="zt" style="position:absolute; z-index:10; top:1px; left:1px; border:7px solid red;">Ig</div>
-      <div id="tz" style="position:absolute; z-index:10; top:1px; left:1px; border:7px solid black;"></div>
+      <div id="tz" style="position:absolute; z-index:30; top:1px; left:1px; border:7px solid black;">sa</div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:7px solid blue;"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
         <div id="response" v-if="response">{{response}}</div>
@@ -50,6 +50,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      alert(document.querySelector("R1: "+"#tz").innerText); alert("R2: "+document.querySelector("#zt").innerText);
       document.querySelector("#tz").innerText=this.response;
     },
   },
