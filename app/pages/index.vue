@@ -17,7 +17,7 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; alert("PR1: "+prompt);
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },5800)
 });
