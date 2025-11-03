@@ -26,7 +26,6 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="zt" style="position:absolute; z-index:10; top:20px; left:1px; border:3px solid red;">Ig</div>
       <div id="tz" style="position:absolute; z-index:40; top:50px; left:1px; border:3px solid black;">sa</div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
@@ -53,7 +52,6 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       document.querySelector("#tz").innerText=this.response;
-      document.querySelector("#zt").innerText="Blah";
     },
   },
 }
