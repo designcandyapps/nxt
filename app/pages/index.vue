@@ -50,7 +50,14 @@ export default{
   mounted(){setTimeout(()=>{this.send()},9800)},
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const response=await fetch("/api/chat",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          apiKey:apiKey.value,
+          message:document.querySelector("#prompt").value
+        })
+      });
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); //alert("RES01: "+this.response);
       document.querySelector("#tz").innerText=this.response;
     },
