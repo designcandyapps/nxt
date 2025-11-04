@@ -5,7 +5,7 @@ export default{
   setup(){
     const prompt=ref(""); const image=ref("");
     const generateImage=async()=>{image.value="";
-      const response=await fetch("https://api.openai.com/v1/chat/completions",{
+      const response=await fetch("https://api.openai.com/v1/images/generations",{
         method:"POST",headers:{"Content-Type":"application/json",
         "Authorization":`Bearer ${process.env.OPENAI_API_KEY}`
       },
