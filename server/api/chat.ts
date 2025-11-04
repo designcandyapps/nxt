@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+alert("AK: "+document.querySelector("#apiKey").value);
 const openai=new OpenAI({
   //apiKey:apiKey.value
   apiKey:document.querySelector("#apiKey").value
