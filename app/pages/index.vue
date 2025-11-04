@@ -50,33 +50,16 @@ export default{
   mounted(){setTimeout(()=>{this.send()},9800)},
   methods:{
     async send(){
-      /*const response=await fetch("/api/chat",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({
-          apiKey:apiKey.value,
-          message:document.querySelector("#prompt").value
-        })
-      });
-      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); //alert("RES01: "+this.response);
-      document.querySelector("#tz").innerText=this.response;*/
-
-
       const response=await fetch("/api/chat",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
       body:JSON.stringify({
         message:document.querySelector("#prompt").value,
-        /*messages:[
-          {role:"system",content:"You are a helpful assistant."},
-          {role:"user",content:"Explain async/await in simple terms."},
-        ],*/
       }),
     });
-    const data=await response.json(); this.response=data.reply; alert("RES002: "+JSON.stringify(data));
+    const data=await response.json(); this.response=data.reply; alert("RES002: "+JSON.stringify(data)); //alert("RES01: "+this.response);
     console.log(data.message.content);
     document.querySelector("#tz").innerText=this.response;
-
     },
   },
 }
