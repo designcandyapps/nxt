@@ -26,11 +26,10 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="tz" style="border:3px solid black;">sa</div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
         <input id="pho" v-model="pho" style="border:3px solid green;"><input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <div id="tz" style="border:3px solid black;">sa</div><div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
