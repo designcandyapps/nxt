@@ -18,7 +18,7 @@ onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
+    //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },5800)
 });
 </script>
@@ -29,7 +29,7 @@ onMounted(()=>{
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
         <input id="pho" v-model="pho" style="border:3px solid green;"><input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <div id="t" style="border:3px solid black;">sa</div><div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <div id="tz" style="border:3px solid black;">sa</div><div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -49,7 +49,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); //this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      document.querySelector("#t").innerText=this.response;
+      document.querySelector("#tz").innerText=this.response;
     },
   },
 }
