@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 const openai=new OpenAI({
-  apiKey:apiKey.value
+  //apiKey:apiKey.value
+  apiKey:document.querySelector("#apiKey").value
 });
 const response=openai.responses.create({
   model:"gpt-5-nano",
@@ -8,5 +9,3 @@ const response=openai.responses.create({
   store:true,
 });
 response.then((result)=>console.log(result.output_text));
-
-
