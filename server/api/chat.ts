@@ -8,7 +8,10 @@ export default defineEventHandler(async(event)=>{
     },
     body:JSON.stringify({
       model: "gpt-5-nano",
-      messages: [{role:"user",content:body.message}],
+      messages: [{
+        //role:"user",
+        content:body.message
+      }],
     }),
   });
   const data=await apiResponse.json();
