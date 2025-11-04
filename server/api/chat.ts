@@ -1,6 +1,6 @@
 import OpenAI from "openai";
 const openai=new OpenAI({
-  apiKey:`Bearer ${process.env.OPENAI_API_KEY}`
+  apiKey:apiKey.value
 });
 const response=openai.responses.create({
   model:"gpt-5-nano",
