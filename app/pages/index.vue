@@ -3,14 +3,14 @@ const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
 async function fetchGetty(query){
   try{
     const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
     if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); alert("RES2P: "+JSON.stringify(data));
+    const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
@@ -27,9 +27,8 @@ onMounted(()=>{
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g">
-        <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
-        <input id="pho" v-model="pho" style="border:3px solid green;"><input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <div id="tz" style="border:3px solid black;">sa</div><div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+        <div id="response" v-if="response">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -49,7 +48,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      document.querySelector("#tz").innerText=this.response;
+      document.querySelector("#t").innerText=this.response;
     },
   },
 }
