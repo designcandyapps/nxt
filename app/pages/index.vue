@@ -16,9 +16,9 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    //const prompt=document.querySelector("#prompt").value; alert("PR1: "+prompt);
-    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
-    //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
+    const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },5800)
 });
 </script>
@@ -32,7 +32,7 @@ onMounted(()=>{
         <input id="pho" v-model="pho" style="border:3px solid green;">
         <input id="pho2" v-model="pho2" style="border:3px solid orange;">
         <input id="apiKey" v-model="apiKey" style="border:3px solid navy;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div><ImageGenerator />
+        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -47,11 +47,11 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{prompt:"",response:null}},
-  //mounted(){setTimeout(()=>{this.send()},9800)},
+  mounted(){setTimeout(()=>{this.send()},9800)},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); //this.response=data.reply; alert("RES002: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await response.json(); //this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       document.querySelector("#tz").innerText=this.response;
     },
   },
