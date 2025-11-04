@@ -26,13 +26,10 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
-      <div id="tz" style="position:absolute; z-index:40; top:50px; left:1px; border:3px solid black;">sa</div>
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt" style="border:3px solid blue;">
-        <input id="pho" v-model="pho" style="border:3px solid green;">
-        <input id="pho2" v-model="pho2" style="border:3px solid orange;">
-        <input id="apiKey" v-model="apiKey" style="border:3px solid navy;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <input id="pho" v-model="pho" style="border:3px solid green;"><input id="pho2" v-model="pho2" style="border:3px solid orange;">
+        <div id="t" style="border:3px solid black;">sa</div><div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
@@ -52,7 +49,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); //this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      document.querySelector("#tz").innerText=this.response;
+      document.querySelector("#t").innerText=this.response;
     },
   },
 }
