@@ -32,7 +32,7 @@ onMounted(()=>{
         <input id="pho" v-model="pho" style="border:3px solid green;">
         <input id="pho2" v-model="pho2" style="border:3px solid orange;">
         <input id="apiKey" v-model="apiKey" style="border:3px solid navy;">
-        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div>
+        <div id="response" v-if="response" style="border:3px solid yellow;">{{response}}</div><ImageGenerator />
       </div>
       <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
     </ULandingHero>
