@@ -16,7 +16,7 @@ export default defineEventHandler(async(event)=>{
   });
   const data=await apiResponse.json();
   //this.response=data.reply;
-  alert("RES00: "+JSON.stringify(data));
+  alert("RES001: "+JSON.stringify(data));
 
   return{reply:data.choices[0].message.content};
 });
