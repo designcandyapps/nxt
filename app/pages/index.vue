@@ -18,10 +18,10 @@ onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
 
-    const pr2=document.querySelector("#pr2").value;
-    const pr3=document.querySelector("#pr3").value;
-    const pr4=document.querySelector("#pr4").value;
-    const pr5=document.querySelector("#pr5").value;
+    const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
+    const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
+    const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
+    const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
 
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
