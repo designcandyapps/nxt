@@ -52,7 +52,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     setTimeout(()=>{this.send()},7800);
-    setTimeout(()=>{this.send2()},11800);
+    setTimeout(()=>{this.send2()},14800);
   },
   methods:{
     async send(){
