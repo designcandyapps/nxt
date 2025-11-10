@@ -17,13 +17,11 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
-
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
-
-    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },7800)
 });
@@ -63,7 +61,6 @@ export default{
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      //document.querySelector("#t").innerText=this.response;
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
 
