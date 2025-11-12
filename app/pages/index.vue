@@ -21,7 +21,7 @@ onMounted(()=>{
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },7800)
 });
@@ -49,8 +49,8 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},7800);
-    setTimeout(()=>{this.send2()},17800);
+    //setTimeout(()=>{this.send()},7800);
+    //setTimeout(()=>{this.send2()},17800);
   },
   methods:{
     async send(){
