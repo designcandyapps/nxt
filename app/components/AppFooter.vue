@@ -4,11 +4,7 @@ const {footer}=useAppConfig()
 
 <template>
   <UFooter>
-    <template #left>
-      <div>Test</div>
-    </template>
-    <template #right>
-      <template v-if="footer?.links"><UButton v-for="(link,index) of footer?.links" key="index" v-bind="{color:'gray',variant:'ghost',...link}" /></template>
-    </template>
+    <template #left></template>
+    <template #right><template v-if="footer?.links"><UButton v-for="(link,index) of footer?.links" key="index" v-bind="{color:'gray',variant:'ghost',...link}" /></template></template>
   </UFooter>
 </template>
