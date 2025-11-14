@@ -5,7 +5,8 @@ const {footer}=useAppConfig()
 <template>
 
 
-<footer>
+<UFooter>
+<template>
 <div>
 <div>
 <div>
@@ -33,5 +34,6 @@ const {footer}=useAppConfig()
 </div>
 </div>
 </div>
-</footer>
+</template>
+</UFooter>
 </template>
