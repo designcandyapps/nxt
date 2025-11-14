@@ -21,9 +21,9 @@ export default defineNuxtConfig({
     ],
     script:[
       {src:'https://pinfluents.com/inc/jq.js'},
+      {src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
       {src:'https://pinfluents.com/_BCK/4/jqP9.js'},
-      //src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
 
       //{src:'https://pinfluents.com/inc/jq3.7.js'},
       //{src:'https://pinfluents.com/_BCK/4/inc/zo/bs.js'},
