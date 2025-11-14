@@ -46,4 +46,3 @@ const {header}=useAppConfig()
 </div>
 </template>
 </UHeader>
-</template>
