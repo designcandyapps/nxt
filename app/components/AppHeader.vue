@@ -12,5 +12,37 @@ const {header}=useAppConfig()
     </template>
     <template #panel><UNavigationTree :links="mapContentNavigation(navigation)" /></template>
   </UHeader-->
-  <Nav />
+
+<template>
+<div id="hdr">
+  <div>
+    <div>
+
+      <div>
+        <div></div>
+      </div>
+
+      <div>
+        <div>
+          <ul>
+            <li><a>Learn</a>
+              <ul>
+                <li><a href="#">Practice</a></li>
+                <li><a href="#">Product</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+</template>
 </template>
