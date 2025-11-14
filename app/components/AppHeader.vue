@@ -13,8 +13,8 @@ const {header}=useAppConfig()
     <template #panel><UNavigationTree :links="mapContentNavigation(navigation)" /></template>
   </UHeader-->
 
+<UHeader>
 <template>
-<div id="hdr">
   <div>
     <div>
 
@@ -45,4 +45,5 @@ const {header}=useAppConfig()
   </div>
 </div>
 </template>
+</UHeader>
 </template>
