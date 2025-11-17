@@ -3,13 +3,7 @@
 <div class="container">
 <div class="section-team__accordion accordion accordion-flush" id="accordionResource">
 
-
-
-<template>
 <ac />
-</template>
-
-
 
 </div>
 </div>
