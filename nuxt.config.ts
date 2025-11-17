@@ -20,9 +20,9 @@ export default defineNuxtConfig({
       {rel:'stylesheet',href:'https://pinfluents.com/_BCK/4/inc/ct.css'},
     ],
     script:[
-      {src:'https://pinfluents.com/_BCK/4/zd18/inc/jq.js'},
+      {src:'https://pinfluents.com/_BCK/4/zd18/inc/jq2.js'},
       //{src:'https://pinfluents.com/_BCK/4/jq3.7.js'},
-      //{src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
+      {src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
 
       /*
