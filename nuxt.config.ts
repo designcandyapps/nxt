@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   app: {head:{
     //link:[{rel:'stylesheet',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
     script:[
-      {src:'https://pinfluents.com/_BCK/4/jq.js'},
+      {src:'https://pinfluents.com/_BCK/4/jq444.js'},
       //{src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
       //{src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
       //{src:'https://pinfluents.com/_BCK/4/jqP9.js'},
