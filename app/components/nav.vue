@@ -10,10 +10,10 @@
       <div>
         <div>
           <ul>
-            <li><a>Learn</a>
+            <li><a>Lea</a>
               <ul>
-                <li><a href="#">Practice</a></li>
-                <li><a href="#">Product</a></li>
+                <li><a href="#">Pra</a></li>
+                <li><a href="#">Pro</a></li>
               </ul>
             </li>
           </ul>
