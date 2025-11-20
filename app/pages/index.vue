@@ -30,6 +30,7 @@ onMounted(()=>{
 <template>
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
+      <About />
       <div class="g">
         <div id="z"><ColorThief /></div><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
         <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
