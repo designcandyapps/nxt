@@ -10,10 +10,6 @@ provide('navigation',navigation)
 <template>
   <div>
     <NuxtLoadingIndicator />
-
-<div class="theme-app d-flex flex-column">
-<div class="theme-wrap position-relative">
-
     <AppHeader />
     <UMain>
       <NuxtLayout>
@@ -23,9 +19,5 @@ provide('navigation',navigation)
     <AppFooter />
     <ClientOnly><LazyUContentSearch :files="files" :navigation="navigation" /></ClientOnly>
     <UNotifications />
-
-</div>
-</div>
-
   </div>
 </template>
