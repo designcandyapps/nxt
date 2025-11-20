@@ -5,5 +5,5 @@ const {header}=useAppConfig()
 </script>
 
 <template>
-<ac />
+<hd />
 </template>
