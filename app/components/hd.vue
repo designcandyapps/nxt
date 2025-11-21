@@ -1,7 +1,6 @@
 <template>
 <header>
   <div>
-    <div>
 
       <div class="provider-header__menu">
         <div class="menu-provider-menu-container">
@@ -15,7 +14,7 @@
 
         </div>
       </div>
-    </div>
+
   </div>
 </header>
 </template>
