@@ -11,12 +11,7 @@
           </ul>
         </div>
       </div>
-      <div class="provider-header__cta-container"><div class="provider-header__cta-wrapper-mobile" data-swap-on-scroll="secondary"></div></div>
-      <div class="provider-menu__toogle">
-        <span class="toogle-item"></span>
-        <span class="toogle-item"></span>
-        <span class="toogle-item"></span>
-      </div>
+
     </div>
   </div>
 </header>
