@@ -2,7 +2,14 @@
 <header class="provider-header">
   <div class="container">
     <div class="provider-header--container">
+
+      <div class="provider-header__cta-container">
+      <a class="provider-image-link provider-image-link-mobile" data-swap-on-scroll="primary" style="-opacity:0; -visibility:hidden;"><img id="ep" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"></a>
+      <div class="provider-header__cta-wrapper-mobile" data-swap-on-scroll="secondary" style="opacity:1; visibility:visible;">
+      <a class="provider-image-link provider-image-link-mobile-icon" data-swap-on-scroll="primary" style="-opacity:0; -visibility:hidden;"><img id="ep" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"></a>
+
       <div class="provider-header__menu">
+        <a class="provider-image-link provider-image-link-desktop" data-swap-on-scroll="primary" style="-opacity:0; -visibility:hidden;"><img id="ep" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"></a>
         <div class="menu-provider-menu-container">
           <ul class="provider_menu list-unstyled">
             <li class="menu-item menu-item-has-children">
@@ -14,8 +21,6 @@
               </ul>
             </li>
           </ul>
-        </div>
-      </div>
     </div>
   </div>
 </header>
