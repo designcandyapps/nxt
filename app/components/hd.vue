@@ -3,10 +3,6 @@
   <div class="container">
     <div class="provider-header--container">
 
-      <div class="provider-header__cta-container">
-
-      </div>
-
       <div class="provider-header__menu">
         <div class="menu-provider-menu-container">
           <ul class="provider_menu list-unstyled">
