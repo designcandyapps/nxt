@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <div class="provider-header--container">
-
+      <div class="provider-header__menu">
+        <div class="menu-provider-menu-container">
           <ul class="provider_menu list-unstyled">
             <li class="menu-item menu-item-has-children">
               <a>L</a>
@@ -12,11 +13,8 @@
               </ul>
             </li>
           </ul>
-      <!--div class="provider-menu__toogle">
-        <span class="toogle-item"></span>
-        <span class="toogle-item"></span>
-        <span class="toogle-item"></span>
-      </div-->
+        </div>
+      </div>
     </div>
   </div>
 </template>
