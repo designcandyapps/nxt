@@ -18,6 +18,12 @@
           <div class="swiper-wrapper d-block d-sm-flex">
             <ac1 />
             <ac2 />
+            <ac1 />
+            <ac2 />
+            <ac1 />
+            <ac2 />
+            <ac1 />
+            <ac2 />
           </div>
           <div class="swiper-controls slide-team__controls d-none d-sm-block">
             <div class="swiper__button-prev position-absolute z-index-3 top-50 translate-middle"><i class="icon-left-arrow"></i></div>
