@@ -24,9 +24,10 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
-    //if(){
-      setTimeout(function(){imageUrl.value=document.getElementById("ep").src; generatePalette()},1800);
-    //}
+    setTimeout(function(){
+      imageUrl.value=document.getElementById("ep").src;
+      generatePalette();
+    },1800);
   }
 });
 </script>
