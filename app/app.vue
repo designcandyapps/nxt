@@ -9,7 +9,6 @@ provide('navigation',navigation)
 
 <template>
   <div>
-    <NuxtLoadingIndicator />
     <AppHeader />
     <UMain>
       <NuxtLayout>
