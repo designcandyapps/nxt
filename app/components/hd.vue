@@ -2,10 +2,10 @@
 <header>
   <div>
     <div>
-      <ul class="provider_menu list-unstyled">
-        <li class="menu-item menu-item-has-children">
+      <ul>
+        <li>
           <a>Learr</a>
-          <ul class="sub-menu"><li class="menu-item"><a>Par</a></li></ul>
+          <ul><li><a>Par</a></li></ul>
         </li>
       </ul>
     </div>
