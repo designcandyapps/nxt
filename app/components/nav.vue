@@ -2,11 +2,9 @@
 <header>
   <div>
     <div>
-
-      <div>
+      <!--div>
         <div></div>
-      </div>
-
+      </div-->
       <div>
         <div>
           <ul>
@@ -19,13 +17,11 @@
           </ul>
         </div>
       </div>
-
-      <div>
+      <!--div>
         <span></span>
         <span></span>
         <span></span>
-      </div>
-
+      </div-->
     </div>
   </div>
 </header>
