@@ -18,11 +18,11 @@ export default defineNuxtConfig({
     //link:[{rel:'stylesheet',class:'st',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
     script:[
       {src:'https://pinfluents.com/_BCK/4/jq.js'},
-      {src:'https://pinfluents.com/_BCK/4/jq0.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/zo/ap.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
+      {src:'https://pinfluents.com/_BCK/4/jq0.js'},
       //{src:'https://js.stripe.com/v3/'},
       //{src:'https://pinfluents.com/_BCK/4/inc/str/utils.js'},
       //{src:'https://pinfluents.com/_BCK/4/inc/str/index.js'},
