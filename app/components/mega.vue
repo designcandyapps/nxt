@@ -1,3 +1,4 @@
+<template>
 <li class="has-mega-menu menu-item-has-children">
 <a>Products</a>
 <div class="mega-menu"><div class="mega-menu-grid">
@@ -24,3 +25,4 @@
 </ul>
 </li>
 <li><a href="#">Find care</a></li>
+</template>
