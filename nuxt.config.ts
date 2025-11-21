@@ -14,7 +14,9 @@ export default defineNuxtConfig({
       globals.forEach(c=>c.global=true)
     }
   },
-  app: {head:{
+  app: {
+    baseURL:'https://pinfluents.com/_BCK/4/',
+    head:{
     //link:[{rel:'stylesheet',class:'st',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
     script:[
       {src:'https://pinfluents.com/_BCK/4/jq.js'},
