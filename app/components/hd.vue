@@ -4,7 +4,7 @@
     <div class="provider-header--container">
 
       <div class="provider-header__cta-container">
-      <a class="provider-image-link provider-image-link-mobile" data-swap-on-scroll="primary" style="-opacity:0; -visibility:hidden;"><img id="ep" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"></a>
+      <a class="provider-image-link provider-image-link-mobile" data-swap-on-scroll="primary" style="-opacity:0; -visibility:hidden;"><img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"></a>
       </div>
 
       <div class="provider-header__menu">
