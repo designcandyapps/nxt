@@ -16,11 +16,11 @@
           </ul>
         </div>
       </div>
-      <div class="provider-menu__toogle">
+      <!--div class="provider-menu__toogle">
         <span class="toogle-item"></span>
         <span class="toogle-item"></span>
         <span class="toogle-item"></span>
-      </div>
+      </div-->
     </div>
   </div>
 </header>
