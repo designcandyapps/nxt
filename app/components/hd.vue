@@ -22,6 +22,7 @@
             </li>
           </ul>
         </div>
+      </div>
 
       <!--div class="provider-menu__toogle">
         <span class="toogle-item"></span>
