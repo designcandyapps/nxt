@@ -5,8 +5,6 @@
 </script>
 
 <template>
-    <template #logo>
-        <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
-    </template>
+    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp1.png" width="60" height="60">
     <hd />
 </template>
