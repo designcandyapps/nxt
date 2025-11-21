@@ -4,9 +4,9 @@
         <div class="menu-item-wrapper">
             <div class="menu-icon"><img src="im/zi.svg"></div>
             <div class="menu-texts">
-		<div class="item-title">Results</div>
-		<div class="item-description">Promote listings</div>
-	    </div>
+				<div class="item-title">Results</div>
+				<div class="item-description">Promote listings</div>
+	    	</div>
         </div>
     </a>
 </div>
