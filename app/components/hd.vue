@@ -5,11 +5,11 @@
         <div class="menu-provider-menu-container">
           <ul class="provider_menu list-unstyled">
             <li class="menu-item menu-item-has-children">
-              <a>L</a>
+              <a>Learr</a>
               <ul class="sub-menu">
-                <li class="menu-item"><a>P</a></li>
-                <li class="menu-item"><a>P</a></li>
-                <li class="menu-item"><a>P</a></li>
+                <li class="menu-item"><a>Par</a></li>
+                <li class="menu-item"><a>Per</a></li>
+                <li class="menu-item"><a>Pep</a></li>
               </ul>
             </li>
           </ul>
