@@ -1,4 +1,5 @@
 <template>
+<header class="provider-header">
   <div class="container">
     <div class="provider-header--container">
       <div class="provider-header__menu">
@@ -17,4 +18,5 @@
       </div>
     </div>
   </div>
+</header>
 </template>
