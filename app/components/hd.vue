@@ -1,5 +1,4 @@
 <template>
-<header class="provider-header">
   <div class="container">
     <div class="provider-header--container">
       <!---->
@@ -24,5 +23,4 @@
       </div-->
     </div>
   </div>
-</header>
 </template>
