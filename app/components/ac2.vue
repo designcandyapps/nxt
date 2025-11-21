@@ -1,3 +1,4 @@
+<template>
 <div class="swiper-slide pt-8 pt-sm-0">
   <article class="card-team">
   <a href="#">
@@ -9,3 +10,4 @@
   </a>
   </article>
 </div>
+</template>
