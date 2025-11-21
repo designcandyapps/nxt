@@ -9,7 +9,7 @@ const {header}=useAppConfig()
     <div class="provider-header--container">
       <div class="provider-header__menu">
       <div class="menu-provider-menu-container">
-          <template #panel><UNavigationTree :links="mapContentNavigation(navigation)" /></template>
+          <UNavigationTree :links="mapContentNavigation(navigation)" />
           <!--ul class="provider_menu list-unstyled">
             <li class="menu-item menu-item-has-children">
               <a>L</a>
