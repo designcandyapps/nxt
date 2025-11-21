@@ -1,3 +1,4 @@
+<template>
 <div class="menu-link-wrapper">
     <a class="menu-items-list" href="#">
         <div class="menu-item-wrapper">
@@ -9,3 +10,4 @@
         </div>
     </a>
 </div>
+</template>
