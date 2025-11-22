@@ -3,11 +3,9 @@
 
   <div class="col-span-8 flex items-center animate-top">
     <div class="relative w-full flex items-center h-4">
-      <inp1 />
+      
     </div>
   </div>
-
-
 
 </div>
 </template>
