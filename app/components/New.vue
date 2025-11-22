@@ -12,6 +12,7 @@
     <div class="relative flex items-start">
       <inp2 />
     </div>
+
   </div>
   </div>
 
