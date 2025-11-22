@@ -31,7 +31,7 @@
   <div class="col-span-2 animate-left z-10" style="animation-fill-mode:forwards; transform-origin:center center; animation-play-state:running; animation-duration:1s;">
 
     <div data-headlessui-state="" class="relative inline-flex text-left rtl:text-right">
-      <btn1 />
+      <!--btn1 /-->
     </div>
 
   </div>
@@ -43,7 +43,7 @@
       <spn />
     </div>
     <div class="flex items-center -space-x-px">
-      <btns />
+      <!--btns /-->
     </div>
 
 </div><!--1-->
@@ -122,7 +122,7 @@
 
     <div>
       <div class="relative overflow-x-auto">
-        <tbl />
+        <!--tbl /-->
       </div>
     </div>
 
