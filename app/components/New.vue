@@ -7,19 +7,7 @@
     </div>
   </div>
 
-  <div class="col-span-2 row-span-2 flex items-center animate-right">
-  <div class="space-y-1">
-    <div class="relative flex items-start">
-      <inp2 />
-    </div>
-    <div class="relative flex items-start">
-      <inp3 />
-    </div>
-    <div class="relative flex items-start">
-      <inp4 />
-    </div>
-  </div>
-  </div>
+
 
 </div>
 </template>
