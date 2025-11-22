@@ -33,6 +33,7 @@ onMounted(()=>{
 </script>
 
 <template>
+  <New />
   <div>
     <ULandingHero v-if="page.hero" v-bind="page.hero">
       <div class="g">
