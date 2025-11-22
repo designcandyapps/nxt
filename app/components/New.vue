@@ -9,7 +9,6 @@
 
   </div>
 
-
   <div class="col-span-2 row-span-2 flex items-center animate-right">
   <div class="space-y-1">
 
@@ -24,27 +23,6 @@
     </div>
 
   </div>
-  </div>
-
-
-  <div class="col-span-2 animate-left z-10">
-
-    <div data-headlessui-state="" class="relative inline-flex text-left rtl:text-right">
-      <btn1 />
-    </div>
-
-  </div>
-
-
-  <div class="col-span-6 flex flex-wrap items-center justify-between gap-1 animate-bottom">
-
-    <div class="inline-flex flex-row-reverse justify-end">
-      <spn />
-    </div>
-    <div class="flex items-center -space-x-px">
-ss
-    </div>
-
   </div>
 
 </div>
