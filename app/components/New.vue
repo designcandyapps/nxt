@@ -24,9 +24,24 @@
 <div class="rounded-lg divide-y divide-gray-200 dark:divide-gray-800 ring-1 ring-gray-200 dark:ring-gray-800 shadow bg-white dark:bg-gray-900 col-span-4 row-span-6 flex-1 flex flex-col">
 <div class="flex-1 flex flex-col overflow-y-auto">
 <div class="flex flex-col flex-1 min-h-0 divide-y divide-gray-100 dark:divide-gray-800" data-headlessui-state="">
-  <div class="relative flex items-center">
-    <inp5 />
+  <div class="relative w-full flex items-center h-4">
+    <inp1 />
   </div>
+  <div class="relative flex items-start">
+    <inp2 />
+  </div>
+  <div class="relative flex items-start">
+    <inp3 />
+  </div>
+  <div class="relative flex items-start">
+    <inp4 />
+  </div>
+    <div class="relative flex items-start">
+    <inp4 />
+  </div>
+
+
+  
   <div id="headlessui-combobox-options-v-0-0-0-14" role="listbox" data-headlessui-state="" aria-label="Commands" class="relative flex-1 overflow-y-auto divide-y divide-gray-100 dark:divide-gray-800 scroll-py-2">
     <div class="p-2">
       <p1 />
