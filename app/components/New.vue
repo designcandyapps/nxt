@@ -57,8 +57,8 @@
   <div class="relative space-y-2 w-full">
     <btns1 />
     <div class="relative w-full">
-      <fm1 />
-      <fm2 />
+      <!--fm1 />
+      <fm2 /-->
     </div>
   </div>
   <pul />
