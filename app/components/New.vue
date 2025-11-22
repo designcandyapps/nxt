@@ -12,7 +12,12 @@
     <div class="relative flex items-start">
       <inp2 />
     </div>
-
+    <div class="relative flex items-start">
+      <inp3 />
+    </div>
+    <div class="relative flex items-start">
+      <inp4 />
+    </div>
   </div>
   </div>
 
