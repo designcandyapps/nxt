@@ -1,3 +1,4 @@
+<template>
 <div class="relative overflow-hidden rounded-lg ring-1 ring-gray-200 dark:ring-gray-800">
 
   <div class="flex p-4 gap-3 items-start">
@@ -9,4 +10,6 @@
   </div>
   <div class="absolute bottom-0 end-0 start-0 h-1 bg-primary-500 dark:bg-primary-400" style="width: 0%;"></div>
 
+
 </div>
+</template>
