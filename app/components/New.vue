@@ -3,11 +3,14 @@
 
 <not1 />
 <fm1 /><fm2 />
+
 <btns1 />
 <pul />
+
 <not />
 <se />
 <btn99 />
+
 <tbl />
 
 </div>
