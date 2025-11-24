@@ -2,12 +2,12 @@
 <div class="flex flex-col lg:grid gap-8 relative lg:grid-cols-10 lg:gap-8 overflow-hidden p-1">
 
 <not1 />
-<fm1 /><fm2 />
 <btns1 />
-<pul />
+<fm1 /><fm2 />
+<!--pul />
 <not />
 <se />
-<btn99 />
+<btn99 /-->
 <tbl />
 
 <!--btns />
