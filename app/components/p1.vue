@@ -1,4 +1,5 @@
 <template>
+
 <h2 class="px-2.5 my-2 text-xs font-semibold text-gray-900 dark:text-white">Recent searches</h2>
 <div class="text-sm text-gray-700 dark:text-gray-200" aria-label="Recent searches">
 <div class="flex justify-between select-none items-center rounded-md px-2.5 py-1.5 gap-2 relative cursor-pointer" id="headlessui-combobox-option-v-0-0-0-15" role="option" aria-selected="false" data-headlessui-state="">
