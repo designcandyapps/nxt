@@ -10,15 +10,15 @@
 <btn99 />
 <tbl /-->
 
-<btns />
+<!--btns />
 <h />
 <kbd />
 <lbl />
 <nf />
-<spn />
+<spn /-->
 
-<!--p1 />
-<inp1 /><inp2 /><inp3 /><inp4 /><inp5 /-->
+<p1 />
+<inp1 /><inp2 /><inp3 /><inp4 /><inp5 />
 
 </div>
 </template>
