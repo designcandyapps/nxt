@@ -6,11 +6,12 @@
 </div>
 <div class="relative">
 <tabs />
-<br>
+</div>
 <!--pul />
 <not />
 <se />
 <btn99 /-->
+<div class="relative">
 <tbl />
 </div>
 
