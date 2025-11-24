@@ -12,12 +12,13 @@
 
 <btns />
 <h />
-<inp1 /><inp2 /><inp3 /><inp4 /><inp5 />
 <kbd />
 <lbl />
 <nf />
-<p1 />
 <spn />
+
+<!--p1 />
+<inp1 /><inp2 /><inp3 /><inp4 /><inp5 /-->
 
 </div>
 </template>
