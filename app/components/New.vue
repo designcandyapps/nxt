@@ -1,15 +1,18 @@
 <template>
 <div class="flex flex-col lg:grid gap-8 relative lg:grid-cols-10 lg:gap-8 overflow-hidden p-1">
 
+<div class="relative">
 <not1 />
-<br><br>
+</div>
+<div class="relative">
 <tabs />
-<br><br>
+<br>
 <!--pul />
 <not />
 <se />
 <btn99 /-->
 <tbl />
+</div>
 
 <!--btns />
 <h />
