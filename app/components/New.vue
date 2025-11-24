@@ -3,7 +3,6 @@
 
 <not1 />
 <tabs />
-<fm1 /><fm2 />
 <!--pul />
 <not />
 <se />
