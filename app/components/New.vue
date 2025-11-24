@@ -2,7 +2,7 @@
 <div class="flex flex-col lg:grid gap-8 relative lg:grid-cols-10 lg:gap-8 overflow-hidden p-1">
 
 <not1 />
-<btns1 />
+<tabs />
 <fm1 /><fm2 />
 <!--pul />
 <not />
