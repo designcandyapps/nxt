@@ -2,7 +2,9 @@
 <div class="flex flex-col lg:grid gap-8 relative lg:grid-cols-10 lg:gap-8 overflow-hidden p-1">
 
 <not1 />
+<br><br>
 <tabs />
+<br><br>
 <!--pul />
 <not />
 <se />
