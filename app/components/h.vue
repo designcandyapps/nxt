@@ -1,8 +1,8 @@
 <template>
-<div class="flex justify-between select-none items-center rounded-md px-2.5 py-1.5 gap-2 relative bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white cursor-pointer" id="headlessui-combobox-option-v-0-0-0-18" role="option" aria-selected="false" data-headlessui-state="active">
+<div class="flex justify-between select-none items-center rounded-md px-2.5 py-1.5 gap-2 relative bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white cursor-pointer" data-headlessui-state="active">
 
   <div class="flex items-center gap-1.5 min-w-0">
-    <span class="iconify i-heroicons:hashtag flex-shrink-0 w-5 h-5 text-gray-900 dark:text-white" aria-hidden="true"></span>
+    <span class="iconify i-heroicons:hashtag flex-shrink-0 w-5 h-5 text-gray-900 dark:text-white"></span>
     <div class="flex items-center gap-1.5 min-w-0"><span class="truncate">Add hashtag</span></div>
   </div>
 
