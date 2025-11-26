@@ -6,21 +6,21 @@ hero:
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnatis aliqua ut enim ad minim veniam.
   orientation: horizontal
 features:
-  title: Lorem ipsum0
+  title: 0Lorem ipsum
   items:
-    - title: Lorem ipsum1
-      description: Crashum smashum lorem ipsum.
+    - title: 1Lorem ipsum
+      description: 1Crashum smashum lorem ipsum.
     - title: Crashum smashum
       description: Lorem ipsum crashum smashum.
-    - title: Lorem ipsum2
-      description: Crashum smashum lorem ipsum.
-    - title: Crashum smashum
-      description: Lorem ipsum crashum smashum.
+    - title: 2Lorem ipsum
+      description: 2Crashum smashum lorem ipsum.
+    - title: 3Crashum smashum
+      description: 3Lorem ipsum crashum smashum.
 sections:
-  title: Crashum smashum
+  title: 4Crashum smashum
 mid:
-  title: Lorem ipsum
+  title: 5Lorem ipsum
 bottom:
-  title: Crashum smashum
+  title: 6Crashum smashum
 lower:
-  title: Lorem ipsum
+  title: 7Lorem ipsum
