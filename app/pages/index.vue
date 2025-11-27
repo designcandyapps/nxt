@@ -18,8 +18,7 @@ onMounted(()=>{
   setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
-    const sc3=document.createElement('script'); sc3.src='https://pinfluents.com/_BCK/4/inc/ct.js';
-    document.head.appendChild(sc1); document.head.appendChild(sc2); //document.head.appendChild(sc3);
+    document.head.appendChild(sc1); document.head.appendChild(sc2);
 
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
