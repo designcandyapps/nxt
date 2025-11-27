@@ -27,7 +27,7 @@ onMounted(()=>{
     setTimeout(function(){
       imageUrl.value=document.getElementById("ep").src;
       generatePalette();
-    },1800);
+    },800);
   }
 });
 </script>
