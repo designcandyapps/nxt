@@ -1,5 +1,5 @@
 <template>
-  <UHeader>
+  <header>
   <div>
     <div>
       <ul>
@@ -10,5 +10,5 @@
       </ul>
     </div>
   </div>
-  </UHeader>
+  </header>
 </template>
