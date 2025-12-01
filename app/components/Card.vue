@@ -9,7 +9,6 @@
       </div>
 
       <div class="provider-header__menu">
-        <a class="provider-image-link provider-image-link-desktop" href="#"><img id="ee" src="im/zo.png"></a>
         <div class="menu-provider-menu-container">
           <ul class="provider_menu list-unstyled">
             <li class="menu-item menu-item-has-children"><a>Learn</a>
