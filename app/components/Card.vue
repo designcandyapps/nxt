@@ -1,5 +1,5 @@
 <template>
-<div>
+
   <div class="container">
     <div class="provider-header--container open">
 	  <ul class="provider_menu list-unstyled">
