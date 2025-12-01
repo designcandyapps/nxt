@@ -1,5 +1,5 @@
 <template>
-<header>
+<div>
   <div class="container">
     <div class="provider-header--container open">
 
@@ -9,5 +9,5 @@
 
     </div>
   </div>
-</header>
+</div>
 </template>
