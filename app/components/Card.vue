@@ -1,5 +1,5 @@
 <template>
-<header class="provider-header">
+<header>
   <div class="container">
     <div class="provider-header--container open">
 
