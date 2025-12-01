@@ -1,4 +1,5 @@
 <template>
+<header>
   <div>
     <div>
       <div>
@@ -8,4 +9,5 @@
       </div>
     </div>
   </div>
+</header>
 </template>
