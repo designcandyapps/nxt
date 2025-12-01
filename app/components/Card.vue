@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header style="border:3px dashed red;">
   <div>
     <div>
       <ul>
