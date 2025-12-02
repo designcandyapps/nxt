@@ -64,7 +64,7 @@ const calculate_tax = async (orderAmount: number, currency: string) => {
 app.get("/create-payment-intent",
   async (req: Request, res: Response): Promise<void> => {
     let orderAmount = 1400;
-    let description: 'Website',
+    let description: 'Website';
     let paymentIntent: Stripe.PaymentIntent;
     try {
       if (calculateTax) {
