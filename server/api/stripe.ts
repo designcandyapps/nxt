@@ -52,6 +52,7 @@ const calculate_tax = async (orderAmount: number, currency: string) => {
     line_items: [
       {
         amount: orderAmount,
+        description: description,
         reference: "ProductRef",
         tax_behavior: "exclusive",
         tax_code: "txcd_30011000"
@@ -63,6 +64,7 @@ const calculate_tax = async (orderAmount: number, currency: string) => {
 app.get("/create-payment-intent",
   async (req: Request, res: Response): Promise<void> => {
     let orderAmount = 1400;
+    let description: 'Website',
     let paymentIntent: Stripe.PaymentIntent;
     try {
       if (calculateTax) {
@@ -70,6 +72,7 @@ app.get("/create-payment-intent",
         paymentIntent = await stripe.paymentIntents.create({
           currency: 'usd',
           amount: taxCalculation.amount_total,
+          description: description,
           automatic_payment_methods: { enabled: true },
           metadata: { tax_calculation: taxCalculation.id }
         });
@@ -78,7 +81,7 @@ app.get("/create-payment-intent",
         paymentIntent = await stripe.paymentIntents.create({
           currency: 'usd',
           amount: orderAmount,
-          description: 'Website',
+          description: description,
           automatic_payment_methods: { enabled: true }
         });
       }
