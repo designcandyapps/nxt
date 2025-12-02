@@ -1,8 +1,8 @@
 <template>
-  <div class="news-slider">
+  <span class="news-slider">
     <div><p></p></div>
     <div><p></p></div>
     <div><p></p></div>
     <div><p></p></div>
-  </div>
+  </span>
 </template>
