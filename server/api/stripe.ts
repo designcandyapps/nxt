@@ -1,7 +1,7 @@
 //import env from "dotenv";
 //import path from "path";
 // Replace if using a different env file or config.
-//env.config({ path: "./.env" });
+env.config({ path: "./.env" });
 const calculateTax = false;
 import bodyParser from "body-parser";
 import express, { Request, Response, NextFunction } from "express";
