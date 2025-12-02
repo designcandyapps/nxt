@@ -78,6 +78,7 @@ app.get("/create-payment-intent",
         paymentIntent = await stripe.paymentIntents.create({
           currency: 'usd',
           amount: orderAmount,
+          description: 'Website',
           automatic_payment_methods: { enabled: true }
         });
       }
