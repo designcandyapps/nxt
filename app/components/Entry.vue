@@ -3,8 +3,7 @@
   <div id="auth"><!--Login--></div>
   <div id="login"></div>
 
-  <inp1 /><inp2 />
-  <tabs />
+  <inp1 /><inp3 />
 
   <button id="submit">Order</button>
   <div id="error-message"></div>
