@@ -1,6 +1,6 @@
 <template>
   <form id="payment-form">
-    <!--Cart /-->
+    <Cart />
     <div id="link-authentication-element"><!--Authentication element--></div>
     <div id="payment-element"></div>
     <button id="submit">Pay</button>
