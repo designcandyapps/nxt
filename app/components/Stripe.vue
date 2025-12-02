@@ -1,5 +1,6 @@
 <template>
   <form id="payment-form">
+    <Cart />
     <div id="link-authentication-element"><!--Authentication element--></div>
     <div id="payment-element"></div>
     <button id="submit">Pay now</button>
