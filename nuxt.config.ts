@@ -15,13 +15,13 @@ export default defineNuxtConfig({
     }
   },
   app: {head:{
-    //link:[{rel:'stylesheet',class:'st',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
+    link:[{rel:'stylesheet',class:'st',href:'https://pinfluents.com/_BCK/4/inc/ct.css'}],
     script:[
-      {src:'https://pinfluents.com/_BCK/4/jq.js'},
-      {src:'https://pinfluents.com/_BCK/4/inc/zo/ap.js'},
-      {src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
+      {src:'https://pinfluents.com/inc/jq.js'},
+      //{src:'https://pinfluents.com/_BCK/4/inc/zo/ap.js'},
+      //{src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
       {src:'https://pinfluents.com/_BCK/4/inc/sl.js'},
-      {src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
+      //{src:'https://pinfluents.com/_BCK/4/inc/ct.js'},
       {src:'https://pinfluents.com/_BCK/4/jp.js'},
       //{src:'https://js.stripe.com/v3/'},
       //{src:'https://pinfluents.com/_BCK/4/inc/str/utils.js'},
