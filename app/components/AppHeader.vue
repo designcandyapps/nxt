@@ -8,5 +8,6 @@ const {header}=useAppConfig()
   <UHeader>
     <!--img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">
     <UNavigationTree :links="mapContentNavigation(navigation)" /-->
+    <hd />
   </UHeader>
 </template>
