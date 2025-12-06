@@ -5,7 +5,5 @@ const {header}=useAppConfig()
 </script>
 
 <template>
-  <UHeader>
-    <hd />
-  </UHeader>
+  <hd />
 </template>
