@@ -6,8 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxthq/studio',
-    'nuxt-og-image'
+    '@nuxthq/studio'
   ],
   hooks: {
     'components:extend':(components)=>{
