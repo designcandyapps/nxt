@@ -5,8 +5,6 @@ const {header}=useAppConfig()
 </script>
 
 <template>
-
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">
-    <hd />
-
+  <img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">
+  <hd />
 </template>
