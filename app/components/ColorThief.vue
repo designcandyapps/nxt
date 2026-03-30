@@ -23,7 +23,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
   var slider=$($slidername);
-  alert("Tzr: "+slider.html());
+  alert("Tzy: "+slider.html());
 
   var settings={mobileFirst:true,dots:$dots,arrows:$arrows,responsive:[{breakpoint:$breakpoint,settings:"unslick"}]};slider.slick(settings);
   $(window).on("resize",function(){
