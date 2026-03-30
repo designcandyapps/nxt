@@ -37,7 +37,7 @@ onMounted(()=>{
     setTimeout(function(){
       imageUrl.value=document.getElementById("ee").src;
       generatePalette();
-      mobileOnlySlider(".news-slider",true,false,767);
+      mobileOnlySlider(".ey",true,false,767);
     },1800);
   }
 });
