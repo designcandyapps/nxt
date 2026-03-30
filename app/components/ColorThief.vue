@@ -21,7 +21,7 @@ const generatePalette=async()=>{
 function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]}; const palettes={}; for(const type of Object.keys(targetHueSteps)){palettes[type]=targetHueSteps[type].map((step)=>({mode:"lch",l:baseColor.l,c:baseColor.c,h:(baseColor.h+step)%360}))} return palettes}
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
-function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
+/*function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
   var slider=$($slidername);
   alert("T: "+slider.html());
 
@@ -30,14 +30,14 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
     if($(window).width()>$breakpoint)return;
     if(!slider.hasClass("slick-initialized"))return slider.slick(settings);
   });
-}
+}*/
 
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       imageUrl.value=document.getElementById("ee").src;
       generatePalette();
-      mobileOnlySlider(".news-slider",true,false,767);
+      //mobileOnlySlider(".news-slider",true,false,767);
     },1800);
   }
 });
