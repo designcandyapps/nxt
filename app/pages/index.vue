@@ -19,7 +19,6 @@ onMounted(()=>{
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
     document.head.appendChild(sc1); document.head.appendChild(sc2);
-
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -34,7 +33,7 @@ onMounted(()=>{
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <span class="g">
-      <!--img src="https://pinfluents.com/_BCK/4/im/dc.png"-->
+      <img src="https://pinfluents.com/_BCK/4/im/dc.png">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
       <span id="response" v-if="response">{{response}}</span>
@@ -55,7 +54,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(()=>{this.send()},7800);
+    setTimeout(()=>{this.send()},7800);
     setTimeout(()=>{this.send2()},17800);
   },
   methods:{
