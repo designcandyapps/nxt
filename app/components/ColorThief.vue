@@ -36,8 +36,11 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       imageUrl.value=document.getElementById("ee").src;
+      alert(imageurl.value);
       generatePalette();
+      alert(1);
       mobileOnlySlider(".ey",true,false,767);
+      alert(2);
     },1800);
   }
 });
