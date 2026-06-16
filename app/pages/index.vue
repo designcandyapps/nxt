@@ -54,8 +54,8 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},7800);
-    setTimeout(()=>{this.send2()},17800);
+    //setTimeout(()=>{this.send()},7800);
+    //setTimeout(()=>{this.send2()},17800);
   },
   methods:{
     async send(){
