@@ -39,7 +39,7 @@ onMounted(()=>{
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
       //alert(2);
-    },1800);
+    },2800);
   }
 });
 </script>
