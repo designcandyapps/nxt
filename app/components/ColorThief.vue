@@ -38,7 +38,7 @@ onMounted(()=>{
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
       //alert(2);
-    },2800);
+    },3800);
   }
 });
 </script>
