@@ -32,7 +32,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">
+    <!--img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60"-->
     <span class="g">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
