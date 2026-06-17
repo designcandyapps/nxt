@@ -35,14 +35,14 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      alert(document.getElementById("ee").src);
+      //alert(document.getElementById("ee").src);
       imageUrl.value=document.getElementById("ee").src;
       alert(imageurl.value);
       generatePalette();
       //alert(1);
       mobileOnlySlider(".ey",true,false,767);
       //alert(2);
-    },1800);
+    },2800);
   }
 });
 </script>
