@@ -31,7 +31,6 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
     if(!slider.hasClass("slick-initialized"))return slider.slick(settings);
   });
 }
-
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
