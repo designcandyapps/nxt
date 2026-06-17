@@ -10,7 +10,7 @@ async function fetchGetty(query){
   try{
     const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
     if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
+    const data=await response.json(); alert("RES2P: "+JSON.stringify(data));
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
