@@ -34,10 +34,10 @@ onMounted(()=>{
     setTimeout(function(){
       alert(document.getElementById("ee").src);
       imageUrl.value=document.getElementById("ee").src;
-      alert(imageurl.value);
+      alert(imageurl);
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
-      //alert(2);
+      alert(2);
     },3800);
   }
 });
