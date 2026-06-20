@@ -42,7 +42,7 @@ onMounted(()=>{
       imageUrl.value=document.getElementById("ee").src;
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
-    },3800);
+    },1800);
   }
 });
 </script>
