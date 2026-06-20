@@ -55,7 +55,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     setTimeout(()=>{this.send()},7800);
-    setTimeout(()=>{this.send2()},800);
+    setTimeout(()=>{this.send2()},8800);
   },
   methods:{
     async send(){
@@ -67,7 +67,7 @@ export default{
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      alert("S: "+document.querySelector(".slick-slide"));
+      //alert("S: "+document.querySelector(".slick-slide"));
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
   },
