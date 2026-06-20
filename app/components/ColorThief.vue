@@ -32,10 +32,9 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      alert(document.getElementById("ee").src);
-      alert(imageurl);
+      //alert(document.getElementById("ee").src);
+      //alert(imageurl);
       imageUrl.value=document.getElementById("ee").src;
-
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
       alert(2);
