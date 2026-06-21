@@ -33,10 +33,9 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      //alert(document.getElementById("ee").src);
-      alert(imageUrl.value);
+      //alert(document.getElementById("ee").src); //alert(imageUrl.value);
       imageUrl.value=document.getElementById("ee").src;
-      alert("T: "+imageUrl.value);
+      //alert("T: "+imageUrl.value);
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
     },1800);
