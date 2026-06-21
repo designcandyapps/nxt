@@ -3,11 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  isLoading.value=true;
-  alert(imageUrl.value);
-  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  //alert(proxyUrl.value);
-
+  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; //alert(proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -17,6 +13,7 @@ const generatePalette=async()=>{
     }
     //alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
+    alert('${imageUrl.value}');
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
