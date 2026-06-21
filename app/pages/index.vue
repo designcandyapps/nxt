@@ -18,7 +18,7 @@ onMounted(()=>{
   setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
-    //document.head.appendChild(sc1); document.head.appendChild(sc2);
+    document.head.appendChild(sc1); document.head.appendChild(sc2);
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -42,7 +42,7 @@ onMounted(()=>{
     <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
   </ULandingHero>
   <ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /><Slider2 /></UPageGrid></ULandingSection>
-  <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /><!--Slider2 /--></UPageGrid></ULandingSection>
+  <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /><Slider2 /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.bottom.title" :links="page.bottom.links"><UPageGrid><ULandingCard v-for="(item,index) of page.bottom.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.lower.title" :links="page.lower.links"><UPageGrid><ULandingCard v-for="(item,index) of page.lower.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
