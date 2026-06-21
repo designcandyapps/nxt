@@ -36,7 +36,7 @@ onMounted(()=>{
       imageUrl.value=document.getElementById("ee").src;
       //alert("T: "+imageUrl.value);
       generatePalette();
-      mobileOnlySlider(".ey",true,false,767);
+      //mobileOnlySlider(".ey",true,false,767);
     },1800);
   }
 });
