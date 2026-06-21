@@ -3,7 +3,11 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert(proxyUrl.value);
+  isLoading.value=true;
+  alert(${encodeURIComponent(imageUrl.value)});
+  proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
+  alert(proxyUrl.value);
+
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -33,7 +37,7 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       alert(document.getElementById("ee").src);
-      imageUrl.value=document.getElementById("ee").src; alert(imageurl.value);
+      imageUrl.value=document.getElementById("ee").src; //alert(imageurl.value);
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
     },1800);
