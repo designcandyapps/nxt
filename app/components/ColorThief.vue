@@ -13,7 +13,7 @@ const generatePalette=async()=>{
     }
     //alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
-    alert(imageUrl.value);
+
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
@@ -34,6 +34,7 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       //alert(document.getElementById("ee").src);
+      alert(imageUrl.value);
       imageUrl.value=document.getElementById("ee").src;
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
