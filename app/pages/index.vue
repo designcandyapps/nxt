@@ -19,12 +19,13 @@ onMounted(()=>{
   const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
   document.head.appendChild(sc1); document.head.appendChild(sc2);
 
+  const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
+  const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
+  const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
+  const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
+  const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
+
   setTimeout(function(){
-    const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
-    const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
-    const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
-    const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
-    const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   },1800)
@@ -34,7 +35,6 @@ onMounted(()=>{
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <!--input id="t" v-model="t"--><!--style="border:9px solid red;"-->
-    <!--div id="dv" style="width:500px; height:300px; border:3px solid red;"></div-->
     <span class="g">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
@@ -56,7 +56,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(()=>{this.send()},7800);
+    setTimeout(()=>{this.send()},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
