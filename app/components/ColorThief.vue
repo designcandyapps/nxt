@@ -13,7 +13,6 @@ const generatePalette=async()=>{
     }
     //alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
-
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
