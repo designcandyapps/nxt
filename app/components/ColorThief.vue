@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; //alert(proxyUrl.value);
+  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert(proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -11,8 +11,7 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    //alert("Z: "+document.getElementById("z").innerHTML);
-    //document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
+    //alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
@@ -23,7 +22,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
-  var slider=$($slidername); alert("Tzy: "+slider.html());
+  var slider=$($slidername); //alert("Tzy: "+slider.html());
   var settings={mobileFirst:true,dots:$dots,arrows:$arrows,responsive:[{breakpoint:$breakpoint,settings:"unslick"}]};slider.slick(settings);
   $(window).on("resize",function(){
     if($(window).width()>$breakpoint)return;
@@ -33,7 +32,7 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      alert(document.getElementById("ee").src); //alert(imageurl);
+      alert(document.getElementById("ee").src); alert(imageurl);
       imageUrl.value=document.getElementById("ee").src;
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
