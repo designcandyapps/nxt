@@ -6,4 +6,5 @@
     <li1 />
     <li1 />
   </ul>
+  <a href="https://nxt-pink.vercel.app/?u=wordpress.com&s=sr&t=pl">Click</a>
 </template>
