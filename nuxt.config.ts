@@ -22,18 +22,7 @@ export default defineNuxtConfig({
       //{src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       {src:"https://pinfluents.com/inc/colorthief.js"},
-      {src:"https://pinfluents.com/_BCK/4/jq-4jpADGb.js"},
-      //{src:"https://pinfluents.com/_BCK/4/2jpADG.js"},
-      ////{src:"https://pinfluents.com/_BCK/4/2jpADF.js"},
-
-      //{src:"https://pinfluents.com/_BCK/4/2jpADF-4.js"},
-      ////{src:"https://pinfluents.com/_BCK/4/2jpADF_HOLD.js"},
-      //{src:"https://pinfluents.com/_BCK/4/2jpAE.js"},
-      //{src:"https://pinfluents.com/_BCK/4/2jpADE.js"},
-
-      //{src:'https://js.stripe.com/v3/'},
-      //{src:'https://pinfluents.com/_BCK/4/inc/utils.js'},
-      //{src:'https://pinfluents.com/_BCK/4/inc/index.js'}, 
+      {src:"https://pinfluents.com/_BCK/4/jq-4jpADGb.js"},p
     ]}},
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
