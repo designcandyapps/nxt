@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       //{src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       {src:"https://pinfluents.com/inc/colorthief.js"},
-      {src:"https://pinfluents.com/_BCK/4/jq-4jpADGb.js"},
+      {src:"https://pinfluents.com/_BCK/4/jq-4jpADGb-2.js"},
     ]}},
   colorMode: {preference:'light'},
   nitro: {prerender:{routes:['/'],crawlLinks:true}},
