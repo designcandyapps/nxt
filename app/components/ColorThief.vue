@@ -34,7 +34,7 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 }
 onMounted(()=>{
   window.onload=function(){
-    //alert("3: "+document.getElementById("ee").src);
+    alert("3: "+document.getElementById("ee").src);
     setTimeout(function(){
       //alert("4: "+document.getElementById("ee").src); //alert(imageUrl.value);
       imageUrl.value=document.getElementById("ee").src;
