@@ -41,7 +41,7 @@ onMounted(()=>{
       //alert("T: "+imageUrl.value);
       generatePalette();
       //mobileOnlySlider(".ey",true,false,767);
-    },7800);
+    },1800);
   }
 });
 </script>
