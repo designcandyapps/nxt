@@ -16,7 +16,7 @@ async function fetchGetty(query){
 }
 
 
-import {ref,onMounted} from "vue";
+//import {ref,onMounted} from "vue";
 import ColorThief from "colorthief";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
@@ -41,22 +41,22 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-
 onMounted(()=>{
-  window.onload=function(){
+  /*window.onload=function(){
     alert("3: "+document.getElementById("ee").src);
     setTimeout(function(){
       //alert("4: "+document.getElementById("ee").src); //alert(imageUrl.value);
-      imageUrl.value=document.getElementById("ee").src;
+      //imageUrl.value=document.getElementById("ee").src;
       //alert("T: "+imageUrl.value);
       generatePalette();
       //mobileOnlySlider(".ey",true,false,767);
     },1800);
-  }
+  }*/
   setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
     //document.head.appendChild(sc1); document.head.appendChild(sc2);
+    generatePalette();
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -101,6 +101,7 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       alert("T: "+document.querySelector("#t"));
+      //generatePalette();
       document.querySelector("#t").innerText=this.response;
     },
     async send2(){
