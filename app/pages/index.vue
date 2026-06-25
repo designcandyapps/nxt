@@ -21,7 +21,7 @@ async function fetchGetty(query){
 
 
 const generatePalette=async()=>{
-  alert(3);
+  alert(4);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`; alert("UI: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -51,7 +51,7 @@ onMounted(()=>{
       //mobileOnlySlider(".ey",true,false,767);
     },1800);
   }*/
-  setTimeout(function(){
+  //setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
     //document.head.appendChild(sc1); document.head.appendChild(sc2);
@@ -63,7 +63,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  },7800)
+  //},7800)
 });
 </script>
 
@@ -92,7 +92,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},7800);
+    //setTimeout(()=>{
+      this.send()
+    //},7800);
     //setTimeout(()=>{this.send2()},11800);
   },
   methods:{
