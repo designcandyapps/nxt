@@ -40,7 +40,6 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
     },1800);
