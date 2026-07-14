@@ -38,7 +38,8 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <input id="t" v-model="t"><!-- style="border:9px solid red;"><div id="dv" style="width:500px; height:300px; border:3px solid red;"></div><h1>Title</h1-->
+    <input id="t" v-model="t"><!-- style="border:9px solid red;"><div id="dv" style="width:500px; height:300px; border:3px solid red;"></div-->
+    <h1>Title</h1>
     <span class="g">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
@@ -60,8 +61,8 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(()=>{this.send()},7800);
-    //setTimeout(()=>{this.send2()},11800);
+    setTimeout(()=>{this.send()},7800);
+    setTimeout(()=>{this.send2()},11800);
   },
   methods:{
     async send(){
