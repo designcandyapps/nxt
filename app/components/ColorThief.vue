@@ -34,7 +34,6 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      //alert("HD: "+document.querySelector("header"));
       $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png">').insertBefore("ul:eq(0)");
       //alert("3: "+document.getElementById("ee").src); alert("4: "+document.getElementByClassName("qq").src);
       //alert("IU1: "+imageUrl.value);
