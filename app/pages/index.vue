@@ -21,7 +21,7 @@ onMounted(()=>{
       mobileOnlySlider(".ey",true,false,767);
     },1800);
   }*/
-  //setTimeout(function(){
+  setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
     document.head.appendChild(sc1); document.head.appendChild(sc2);
@@ -32,7 +32,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  //},7800)
+  },7800)
 });
 </script>
 
