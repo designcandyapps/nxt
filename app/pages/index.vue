@@ -15,12 +15,6 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  /*window.onload=function(){
-    setTimeout(function(){
-      generatePalette();
-      mobileOnlySlider(".ey",true,false,767);
-    },1800);
-  }*/
   //setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
@@ -38,8 +32,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <input id="t" v-model="t"><!-- style="border:9px solid red;"><div id="dv" style="width:500px; height:300px; border:3px solid red;"></div-->
-    <h1>Title</h1><h2>Subtitle</h2>
+    <input id="t" v-model="t"><!--h1>Title</h1><h2>Subtitle</h2-->
     <span class="g">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
@@ -62,7 +55,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(()=>{this.send()},7800);
-    setTimeout(()=>{this.send2()},11800);
+    setTimeout(()=>{this.send2()},8800);
   },
   methods:{
     async send(){
@@ -73,7 +66,7 @@ export default{
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       //alert("S: "+document.querySelector(".slick-slide"));
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
