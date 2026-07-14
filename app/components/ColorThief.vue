@@ -42,7 +42,7 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
     var r0=document.querySelector("#dv7").style.backgroundColor; r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
-    alert("D7: "+document.querySelector("#dv7")); alert("R0: "+r0);
+    alert("aD7: "+document.querySelector("#dv7")); alert("R0: "+r0);
     var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
     var r2=document.querySelector("#dv8").style.backgroundColor;
     var r3=document.querySelector("#dv10").style.backgroundColor;
