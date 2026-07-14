@@ -34,12 +34,13 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 }
 onMounted(()=>{
   window.onload=function(){
-    document.querySelector("#hd").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60">');
-    //alert("3: "+document.getElementById("ee").src);
-    //alert("IU1: "+imageUrl.value);
-    imageUrl.value=document.getElementById("ee").src;
-    alert("IU2: "+imageUrl.value);
     setTimeout(function(){
+      document.querySelector("#hd").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc2.png" width="60" height="60">');
+      //alert("3: "+document.getElementById("ee").src);
+      //alert("IU1: "+imageUrl.value);
+      imageUrl.value=document.getElementById("ee").src;
+      alert("IU2: "+imageUrl.value);
+
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
     },1800);
