@@ -23,7 +23,9 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+  //alert("Z: "+document.getElementById("z").innerHTML);
+  alert("DV7: "+document.querySelector("#dv7").style.backgroundColor;
+  document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
 function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]}; const palettes={}; for(const type of Object.keys(targetHueSteps)){palettes[type]=targetHueSteps[type].map((step)=>({mode:"lch",l:baseColor.l,c:baseColor.c,h:(baseColor.h+step)%360}))} return palettes}
