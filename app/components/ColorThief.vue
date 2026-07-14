@@ -53,7 +53,7 @@ onMounted(()=>{
       var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";*/
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
-    },8800);
+    },1800);
   }
 });
 </script>
