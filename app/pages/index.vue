@@ -55,7 +55,7 @@ onMounted(()=>{
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
     //document.head.appendChild(sc1); document.head.appendChild(sc2);
-    generatePalette();
+    //generatePalette();
     const prompt=document.querySelector("#prompt").value; //alert("PR1: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -93,7 +93,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(()=>{
-      //00this.send()
+      //this.send()
     //},7800);
     //setTimeout(()=>{this.send2()},11800);
   },
@@ -101,7 +101,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      alert("T: "+document.querySelector("#t"));
+      //alert("T: "+document.querySelector("#t"));
       //generatePalette();
       document.querySelector("#t").innerText=this.response;
     },
