@@ -35,10 +35,8 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       //alert("HD: "+document.querySelector("header"));
-      $('<img id="ee" class="qq" src="https://pinfluents.com/_BCK/4/im/dc2.png">').insertBefore("ul:eq(0)");
-
-      alert("3: "+document.getElementById("ee").src);
-      alert("4: "+document.getElementByClassName("qq").src);
+      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png">').insertBefore("ul:eq(0)");
+      //alert("3: "+document.getElementById("ee").src); alert("4: "+document.getElementByClassName("qq").src);
       //alert("IU1: "+imageUrl.value);
       imageUrl.value=document.getElementById("ee").src;
       alert("IU2: "+imageUrl.value);
