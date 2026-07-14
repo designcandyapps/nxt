@@ -3,6 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
+  alert("IU: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
@@ -34,9 +35,8 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png">').insertBefore("ul:eq(0)");
-      //alert("3: "+document.getElementById("ee").src); alert("4: "+document.getElementByClassName("qq").src);
-      //alert("IU1: "+imageUrl.value);
+      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
+      //alert("3: "+document.getElementById("ee").src);
       imageUrl.value=document.getElementById("ee").src;
       alert("IU2: "+imageUrl.value);
 
