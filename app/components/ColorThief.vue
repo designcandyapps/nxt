@@ -20,6 +20,14 @@ const generatePalette=async()=>{
     }
     var r0=document.querySelector("#dv7").style.backgroundColor; r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
     alert("D7: "+document.querySelector("#dv7")); alert("R0: "+r0);
+    var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
+    var r2=document.querySelector("#dv8").style.backgroundColor;
+    var r3=document.querySelector("#dv10").style.backgroundColor;
+
+    //r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
+    r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
+    var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
+    var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
 
     //alert("Z: "+document.getElementById("z").innerHTML); document.body.style.backgroundColor=document.querySelector("#dv13").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
@@ -32,7 +40,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
-  var slider=$($slidername); alert("Tzy: "+slider.html());
+  var slider=$($slidername); //alert("Tzy: "+slider.html());
   var settings={mobileFirst:true,dots:$dots,arrows:$arrows,responsive:[{breakpoint:$breakpoint,settings:"unslick"}]};slider.slick(settings);
   $(window).on("resize",function(){
     if($(window).width()>$breakpoint)return;
