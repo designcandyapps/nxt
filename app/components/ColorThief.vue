@@ -24,7 +24,7 @@ const generatePalette=async()=>{
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
   //alert("Z: "+document.getElementById("z").innerHTML);
-  alert("DV7: "+document.querySelector("#dv7").style.backgroundColor;
+  alert("DV7: "+document.querySelector("#dv7").style.backgroundColor);
   document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
