@@ -20,7 +20,6 @@ export default defineNuxtConfig({
       {src:"https://pinfluents.com/_BCK/4/jq.js"},
       //{src:"https://pinfluents.com/inc/colorthief.js"},
       {src:'https://pinfluents.com/_BCK/4/inc/zo/ap.js'},
-      //{src:'https://pinfluents.com/_BCK/4/inc/zo/sw.js'},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       {src:"https://pinfluents.com/_BCK/4/jqP5-e.js"},
   
