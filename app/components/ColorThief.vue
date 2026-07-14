@@ -5,12 +5,12 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 const generatePalette=async()=>{
   $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
   imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
+  //alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert("PU1: "+proxyUrl.value);
+  //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  alert("PU2: "+proxyUrl.value);
+  //alert("PU2: "+proxyUrl.value);
   
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -19,7 +19,7 @@ const generatePalette=async()=>{
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
     var r0=document.querySelector("#dv7").style.backgroundColor; r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
-    alert("D7: "+document.querySelector("#dv7")); alert("R0: "+r0);
+    //alert("D7: "+document.querySelector("#dv7")); alert("R0: "+r0);
     var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
     var r2=document.querySelector("#dv8").style.backgroundColor;
     var r3=document.querySelector("#dv10").style.backgroundColor;
