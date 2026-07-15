@@ -6,7 +6,7 @@ const generatePalette=async()=>{
   //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').insertInto("ul:eq(0)");
   $("ul:eq(0)").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">');
   imageUrl.value=document.getElementById("ee").src;
-  //alert("IU1: "+imageUrl.value);
+  alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
