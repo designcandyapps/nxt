@@ -19,7 +19,7 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    alert("DV7: "+document.querySelector("#dv7").style.backgroundColor);
+
 
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
@@ -52,7 +52,10 @@ onMounted(()=>{
       var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
       var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
 */
+      
       generatePalette();
+          const r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
+    alert("r0: "+r0);
       mobileOnlySlider(".ey",true,false,767);
     },1800);
   }
