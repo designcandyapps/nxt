@@ -18,13 +18,14 @@ const generatePalette=async()=>{
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
-    const r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
-    alert("r0a: "+r0);
 
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  alert("Z: "+document.getElementById("z").innerHTML);
+  //alert("Z: "+document.getElementById("z").innerHTML);
+  const r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
+  alert("r0a: "+r0);
+
   document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
