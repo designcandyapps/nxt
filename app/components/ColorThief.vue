@@ -55,7 +55,7 @@ onMounted(()=>{
       var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";*/
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
-    },3800);
+    },4800);
   }
 });
 </script>
