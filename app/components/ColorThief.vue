@@ -10,7 +10,7 @@ const generatePalette=async()=>{
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  alert("PU2: "+proxyUrl.value);
+  //alert("PU2: "+proxyUrl.value);
 
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
