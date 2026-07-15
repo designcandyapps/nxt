@@ -12,7 +12,7 @@ const generatePalette=async()=>{
   //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   alert("PU2: "+proxyUrl.value);
-  
+
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
     var i=0; for(const type of Object.keys(palettesz)){
@@ -44,15 +44,6 @@ function mobileOnlySlider($slidername,$dots,$arrows,$breakpoint){
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-/*
-      var r0=document.querySelector("#dv7").style.backgroundColor; r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
-      alert("aD7: "+document.querySelector("#dv7")); alert("R0: "+r0);
-      var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
-      var r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
-      var r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
-      var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
-      var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
-*/
       generatePalette();
       mobileOnlySlider(".ey",true,false,767);
     },1800);
