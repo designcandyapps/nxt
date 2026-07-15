@@ -21,7 +21,10 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  //const r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0; //alert("r0aa: "+r0);
+  const r0=$("#dv7").css("background-color");
+  //r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
+  alert("r0aa: "+r0);
+
   document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
