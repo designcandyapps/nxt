@@ -3,8 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert("2: "+$(".provider-header"));
-  $(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">'); //$("ul:eq(0)")
+  //$(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">'); //$("ul:eq(0)")
   imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
 
