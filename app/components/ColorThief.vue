@@ -21,10 +21,10 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  var r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
+  var r0=$("#dv7").css("background-color"); //r0=r0&&r0=="rgb(0, 0, 0)"?"#0c152d":r0;
   //alert("r0aa: "+r0);
-  //var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
-  var r2=$("#dv8").css("background-color"); r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
+  var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
+  var r2=$("#dv8").css("background-color"); //r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
   var r3=$("#dv10").css("background-color"); r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
   var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
   var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
