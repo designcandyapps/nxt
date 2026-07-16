@@ -23,7 +23,7 @@ const generatePalette=async()=>{
   };
   const r0=$("#dv7").css("background-color"); r0=r0&&r0=="rgb(0, 0, 0)"?"#000011":r0;
   const r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
-  const r2=$("#dv8").css("background-color"); //r2=r2&&r2=="rgb(0, 0, 0)"?"#0c152d":"#0c152d";
+  const r2=$("#dv8").css("background-color"); r2=r2&&r2=="rgb(0, 0, 0)"?"#001100":"#e7e7e7"; //0c152d
   const r3=$("#dv10").css("background-color"); r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
   const r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
   const r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
