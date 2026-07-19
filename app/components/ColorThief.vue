@@ -4,8 +4,6 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(1);
-  imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
@@ -21,15 +19,7 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  var r0=document.querySelector("#dv7").style.backgroundColor;
-  alert("R02: "+r0);
-
-  r0=r0&&r0=="rgb(0, 0, 0)"?"#000011":r0;
-  var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
-  var r2=document.querySelector("#dv8").style.backgroundColor; r2=r2&&r2=="rgb(0, 0, 0)"?"#001100":"#e7e7e7"; //0c152d
-  var r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
-  var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
-  var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
+  //-r0
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
@@ -41,6 +31,8 @@ onMounted(()=>{
   window.onload=function(){
     //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
     setTimeout(function(){
+      imageUrl.value=document.getElementById("ee").src;
+      alert("IU1: "+imageUrl.value);
       generatePalette();
     },1800);
   }
