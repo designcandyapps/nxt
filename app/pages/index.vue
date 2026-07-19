@@ -2,15 +2,16 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 
-import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
+//import {ref,onMounted} from "vue";
+//import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
   //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-  $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
+  //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
 
   imageUrl.value=document.getElementById("ee").src;
-  //alert("IU1: "+imageUrl.value);
+  alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
