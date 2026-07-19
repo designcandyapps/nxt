@@ -6,12 +6,11 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert(22);
   //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-  $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
+  $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').prepend("ul:eq(0)");
 
   imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
+  //alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
@@ -54,7 +53,7 @@ async function fetchGetty(query){
 onMounted(()=>{
   //window.onload=function(){
   //setTimeout(function(){
-    generatePalette();
+    //generatePalette();
   //},1800);
   //}
 
@@ -97,6 +96,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
+    setTimeout(()=>{this.generatePalette()},1800);
     //setTimeout(()=>{this.send()},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
