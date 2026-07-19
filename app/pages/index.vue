@@ -15,6 +15,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
+  alert(1);
   //setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
     const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
