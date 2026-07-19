@@ -35,11 +35,6 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 
 
-
-
-  
-
-  
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -55,7 +50,7 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    alert(0);
+    alert(2);
     generatePalette();
   },1800);
 
