@@ -32,6 +32,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
+      alert(document.querySelector(".ul"));
       document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
       generatePalette();
     },1800);
