@@ -93,12 +93,6 @@ export default{
       //alert("S: "+document.querySelector(".slick-slide"));
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
-
-
-
-
-
-    
     async genPalette(){
       //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
       //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').insertBefore("ul:eq(0)");
@@ -106,10 +100,10 @@ export default{
 
       alert(document.getElementById("ee").src);
 
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
+      /*const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
       const data=await response.json(); this.response=data.reply;
       //alert("T: "+document.querySelector("#t"));
-      document.querySelector("#t").innerText=this.response;
+      document.querySelector("#t").innerText=this.response;*/
   
   imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
