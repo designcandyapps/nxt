@@ -2,7 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 
-//import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
+import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
@@ -60,9 +60,9 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){
+  //setTimeout(function(){
     generatePalette();
-  },1800);
+  //},1800);
 
   //setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
