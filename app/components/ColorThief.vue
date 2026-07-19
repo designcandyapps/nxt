@@ -41,7 +41,7 @@ onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
       generatePalette();
-    },1600);
+    },1800);
   }
 });
 </script>
