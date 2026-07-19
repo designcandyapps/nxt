@@ -4,7 +4,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(1);
-  document.querySelector(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
+  //document.querySelector(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
