@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  document.querySelector("ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
+
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
@@ -31,6 +31,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
+    document.querySelector("ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
     setTimeout(function(){
       generatePalette();
     },1800);
