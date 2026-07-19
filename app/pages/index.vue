@@ -3,7 +3,7 @@ const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 
 //import {ref,onMounted} from "vue";
-import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
+//import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
@@ -27,7 +27,7 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-
+  alert("13: "+document.querySelector("#dv7"));
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
@@ -55,7 +55,6 @@ onMounted(()=>{
   window.onload=function(){
   //setTimeout(function(){
     generatePalette();
-    alert("13: "+document.querySelector("#dv7"));
   //},1800);
   }
 
