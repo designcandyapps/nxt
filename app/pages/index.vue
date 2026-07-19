@@ -101,7 +101,7 @@ export default{
     
     async genPalette(){
       //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').prepend("ul:eq(0)");
+      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').insertBefore("ul:eq(0)");
 
       alert(document.getElementById("ee").src);
 
