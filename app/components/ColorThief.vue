@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-
+  alert(01);
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
@@ -21,7 +21,16 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  /*-r0*/
+  var r0=document.querySelector("#dv7").style.backgroundColor;
+  alert("R02: "+r0);
+
+  r0=r0&&r0=="rgb(0, 0, 0)"?"#000011":r0;
+  var r1="rgba("+r0.replace("rgb(","").replace(")","")+",.1)"; var r1a="rgba(255,255,255,1)";
+  var r2=document.querySelector("#dv8").style.backgroundColor; r2=r2&&r2=="rgb(0, 0, 0)"?"#001100":"#e7e7e7"; //0c152d
+  var r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
+  var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
+  var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
+  //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
@@ -31,11 +40,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
-    //alert("UL: "+document.querySelector(".ul"));
-    //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-    //$('<img id="ee" class="zz" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
     setTimeout(function(){
-      alert(0);
       generatePalette();
     },1800);
   }
