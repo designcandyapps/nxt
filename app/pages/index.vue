@@ -2,7 +2,8 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
 
-import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
+//import {ref,onMounted} from "vue";
+import ColorThief from "colorthief"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
@@ -77,7 +78,7 @@ onMounted(()=>{
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <input id="t" v-model="t"><!--h1>Title</h1><h2>Subtitle</h2-->
     <span class="g">
-      <span id="z"><!--ColorThief-- /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+      <span id="z"><!--ColorThief /--></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
       <span id="response" v-if="response">{{response}}</span>
     </span>
