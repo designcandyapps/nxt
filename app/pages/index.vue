@@ -102,7 +102,7 @@ export default{
     async genPalette(){
       //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
       //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').insertBefore("ul:eq(0)");
-      $("ul:eq(0)").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">');
+      $("ul:eq(0)").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/bp.png" width="60" height="60">');
 
       alert(document.getElementById("ee").src);
 
