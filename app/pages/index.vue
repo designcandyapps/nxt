@@ -101,7 +101,7 @@ export default{
     
     async genPalette(){
       //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-      //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').prepend("ul:eq(0)");
+      $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/kw.png" width="60" height="60">').prepend("ul:eq(0)");
 
 
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
