@@ -6,8 +6,9 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
+  alert(22);
   //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
-  //$('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
+  $('<img id="ee" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
 
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
@@ -51,12 +52,11 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  window.onload=function(){
-    alert(22);
+  //window.onload=function(){
   //setTimeout(function(){
     generatePalette();
   //},1800);
-  }
+  //}
 
   //setTimeout(function(){
     const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
