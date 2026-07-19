@@ -31,8 +31,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
-    document.querySelector("ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
     setTimeout(function(){
+      document.querySelector("ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
       generatePalette();
     },1800);
   }
