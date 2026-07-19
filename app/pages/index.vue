@@ -107,7 +107,7 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
       const data=await response.json(); this.response=data.reply;
       alert("T: "+document.querySelector("#t"));
-      document.querySelector("#t").innerText=this.response;
+      document.querySelector("#t").value=this.response;
   
   imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
