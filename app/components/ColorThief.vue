@@ -42,6 +42,7 @@ onMounted(()=>{
   window.onload=function(){
     document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
     setTimeout(function(){
+      imageUrl.value=document.getElementById("ee").src;
       generatePalette();
     },1800);
   }
