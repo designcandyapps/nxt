@@ -4,7 +4,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(01);
-  //document.querySelector(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
+  document.querySelector(".provider-header").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
@@ -31,7 +31,6 @@ const generatePalette=async()=>{
   var r3=document.querySelector("#dv10").style.backgroundColor; r3="rgba("+r2.replace("rgb(","").replace(")","")+",.75)";
   var r4="rgba("+r2.replace("rgb(","").replace(")","")+",.85)";
   var r5="rgba("+r3.replace("rgb(","").replace(")","")+",.9)";
-  //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
