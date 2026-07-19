@@ -31,11 +31,11 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
-    alert(0);
     //alert("UL: "+document.querySelector(".ul"));
     //document.querySelector(".ul").insert('<img id="ee" src="https://pinfluents.com/_BCK/4/im/lo.png" width="60" height="60">');
     //$('<img id="ee" class="zz" src="https://pinfluents.com/_BCK/4/im/dc.png" width="60" height="60">').insertBefore("ul:eq(0)");
     setTimeout(function(){
+      alert(0);
       generatePalette();
     },1800);
   }
