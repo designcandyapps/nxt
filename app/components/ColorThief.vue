@@ -4,8 +4,8 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(1);
-  //imageUrl.value=document.getElementById("ee").src;
-  //alert("IU1: "+imageUrl.value);
+  imageUrl.value=document.getElementById("ee").src;
+  alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
@@ -41,8 +41,6 @@ onMounted(()=>{
   window.onload=function(){
     //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
     setTimeout(function(){
-      imageUrl.value=document.getElementById("ee").src;
-      alert("IU1: "+imageUrl.value);
       generatePalette();
     },1800);
   }
