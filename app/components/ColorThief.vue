@@ -6,7 +6,7 @@ const generatePalette=async()=>{
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  alert("PU2: "+proxyUrl.value);
+  //alert("PU2: "+proxyUrl.value);
 
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -31,7 +31,7 @@ onMounted(()=>{
       //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png">'); //$("ul:eq(0)") //document.querySelector(".bb")
       document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
       //alert("BB HTML: "+document.querySelector(".bb").innerHTML);
-      //alert("YY: "+document.querySelector(".yy"));
+      alert("YY: "+document.querySelector(".yy").src);
       imageUrl.value=document.querySelector(".yy").src;
       alert("IU1: "+imageUrl.value);
     },300);
