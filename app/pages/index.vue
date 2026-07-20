@@ -75,8 +75,8 @@ export default{
     async imgu(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-      alert("I: "+document.querySelector("#i"));
-      document.querySelector("#i").innerText=this.response;
+      alert("I: "+document.querySelector("#imageUrl"));
+      document.querySelector("#imageUrl").value=this.response;
     },
   },
 }
