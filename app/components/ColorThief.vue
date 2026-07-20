@@ -3,6 +3,12 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
+  //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)") //document.querySelector(".bb")
+  document.getElementByClassName("bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">';
+  alert(document.querySelector(".yy"));
+  imageUrl.value=document.querySelector(".yy").src;
+  alert("IU1: "+imageUrl.value);
+  
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
@@ -26,12 +32,6 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
-    //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)") //document.querySelector(".bb")
-    document.getElementByClassName("bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">';
-    alert(document.querySelector(".yy"));
-    imageUrl.value=document.querySelector(".yy").src;
-    alert("IU1: "+imageUrl.value);
-
     setTimeout(function(){
       generatePalette();
     },1800);
