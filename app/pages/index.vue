@@ -52,7 +52,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",imageUrl:"",response:null}},
   mounted(){
     setTimeout(()=>{this.imgu()},7800);
     //setTimeout(()=>{this.send()},8800);
