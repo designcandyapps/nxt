@@ -29,7 +29,8 @@ onMounted(()=>{
     setTimeout(function(){
       setTimeout(function(){
       //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png">'); //$("ul:eq(0)") //document.querySelector(".bb")
-      document.getElementsByClassName(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
+      document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
+      alert(document.querySelector(".bb").innerHTML);
       alert(document.querySelector(".yy"));
       imageUrl.value=document.querySelector(".yy").src;
       alert("IU1: "+imageUrl.value);
