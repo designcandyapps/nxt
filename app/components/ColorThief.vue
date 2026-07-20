@@ -10,7 +10,7 @@ const generatePalette=async()=>{
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  alert("IS: "+img.src);
+  //alert("IS: "+img.src);
 
   img.onload=()=>{
     alert(7);
@@ -34,9 +34,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)") //document.querySelector(".bb")
-      document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png" width="60" height="60">';
-      document.querySelector(".yy").src="https://pinfluents.com/_BCK/4/im/bp.png";
+      ////document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)") //document.querySelector(".bb")
+      //document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png" width="60" height="60">';
+      //document.querySelector(".yy").src="https://pinfluents.com/_BCK/4/im/bp.png";
       generatePalette();
     },1800);
   }
