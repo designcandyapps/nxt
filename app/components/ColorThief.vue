@@ -25,7 +25,7 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  //alert(document.querySelector("#dv7"));
+  alert(document.getElementById("dv7"));
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
