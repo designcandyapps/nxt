@@ -36,7 +36,7 @@ onMounted(()=>{
       //document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png" width="60" height="60">';
       //document.querySelector(".yy").src="https://pinfluents.com/_BCK/4/im/bp.png";
       generatePalette();
-    },1800);
+    },8800);
   }
 });
 </script>
