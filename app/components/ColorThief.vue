@@ -21,11 +21,12 @@ const generatePalette=async()=>{
         alert("I: "+i);
         return html
       },"");
+      alert(document.getElementById("dv7"));
     }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
   };
-  alert(document.getElementById("dv7"));
+  
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
