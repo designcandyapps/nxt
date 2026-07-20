@@ -4,6 +4,9 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(8);
+  imageUrl.value=document.querySelector(".yy").src;
+  alert("IU1: "+imageUrl.value);
+
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
@@ -28,14 +31,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   window.onload=function(){
     setTimeout(function(){
-      //setTimeout(function(){
       //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png">'); //$("ul:eq(0)") //document.querySelector(".bb")
       document.querySelector(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
-      //alert("BB HTML: "+document.querySelector(".bb").innerHTML);
       alert("YY: "+document.querySelector(".yy").src);
-      imageUrl.value=document.querySelector(".yy").src;
-      alert("IU1: "+imageUrl.value);
-      //},300);
       generatePalette();
     },1800);
   }
