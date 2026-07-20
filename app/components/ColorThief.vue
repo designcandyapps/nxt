@@ -4,7 +4,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   //alert("YY: "+document.querySelector(".yy").src);
-  imageUrl.value=document.querySelector(".yy").src;
+  imageUrl.value=document.querySelector("#eef").src;
   alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
