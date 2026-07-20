@@ -22,7 +22,7 @@ const generatePalette=async()=>{
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
     
   };
-  alert("DV7: "+document.getElementById("dv7").style.backgroundColor);
+  alert(document.getElementById("dv7").style.backgroundColor);
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
