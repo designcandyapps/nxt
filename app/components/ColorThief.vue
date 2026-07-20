@@ -3,7 +3,6 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  alert(8);
   imageUrl.value=document.querySelector(".yy").src;
   alert("IU1: "+imageUrl.value);
 
