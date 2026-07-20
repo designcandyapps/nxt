@@ -30,7 +30,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   window.onload=function(){
     //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png" width="60" height="60">'); //$("ul:eq(0)")
-    imageUrl.value=document.getElementById("ee").src;
+    alert(document.getElementById(".yy"));
+    alert(document.getElementById(".yy").src);
+    imageUrl.value=document.getElementById(".yy").src;
     alert("IU1: "+imageUrl.value);
     setTimeout(function(){
       generatePalette();
