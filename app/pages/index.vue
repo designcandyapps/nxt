@@ -32,7 +32,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <input id="t" v-model="t"><!--h1>Title</h1><h2>Subtitle</h2-->
+    <input id="t" v-model="t"><input id="imageUrl" v-model="imageUrl" style="border:3px dashed red">
     <span class="g">
       <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
@@ -54,7 +54,8 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(()=>{this.send()},7800);
+    //setTimeout(()=>{this.imgu()},7800);
+    //setTimeout(()=>{this.send()},8800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
@@ -70,6 +71,12 @@ export default{
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       //alert("S: "+document.querySelector(".slick-slide"));
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
+    },
+    async imgu(){
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#imageUrl").value})});
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      alert("I: "+document.querySelector("#i"));
+      document.querySelector("#i").innerText=this.response;
     },
   },
 }
