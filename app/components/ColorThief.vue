@@ -4,7 +4,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   //document.querySelector(".ul").prepend('<img id="ee" src="https://pinfluents.com/_BCK/4/im/gr.png">'); //$("ul:eq(0)") //document.querySelector(".bb")
-  document.getElementsByClassName(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
+  //document.getElementsByClassName(".bb").innerHTML='<img id="ee" class="yy" src="https://pinfluents.com/_BCK/4/im/hn.png">';
   alert(document.querySelector(".yy"));
   imageUrl.value=document.querySelector(".yy").src;
   alert("IU1: "+imageUrl.value);
