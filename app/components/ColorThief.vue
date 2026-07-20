@@ -8,7 +8,7 @@ const generatePalette=async()=>{
   alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert("PU1: "+proxyUrl.value);
+  //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   //alert("IS: "+img.src);
 
