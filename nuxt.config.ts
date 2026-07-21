@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   app: {head:{
     //link:[{rel:"stylesheet",href:"https://pinfluents.com/_BCK/4/inc/ct.css"}],
     script:[
-      //{src:"https://pinfluents.com/_BCK/4/jq.js"},
+      {src:"https://pinfluents.com/_BCK/4/jq.js"},
       //{src:"https://pinfluents.com/inc/colorthief.js"},
       //{src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       //{type:'text/javascript',src:'https://pinfluents.com/_BCK/4/inc/zo/gl.js',body:true,defer:true,tagPosition:'bodyClose'},
