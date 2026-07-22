@@ -16,12 +16,11 @@ export default defineNuxtConfig({
   },
   app: {head:{
     //link:[{rel:"stylesheet",href:"https://pinfluents.com/_BCK/4/inc/ct.css"}],
-    link:[{rel:"stylesheet",href:"https://pinfluents.com/_BCK/4/ap.css"}],
     script:[
       {src:"https://pinfluents.com/_BCK/4/jq.js"},
       //{src:"https://pinfluents.com/inc/colorthief.js"},
       //{src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
-      {type:'text/javascript',src:'https://pinfluents.com/_BCK/4/inc/zo/gl.js',body:true,defer:true,tagPosition:'bodyClose'},
+      {src:'https://pinfluents.com/_BCK/4/inc/zo/gl.js'}, //,defer:true  //type:'text/javascript',body:true,tagPosition:'bodyClose'
       {src:"https://pinfluents.com/_BCK/4/jqP-ALL.js"},
       
       //{src:'https://js.stripe.com/v3/'},
