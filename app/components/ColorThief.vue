@@ -32,8 +32,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   window.onload=function(){
+    alert(0);
     setTimeout(function(){
-      alert(0);
       generatePalette();
     },1800);
   }
