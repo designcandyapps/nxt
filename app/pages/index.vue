@@ -53,7 +53,7 @@ export default{
   },
   methods:{
     async send(){
-    const pr="orangey";  //new URLSearchParams(location.search).get("pr");
+    const pr="mountains";  //new URLSearchParams(location.search).get("pr");
     document.querySelector("#t").innerText=pr;
     document.querySelector("#prompt").value=pr;
     alert("PR: "+pr);
