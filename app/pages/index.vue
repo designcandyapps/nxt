@@ -16,7 +16,7 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    document.querySelector("#prompt").value=document.querySelector("#t").innerText;
+    //document.querySelector("#prompt").value=document.querySelector("#t").innerText;
     const prompt=document.querySelector("#prompt").value;
     alert("PromptZZZZ: "+prompt);
 
