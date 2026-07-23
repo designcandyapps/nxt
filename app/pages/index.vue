@@ -15,7 +15,6 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  //setTimeout(function(){
     //const pr="cars";
     const pr:string=new URLSearchParams(location.search).get("pr")??"";
     document.getElementById("tr").innerText=pr;
@@ -23,7 +22,8 @@ onMounted(()=>{
 
     alert("PROMPT: "+document.querySelector("#prompt").value);
     alert("PRP: "+document.getElementById("tr").innerText);
-  
+
+  setTimeout(function(){  
     const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PRP2: "+prp);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
@@ -32,7 +32,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     //fetchPh(prp).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-  //},7800);
+  },7800);
 });
 </script>
 
@@ -56,9 +56,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",prp:"",response:null}},
   mounted(){
-    setTimeout(()=>{
+    //setTimeout(()=>{
       this.send()
-    },7800);
+    //},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
