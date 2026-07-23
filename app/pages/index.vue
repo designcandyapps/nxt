@@ -56,17 +56,17 @@ export default{
     const pr="orangey";  //new URLSearchParams(location.search).get("pr");
     document.querySelector("#t").innerText=pr;
     document.querySelector("#prompt").value=pr;
-    alert("PR0: "+pr);
+    alert("PR: "+pr);
 
-    //document.getElementById("t").innerText="nature";
-    document.getElementById("prompt").value=document.getElementById("t").innerText; alert("T: "+document.getElementById("prompt").value);
+    document.getElementById("prompt").value=document.getElementById("t").innerText;
+    alert("PROMPT: "+document.getElementById("prompt").value);
 
     const prompt=document.querySelector("#prompt").value; alert("PROMT: "+prompt);
   
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       alert("T1: "+document.querySelector("#t").innerText);
-      document.querySelector("#t").innerText=this.response;
+      document.querySelector("#h1n").innerText=this.response;
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
