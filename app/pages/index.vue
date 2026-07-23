@@ -15,12 +15,10 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){
-    //const pr="shiny";
+  //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??"";
-    document.getElementById("tr").innerText=pr;
-    document.getElementById("prompt").value=document.getElementById("tr").innerText; alert("PROMPT: "+document.getElementById("prompt").value);
-    const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PR: "+prp);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -28,7 +26,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     fetchPh(prp).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-  },7800);
+  //},7800);
 });
 </script>
 
@@ -52,9 +50,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",prp:"",response:null}},
   mounted(){
-    //setTimeout(()=>{
+    setTimeout(()=>{
       this.send()
-    //},3800);
+    },7800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
