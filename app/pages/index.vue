@@ -29,7 +29,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <input id="tr" v-model="tr">
+    <input id="t" v-model="t">
     <span class="g">
     <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt" style="border:9px dashed red"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
@@ -54,10 +54,8 @@ export default{
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T: "+document.querySelector("#t").innerText);
-      //alert("TR: "+document.querySelector("#tr").value);
-      //document.querySelector("#tr").value=this.response;
       document.querySelector("#t").innerText=this.response;
     },
     async send2(){
