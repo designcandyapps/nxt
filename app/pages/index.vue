@@ -55,6 +55,7 @@ export default{
   },
   methods:{
     async send(){
+      alert("H1: "+document.querySelector("#t").innerText);
       document.querySelector("#prompt").value=document.querySelector("#t").innerText;
       alert("PromptZZZZ: "+prompt);
 
