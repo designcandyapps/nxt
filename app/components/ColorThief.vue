@@ -22,6 +22,10 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
     const r0=document.getElementById("dv7").style.backgroundColor; alert("G: "+r0);
+    const pr="oranged";  //new URLSearchParams(location.search).get("pr");
+    document.querySelector("#prompt").value=pr;
+    alert("PR1: "+pr);
+
     //document.getElementById("t").innerText="nature";
     document.getElementById("prompt").value=document.getElementById("t").innerText; alert("T: "+document.getElementById("prompt").value);
   };
