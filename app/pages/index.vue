@@ -50,7 +50,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",prp:"",response:null}},
   mounted(){
     //setTimeout(()=>{
       this.send()
