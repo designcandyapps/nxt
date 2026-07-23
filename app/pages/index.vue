@@ -53,7 +53,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(()=>{
-      this.send()
+      //this.send()
     //},3800);
     //setTimeout(()=>{this.send2()},8800);
   },
