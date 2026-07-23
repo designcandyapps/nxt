@@ -16,8 +16,10 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
+    const prompt=document.querySelector("#prompt").value;
     document.querySelector("#prompt").value=document.querySelector("#t").innerText;
-    const prompt=document.querySelector("#prompt").value; alert("PromptZZZZ: "+prompt);
+    alert("PromptZZZZ: "+prompt);
+
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
