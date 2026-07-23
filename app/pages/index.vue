@@ -26,7 +26,7 @@ onMounted(()=>{
     const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PRP2: "+prp);
   
-  setTimeout(function(){
+  //setTimeout(function(){
 
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -34,7 +34,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     //fetchPh(prp).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-  },7800);
+  //},7800);
 });
 </script>
 
