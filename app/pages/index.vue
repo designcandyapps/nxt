@@ -48,7 +48,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},800);
+    setTimeout(()=>{this.send()},1200);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
