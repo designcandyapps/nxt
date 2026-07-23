@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+const pr:string=new URLSearchParams(location.search).get("pr")??"";
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -16,7 +17,6 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    const pr:string=new URLSearchParams(location.search).get("pr")??"";
     pr="cars";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
@@ -60,9 +60,9 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      //alert("T1: "+document.querySelector("#tr").innerText);
+      alert("T1: "+document.querySelector("#tr").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      document.querySelector("#tr").innerText=pr;
+      //->document.querySelector("#tr").innerText=pr;
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
