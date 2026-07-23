@@ -15,18 +15,15 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){
-    //document.querySelector("#prompt").value=document.querySelector("#t").innerText;
+  //setTimeout(function(){
     const prompt=document.querySelector("#prompt").value;
-    alert("PromptZZZZ: "+prompt);
-
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  },7800);
+  //},7800);
 });
 </script>
 
@@ -51,11 +48,16 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},7800);
+    setTimeout(()=>{
+      this.send()
+    },800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
     async send(){
+      document.querySelector("#prompt").value=document.querySelector("#t").innerText;
+      alert("PromptZZZZ: "+prompt);
+
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T: "+document.querySelector("#t").innerText);
