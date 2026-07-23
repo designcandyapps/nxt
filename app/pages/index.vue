@@ -26,7 +26,10 @@ onMounted(()=>{
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+
+    const trompt=document.querySelector("#t").innerText;
+
+    fetchPh(trompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   //},7800);
 });
@@ -61,7 +64,7 @@ export default{
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T1: "+document.querySelector("#t").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      alert("Q: "+prompt);
+      //alert("Q: "+prompt);
       document.querySelector("#t").innerText=prompt;
     },
     async send2(){
