@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
-const pr:string=new URLSearchParams(location.search).get("pr")??"";
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -17,10 +16,16 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    const pr="cars";
-    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
-    const prp=document.getElementById("tr").innerText; alert("PRP: "+prp);
+    //const pr="cars";
+    const pr:string=new URLSearchParams(location.search).get("pr")??"";
+    document.getElementById("tr").innerText=pr;
+    document.getElementById("prompt").value=document.getElementById("tr").innerText;
+
+    alert("PROMPT: "+document.querySelector("#prompt").value);
+    alert("PRP: "+document.getElementById("tr").innerText);
+  
+    const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
+    const prp=document.getElementById("tr").innerText; alert("PRP2: "+prp);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
