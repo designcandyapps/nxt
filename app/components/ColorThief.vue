@@ -23,6 +23,7 @@ const generatePalette=async()=>{
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
     const r0=document.getElementById("dv7").style.backgroundColor; alert("G: "+r0);
     const pr="oranged";  //new URLSearchParams(location.search).get("pr");
+    document.querySelector("#t").innerText=pr;
     document.querySelector("#prompt").value=pr;
     alert("PR1: "+pr);
 
