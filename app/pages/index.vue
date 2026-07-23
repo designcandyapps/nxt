@@ -20,7 +20,7 @@ onMounted(()=>{
     //document.getElementById("tr").innerText=pr;
     //document.getElementById("prompt").value=document.getElementById("tr").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
 
-    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
+    //const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const prp=document.getElementById("tr").innerText;
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -59,11 +59,11 @@ export default{
   },
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prp").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T1: "+document.querySelector("#t").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      document.querySelector("#tr").innerText=prompt;
+      document.querySelector("#tr").innerText=prp;
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
