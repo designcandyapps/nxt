@@ -36,6 +36,6 @@ onMounted(()=>{
   alert(0);
   setTimeout(function(){
     generatePalette();
-  },1200);
+  },1800);
 });
 </script>
