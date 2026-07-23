@@ -16,7 +16,9 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   setTimeout(function(){
-    const prompt=document.querySelector("#prompt").value; alert("PromptZZZZZZZZ: "+prompt);
+    document.querySelector("#prompt").value=document.querySelector("#t").innerText;
+    const prompt=document.querySelector("#prompt").value;
+    alert("PromptZZZZZZZZ: "+prompt);
     /*const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
@@ -56,8 +58,8 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T: "+document.querySelector("#t").innerText);
-      alert("TR: "+document.querySelector("#tr").value);
-      document.querySelector("#tr").value=this.response;
+      //alert("TR: "+document.querySelector("#tr").value);
+      //document.querySelector("#tr").value=this.response;
       document.querySelector("#t").innerText=this.response;
     },
     async send2(){
