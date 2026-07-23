@@ -18,7 +18,7 @@ onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
     const pr:string=new URLSearchParams(location.search).get("pr")??"street";
-    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
 
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     alert("PRP: "+document.getElementById("tr").innerText);
