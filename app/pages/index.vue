@@ -18,9 +18,8 @@ onMounted(()=>{
   //setTimeout(function(){
     const pr="shiny"; //new URLSearchParams(location.search).get("pr"); alert("PR: "+pr);
     document.getElementById("tr").innerText=pr;
-    document.getElementById("prompt").value=pr;
+    //document.getElementById("prompt").value=pr;
     document.getElementById("prompt").value=document.getElementById("tr").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
-    //const t=document.querySelector("#t").value;
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
