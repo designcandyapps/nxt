@@ -16,11 +16,9 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   //setTimeout(function(){
-    const pr="oranges";  //new URLSearchParams(location.search).get("pr");
-    alert("PR1: "+pr);
-    document.querySelector("#prompt").value=pr;
 
-    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
+
+    const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
@@ -57,8 +55,8 @@ export default{
   },
   methods:{
     async send(){
-      alert("PR2: "+pr);
-      document.querySelector("#prompt").value=pr;
+      //alert("PR2: "+pr);
+      //document.querySelector("#prompt").value=pr;
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       alert("T1: "+document.querySelector("#t").innerText);
