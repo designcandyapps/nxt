@@ -15,11 +15,11 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  //setTimeout(function(){
+  setTimeout(function(){
     const pr="shiny";
     document.getElementById("tr").innerText=pr;
     document.getElementById("prompt").value=document.getElementById("tr").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
-  
+
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const prp=document.getElementById("tr").innerText;
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
@@ -28,7 +28,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     fetchPh(prp).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  //},7800);
+  },3800);
 });
 </script>
 
@@ -52,7 +52,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(()=>{this.send()},3800);
+    //setTimeout(()=>{
+      this.send()
+    //},3800);
     //setTimeout(()=>{this.send2()},8800);
   },
   methods:{
@@ -61,8 +63,7 @@ export default{
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T1: "+document.querySelector("#t").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      //alert("Q: "+prompt);
-      document.querySelector("#tr").innerText=pr;
+      //document.querySelector("#tr").innerText=pr;
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
