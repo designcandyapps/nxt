@@ -16,7 +16,6 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   //setTimeout(function(){
-
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
@@ -31,7 +30,7 @@ onMounted(()=>{
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <input id="t" v-model="t">
     <span class="g">
-    <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt" style="border:9px dashed red"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+    <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
       <span id="response" v-if="response">{{response}}</span>
     </span>
@@ -56,12 +55,12 @@ export default{
     const pr="mountains";  //new URLSearchParams(location.search).get("pr");
     document.querySelector("#t").innerText=pr;
     document.querySelector("#prompt").value=pr;
-    alert("PR: "+pr);
+    //alert("PR: "+pr);
 
     document.getElementById("prompt").value=document.getElementById("t").innerText;
-    alert("PROMPT: "+document.getElementById("prompt").value);
+    //alert("PROMPT: "+document.getElementById("prompt").value);
 
-    const prompt=document.querySelector("#prompt").value; alert("PROMT: "+prompt);
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
   
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
