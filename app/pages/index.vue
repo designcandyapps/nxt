@@ -15,9 +15,9 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
-  setTimeout(function(){
+  //setTimeout(function(){
     const prompt=document.querySelector("#prompt").value; alert("Prompt: "+prompt);
-  },7800);
+  //},7800);
     /*const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
@@ -56,8 +56,7 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       alert("T: "+document.querySelector("#t"));
-      document.querySelector("#t").innerText=this.response;
-      //document.querySelector("#t").value=this.response;
+      document.querySelector("#t").innerText=this.response; //document.querySelector("#t").value=this.response;
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
