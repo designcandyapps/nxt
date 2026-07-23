@@ -16,7 +16,7 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   //setTimeout(function(){
-    const pr=new URLSearchParams(location.search).get("pr");
+    const pr="oranges";  //new URLSearchParams(location.search).get("pr");
     alert("PR: "+pr);
 
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
