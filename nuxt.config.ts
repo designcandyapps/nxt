@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       {src:"https://pinfluents.com/inc/colorthief.js"},
       {src:"https://pinfluents.com/_BCK/4/inc/sl.js"},
       //{src:'https://pinfluents.com/_BCK/4/gl.js',class:'st'},
-      {src:"https://pinfluents.com/_BCK/4/jqP14-e.js"},
+      {src:"https://pinfluents.com/_BCK/4/jqP15-e.js"},
       
       //{src:'https://js.stripe.com/v3/'},
       //{src:'https://pinfluents.com/_BCK/4/inc/utils.js'},
