@@ -18,9 +18,9 @@ onMounted(()=>{
   //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??"";
     document.getElementById("tr").innerText=pr;
-    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
-    const prp=document.getElementById("tr").innerText; alert("PR: "+prp);
+    const prp=document.getElementById("tr").innerText; alert("PRP: "+prp);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
