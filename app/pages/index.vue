@@ -19,7 +19,6 @@ onMounted(()=>{
     //const pr="shiny";
     //document.getElementById("tr").innerText=pr;
     //document.getElementById("prompt").value=document.getElementById("tr").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
-
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const prp=document.getElementById("tr").innerText;
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
