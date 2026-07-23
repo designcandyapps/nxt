@@ -15,19 +15,16 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 onMounted(()=>{
+  //setTimeout(function(){
     //const pr="cars";
     const pr:string=new URLSearchParams(location.search).get("pr")??"street";
-    document.getElementById("tr").innerText=pr;
-    document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
 
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     alert("PRP: "+document.getElementById("tr").innerText);
 
     const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PRP2: "+prp);
-  
-  //setTimeout(function(){
-
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
