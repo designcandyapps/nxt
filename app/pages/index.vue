@@ -34,7 +34,7 @@ onMounted(()=>{
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <input id="tr" v-model="tr">
     <span class="g">
-    <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt" style="border:1px solid red"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+    <span id="z"><ColorThief /></span><input id="prompt" v-model="prompt" style="border:9px dashed red"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
       <span id="response" v-if="response">{{response}}</span>
     </span>
