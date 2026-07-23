@@ -25,10 +25,11 @@ const generatePalette=async()=>{
     const pr="oranged";  //new URLSearchParams(location.search).get("pr");
     document.querySelector("#t").innerText=pr;
     document.querySelector("#prompt").value=pr;
-    alert("PR1: "+pr);
+    alert("PR0: "+pr);
 
     //document.getElementById("t").innerText="nature";
     document.getElementById("prompt").value=document.getElementById("t").innerText; alert("T: "+document.getElementById("prompt").value);
+    const prompt=document.querySelector("#prompt").value; alert("PROMT: "+prompt);
   };
   //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
