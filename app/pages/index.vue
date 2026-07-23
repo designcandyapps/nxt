@@ -16,16 +16,16 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   //setTimeout(function(){
-      const pr="mountains";  //new URLSearchParams(location.search).get("pr");
-      document.querySelector("#t").innerText=pr;
-      document.querySelector("#prompt").value=pr; //alert("PR: "+pr);
-      document.getElementById("prompt").value=document.getElementById("t").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
-      const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
+    const pr="shiny";  //new URLSearchParams(location.search).get("pr");
+    document.querySelector("#t").innerText=pr;
+    document.querySelector("#prompt").value=pr; //alert("PR: "+pr);
+    document.getElementById("prompt").value=document.getElementById("t").innerText; //alert("PROMPT: "+document.getElementById("prompt").value);
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
-    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
     //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   //},7800);
 });
