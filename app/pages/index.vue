@@ -16,8 +16,8 @@ async function fetchGetty(query){
 }
 onMounted(()=>{
   //setTimeout(function(){
-    //const pr:string=new URLSearchParams(location.search).get("pr")??"";
-    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const pr:string=new URLSearchParams(location.search).get("pr")??"";
+    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PRP: "+prp);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
