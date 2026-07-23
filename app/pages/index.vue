@@ -17,7 +17,8 @@ async function fetchGetty(query){
 onMounted(()=>{
   setTimeout(function(){
     //const pr="shiny";
-    //document.getElementById("tr").innerText=pr;
+    const pr:string=new URLSearchParams(location.search).get("pr")??"";
+    document.getElementById("tr").innerText=pr;
     document.getElementById("prompt").value=document.getElementById("tr").innerText; alert("PROMPT: "+document.getElementById("prompt").value);
     const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
     const prp=document.getElementById("tr").innerText; alert("PR: "+prp);
