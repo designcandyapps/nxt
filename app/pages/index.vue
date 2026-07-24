@@ -22,7 +22,7 @@ onMounted(()=>{
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
     //alert("PR: "+pr);
 
-    const pr:string=new URLSearchParams(location.search).get("pr")??"trees"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
+    const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     //alert("PRP: "+document.getElementById("tr").innerText);
