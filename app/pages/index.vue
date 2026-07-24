@@ -17,9 +17,12 @@ async function fetchGetty(query){
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
-    const pr:string=new URLSearchParams(location.search).get("pr")??"trees";
-    //pr=pr&&p!=""?pr:document.getElementById("prompt").value;
-    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const pr:string=new URLSearchParams(location.search).get("pr")??document.getElementById("prompt").value;
+    alert("PR: "+pr);
+  
+    //const pr:string=new URLSearchParams(location.search).get("pr")??"trees"; //pr=pr&&p!=""?pr:document.getElementById("prompt").value;
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
 
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     //alert("PRP: "+document.getElementById("tr").innerText);
