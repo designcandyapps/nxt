@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue"; import ColorThief from "colorthief"; import {
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  //alert(1);
+  alert(1);
   //alert(document.getElementById("ee").src);
   imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
@@ -34,7 +34,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
-  //alert(0);
+  alert(0);
   setTimeout(function(){
     generatePalette();
   },1800);
