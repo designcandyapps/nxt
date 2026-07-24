@@ -27,8 +27,8 @@ onMounted(()=>{
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     //alert("PRP: "+document.getElementById("tr").innerText);
 
-    const prompt=document.querySelector("#prompt").value; alert("PROMPT2: "+prompt);
-    //const prp=document.getElementById("tr").innerText; alert("PRP2: "+prp);
+    //const prompt=document.querySelector("#prompt").value; //alert("PROMPT2: "+prompt);
+    const prompt=document.getElementById("tr").innerText; alert("PROMPT2: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
