@@ -71,7 +71,7 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T1: "+document.querySelector("#tr").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      document.getElementById("tr").innerText=prompt;
+      document.querySelector("#tr").innerText=prompt;
       //->document.querySelector("#tr").innerText=pr;
     },
     async send2(){
