@@ -22,6 +22,8 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
     const r0=document.getElementById("dv7").style.backgroundColor; alert("G: "+r0);
+    document.getElementById("tr").innerText="sear";
+    document.getElementById("prompt").value=document.getElementById("tr").innerText;
 
   };
   //--document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
