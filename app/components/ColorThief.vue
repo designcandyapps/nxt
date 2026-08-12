@@ -4,8 +4,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 
 const generatePalette=async()=>{
   alert(1);
-  //alert(document.getElementById("ee").src);
-  imageUrl.value=document.getElementById("ee").src;
+  //imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -36,6 +35,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{
   alert(0);
   setTimeout(function(){
+    alert(document.getElementById("ee").src);
+    imageUrl.value=document.getElementById("ee").src;
     generatePalette();
   },1800);
 });
