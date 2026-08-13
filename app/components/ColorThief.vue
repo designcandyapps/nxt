@@ -6,13 +6,13 @@ const generatePalette=async()=>{
   alert(1);
   //alert(document.getElementById("ee"));
   imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
+  //alert("IU1: "+imageUrl.value);
 
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   //alert("EURI: "+`${encodeURIComponent(imageUrl.value)}`);
-  alert("PU1: "+proxyUrl.value);
+  //alert("PU1: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
-  alert("PU2: "+proxyUrl.value);
+  //alert("PU2: "+proxyUrl.value);
 
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
@@ -36,12 +36,12 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   alert(0);
-  //window.onload=function(){
+  window.onload=function(){
     setTimeout(function(){
       //alert(document.getElementById("ee").src);
       //imageUrl.value=document.getElementById("ee").src;
       generatePalette();
     },1800);
-  //}
+  }
 });
 </script>
