@@ -22,6 +22,9 @@ const generatePalette=async()=>{
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false
     const r0=document.getElementById("dv7").style.backgroundColor; //alert("G: "+r0);
+    const r2=$("#dv8").css("background-color"); //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
+    const r3=$("#dv10").css("background-color"); //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
+
     //document.getElementById("tr").innerText="sear";
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
 
