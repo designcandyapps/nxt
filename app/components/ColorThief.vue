@@ -34,13 +34,13 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
   alert(0);
-  alert(document.getElementById("ee"));
-  window.onload=function(){
+  //alert(document.getElementById("ee"));
+  //window.onload=function(){
     setTimeout(function(){
       alert(document.getElementById("ee").src);
-      imageUrl.value=document.getElementById("ee").src;
+      //imageUrl.value=document.getElementById("ee").src;
       generatePalette();
     },1800);
-  }
+  //}
 });
 </script>
