@@ -13,7 +13,7 @@ const generatePalette=async()=>{//alert(1);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
     //alert("Y: "+document.getElementById("y").innerHTML);
-    document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+    //--document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
     /*const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
