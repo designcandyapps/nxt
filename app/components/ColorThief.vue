@@ -16,9 +16,9 @@ const generatePalette=async()=>{//alert(1);
     document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
-    const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
+    /*const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
-    const r3=document.querySelector("#dv10").style.backgroundColor; //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
+    const r3=document.querySelector("#dv10").style.backgroundColor;*/ //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
     //document.getElementById("tr").innerText="sear";
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   };
