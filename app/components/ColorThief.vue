@@ -1,15 +1,12 @@
 <script setup>
-import {ref,onMounted} from "vue"; //import ColorThief from "colorthief";
-import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
+const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
   //alert(1);
-  //alert(document.getElementById("ee").src);
   imageUrl.value=document.getElementById("ee").src;
   //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  //alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
