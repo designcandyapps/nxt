@@ -4,13 +4,12 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{
-  ////alert(1);
-  alert(document.getElementById("ee").src);
+  //alert(1);
+  //alert(document.getElementById("ee").src);
   imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
-
+  //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  alert("U: "+proxyUrl.value);
+  //alert("U: "+proxyUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value;
   //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -20,13 +19,12 @@ const generatePalette=async()=>{
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
     }
     //alert("Y: "+document.getElementById("y").innerHTML);
-    //document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
+    document.body.style.backgroundColor=document.querySelector("#dv7").style.backgroundColor;
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
     const r0=document.querySelector("#dv7").style.backgroundColor; alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor; //r2=r2!=""?r2.replace("rgb(","rgba(").replace(")",",.1)"):"#001100"; //a9a9a9
     const r3=document.querySelector("#dv10").style.backgroundColor; //r3=r3!=""?r3.replace("rgb(","rgba(").replace(")",",.75)"):"red";
-
     //document.getElementById("tr").innerText="sear";
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   };
@@ -37,7 +35,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
-  ////alert(0);
+  //alert(0);
   setTimeout(function(){
     generatePalette();
   },1800);
