@@ -2,12 +2,12 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 //import {ref,onMounted} from "vue"; const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
-const genTktlr=async()=>{
+/*const genTktlr=async()=>{
   alert(5);
   const proxyUrl=ref("");
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
   alert("PRX: "+proxyUrl.value);
-};
+};*/
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -30,7 +30,7 @@ onMounted(()=>{
     //alert("PR: "+pr);
 
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
-    const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
+    //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     //alert("PRP: "+document.getElementById("tr").innerText);
