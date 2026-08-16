@@ -35,7 +35,7 @@ onMounted(()=>{
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);*/
     fetchPh(prompt).then(photos=>{
-      photos.forEach(photo=>{pho.value=photo.urls.small}); //alert("PH: "+pho.value);
+      photos.forEach(photo=>{pho.value=photo.urls.small}); alert("PH: "+pho.value);
     });
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
   //},7800);
@@ -80,6 +80,23 @@ export default{
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       //alert("S: "+document.querySelector(".slick-slide"));
       document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
+    },
+    async send3(){
+      const response=await fetch("https://api.tickettailor.com/v1/events/:2036131",{
+        headers:{
+          Accept:"application/json",
+          Authorization:"Basic "+Buffer.from("sk_14995_133548_95cbe0f619ded70f2d57a144acefffc5:").toString("base64")},
+        });
+        const data=await response.json();
+        alert("Test1");
+        //alert("RES1P: "+JSON.stringify(data));
+        return data;
+    },
+    async send4(){
+      const response=await fetch("/api/tt",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
+      const data=await response.json();
+      alert("Test2");
+      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
   },
 }
