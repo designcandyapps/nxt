@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-const proxyUrl=ref(""); //const pr2=document.querySelector("#pr2");
+//const proxyUrl=ref(""); //const pr2=document.querySelector("#pr2");
 const genTktlr=async()=>{
   alert(2);
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
