@@ -45,7 +45,7 @@ onMounted(()=>{
 
   setTimeout(function(){
     //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); alert("PH: "+pho.value)});
+    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); //alert("PH: "+pho.value)});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //genTktlr();
   },7800);
