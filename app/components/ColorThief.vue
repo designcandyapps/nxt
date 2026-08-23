@@ -18,7 +18,7 @@ const generatePalette=async()=>{alert(1);
     const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
-    //document.body.style.backgroundColor=r0;
+    document.body.style.backgroundColor=r0;
 
     //document.getElementById("tr").innerText="sear";
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
