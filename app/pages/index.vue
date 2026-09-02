@@ -1,17 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-
-import html from './html.js'
-import contentTypes from './content-types.js'
-import Scraper from './scraper.js'
-import { generateJSONResponse, generateErrorJSONResponse } from './json-response.js'
-
-
-
-
-
-  
 //import {ref,onMounted} from "vue"; const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
 /*const genTktlr=async()=>{
   alert(5);
@@ -32,63 +21,6 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-
-
-
-
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-async function handleRequest(request) {
-  const searchParams = new URL(request.url).searchParams
-  let url = searchParams.get('url')
-  if (url && !url.match(/^[a-zA-Z]+:\/\//)) url = 'http://' + url
-
-  const selector = searchParams.get('selector')
-  const attr = searchParams.get('attr')
-  const spaced = searchParams.get('spaced') // Adds spaces between tags
-  const pretty = searchParams.get('pretty')
-
-  if (!url || !selector) {
-    return handleSiteRequest(request)
-  }
-  return handleAPIRequest({ url, selector, attr, spaced, pretty })
-}
-async function handleSiteRequest(request) {
-  const url = new URL(request.url)
-  if (url.pathname === '/' || url.pathname === '') {
-    return new Response(html, {
-      headers: { 'content-type': contentTypes.html }
-    })
-  }
-  return new Response('Not found', { status: 404 })
-}
-async function handleAPIRequest({ url, selector, attr, spaced, pretty }) {
-  let scraper, result
-  try {
-    scraper = await new Scraper().fetch(url)
-  } catch (error) {
-    return generateErrorJSONResponse(error, pretty)
-  }
-  try {
-    if (!attr) {
-      result = await scraper.querySelector(selector).getText({ spaced })
-    } else {
-      result = await scraper.querySelector(selector).getAttribute(attr)
-    }
-  } catch (error) {
-    return generateErrorJSONResponse(error, pretty)
-  }
-  return generateJSONResponse({ result }, pretty)
-}
-
-
-
-
-
-
-
-  
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
@@ -116,8 +48,6 @@ onMounted(()=>{
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //genTktlr();
-
-    handleRequest(request);
   },5800);
 });
 </script>
@@ -133,7 +63,7 @@ onMounted(()=>{
   </ULandingHero>
   <ULandingSection :title="page.features.title" :links="page.features.links"><UPageGrid><ULandingCard v-for="(item,index) of page.features.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.sections.title" :links="page.sections.links"><UPageGrid><ULandingCard v-for="(item,index) of page.sections.items" :key="index" v-bind="item" /><Slider2 /></UPageGrid></ULandingSection>
-  <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
+  <ULandingSection :title="page.mid.title" :links="page.mid.links"><UPageGrid><ULandingCard v-for="(item,index) of page.mid.items" :key="index" v-bind="item" /><Stripe /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.bottom.title" :links="page.bottom.links"><UPageGrid><ULandingCard v-for="(item,index) of page.bottom.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
   <ULandingSection :title="page.lower.title" :links="page.lower.links"><UPageGrid><ULandingCard v-for="(item,index) of page.lower.items" :key="index" v-bind="item" /></UPageGrid></ULandingSection>
 </template>
@@ -178,29 +108,6 @@ export default{
       alert("Test2");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
-    async send5(){
-      const response=await fetch("/api/tt",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json();
-      alert("Test3");
-      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-    },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
   },
 }
 </script>
