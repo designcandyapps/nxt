@@ -1,6 +1,17 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
+
+import html from './html.js'
+import contentTypes from './content-types.js'
+import Scraper from './scraper.js'
+import { generateJSONResponse, generateErrorJSONResponse } from './json-response.js'
+
+
+
+
+
+  
 //import {ref,onMounted} from "vue"; const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
 /*const genTktlr=async()=>{
   alert(5);
