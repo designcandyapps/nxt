@@ -21,6 +21,63 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
+
+
+
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+async function handleRequest(request) {
+  const searchParams = new URL(request.url).searchParams
+  let url = searchParams.get('url')
+  if (url && !url.match(/^[a-zA-Z]+:\/\//)) url = 'http://' + url
+
+  const selector = searchParams.get('selector')
+  const attr = searchParams.get('attr')
+  const spaced = searchParams.get('spaced') // Adds spaces between tags
+  const pretty = searchParams.get('pretty')
+
+  if (!url || !selector) {
+    return handleSiteRequest(request)
+  }
+  return handleAPIRequest({ url, selector, attr, spaced, pretty })
+}
+async function handleSiteRequest(request) {
+  const url = new URL(request.url)
+  if (url.pathname === '/' || url.pathname === '') {
+    return new Response(html, {
+      headers: { 'content-type': contentTypes.html }
+    })
+  }
+  return new Response('Not found', { status: 404 })
+}
+async function handleAPIRequest({ url, selector, attr, spaced, pretty }) {
+  let scraper, result
+  try {
+    scraper = await new Scraper().fetch(url)
+  } catch (error) {
+    return generateErrorJSONResponse(error, pretty)
+  }
+  try {
+    if (!attr) {
+      result = await scraper.querySelector(selector).getText({ spaced })
+    } else {
+      result = await scraper.querySelector(selector).getAttribute(attr)
+    }
+  } catch (error) {
+    return generateErrorJSONResponse(error, pretty)
+  }
+  return generateJSONResponse({ result }, pretty)
+}
+
+
+
+
+
+
+
+  
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
@@ -48,6 +105,8 @@ onMounted(()=>{
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //genTktlr();
+
+    handleRequest(request);
   },5800);
 });
 </script>
@@ -73,7 +132,7 @@ export default{
   data(){return{prompt:"",prp:"",response:null}},
   mounted(){
     //setTimeout(()=>{
-      this.send()
+      //this.send5()
     //},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
@@ -108,6 +167,29 @@ export default{
       alert("Test2");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
+    async send5(){
+      const response=await fetch("/api/tt",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
+      const data=await response.json();
+      alert("Test3");
+      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   },
 }
 </script>
