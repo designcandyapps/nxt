@@ -23,50 +23,17 @@ async function fetchGetty(query){
 }
 
 
-addEventListener('fetch',event=>{event.respondWith(handleRequest(event.request))})
+import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+const fetchU=async(query)=>{
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
+  return data.results;
+};
+  
+/*addEventListener('fetch',event=>{event.respondWith(handleRequest(event.request))});
 async function handleRequest(request){
   alert(6);
-  const searchParams = new URL(request.url).searchParams
-  let url = searchParams.get('url')
-  if (url && !url.match(/^[a-zA-Z]+:\/\//)) url = 'http://' + url
-
-  const selector = searchParams.get('selector')
-  const attr = searchParams.get('attr')
-  const spaced = searchParams.get('spaced') // Adds spaces between tags
-  const pretty = searchParams.get('pretty')
-
-  if (!url || !selector) {
-    return handleSiteRequest(request)
-  }
-  return handleAPIRequest({ url, selector, attr, spaced, pretty })
-}
-async function handleSiteRequest(request) {
-  const url = new URL(request.url)
-  if (url.pathname === '/' || url.pathname === '') {
-    return new Response(html, {
-      headers: { 'content-type': contentTypes.html }
-    })
-  }
-  return new Response('Not found', { status: 404 })
-}
-async function handleAPIRequest({ url, selector, attr, spaced, pretty }) {
-  let scraper, result
-  try {
-    scraper = await new Scraper().fetch(url)
-  } catch (error) {
-    return generateErrorJSONResponse(error, pretty)
-  }
-  try {
-    if (!attr) {
-      result = await scraper.querySelector(selector).getText({ spaced })
-    } else {
-      result = await scraper.querySelector(selector).getAttribute(attr)
-    }
-  } catch (error) {
-    return generateErrorJSONResponse(error, pretty)
-  }
-  return generateJSONResponse({ result }, pretty)
-}
+}*/
 
 
 
@@ -82,6 +49,7 @@ onMounted(()=>{
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
     //alert("PR: "+pr);
 
+    const uu:string=new URLSearchParams(location.search).get("uu")??"pinfluents.com";
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
@@ -98,10 +66,19 @@ onMounted(()=>{
 
   setTimeout(function(){
     //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    //STAR--fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //genTktlr();
-    handleRequest("pinfluents.com");
+
+
+    
+    //handleRequest("pinfluents.com");
+    //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
+    uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
+    fetchU(pUrl.value); //.then();
+
+
+    
   },5800);
 });
 </script>
@@ -162,6 +139,15 @@ export default{
       alert("Test2");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
+    async send5(){
+      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const data=await response.json();
+      alert("Test3");
+      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+    },
+
+
+    
   },
 }
 </script>
