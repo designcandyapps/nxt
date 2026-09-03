@@ -25,10 +25,10 @@ async function fetchGetty(query){
 
 
 
-import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+//import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
-  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   return data.results;
 };
@@ -67,10 +67,10 @@ onMounted(()=>{
 
 
 
-    //uUrl.value="pinfluents.com"; /////pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    //fetchU(pUrl.value); //.then();
-    fetchU("wordpess.com");
+    fetchU(pUrl.value); //.then();
+    //fetchU("wordpess.com");
 
 
 
