@@ -67,10 +67,10 @@ onMounted(()=>{
 
 
 
-    uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    fetchU(pUrl.value); //.then();
-    //fetchU("wordpess.com");
+    //uUrl.value="pinfluents.com"; /////pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    //fetchU(pUrl.value); //.then();
+    fetchU("wordpess.com");
 
 
 
