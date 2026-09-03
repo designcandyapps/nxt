@@ -25,13 +25,6 @@ async function fetchGetty(query){
 
 
 
-
-
-
-
-
-
-
   
 
 //`/api/ws?url=${encodeURIComponent(uUrl.value)}`
