@@ -77,10 +77,10 @@ onMounted(()=>{
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
     
-    //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}`;
+    uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}`;
     //////uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
-    //fetchU(pUrl.value); //.then();
-    fetchU("pinfluents.com");
+    fetchU(pUrl.value); //.then();
+    //fetchU("pinfluents.com");
     
   },5800);
 });
