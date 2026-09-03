@@ -1,9 +1,9 @@
 export default defineEventHandler(async(event)=>{
   const query=getQuery(event); const uUrl=query.url as string;
   //alert('uURL:'+uUrl);
-  if(!uUrl){return new Response("Invalid URL",{status:400})}
+  if(!uUrl){return new Response("Inval",{status:400})}
   try{const response=await fetch(uUrl,{headers:{"User-Agent":"Mozilla/5.0"}});
-  if(!response.ok){return new Response("Error",{status:500})}
+  //if(!response.ok){return new Response("Error",{status:500})}
   const contentType=response.headers.get("Content-Type");
   //if(!contentType||!contentType.startsWith("image/")){return new Response("Not Img",{status:400})}
   return new Response(
