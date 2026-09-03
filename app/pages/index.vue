@@ -110,7 +110,7 @@ onMounted(()=>{
 
     
     //////uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
-    fetchU(pUrl.value); //.then();
+//    fetchU(pUrl.value); //.then();
     //fetchU("pinfluents.com");
 
 
@@ -186,7 +186,6 @@ export default{
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
     async send5(){
-      alert(4);
       const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json();
       alert("Test3");
