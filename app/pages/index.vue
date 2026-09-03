@@ -69,7 +69,7 @@ onMounted(()=>{
     uUrl.value="pinfluents.com";
     /////pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    fetchU(uUrl.value); //.then();
+    fetchU(pUrl.value); //.then();
     //fetchU("wordpess.com");
 
 
@@ -100,7 +100,7 @@ export default{
   data(){return{prompt:"",prp:"",response:null}},
   mounted(){
     //setTimeout(()=>{
-      this.send()
+      this.send5()
     //},7800);
     //setTimeout(()=>{this.send2()},8800);
   },
