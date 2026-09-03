@@ -23,9 +23,12 @@ async function fetchGetty(query){
 }
 
 
+//`/api/ws?url=${encodeURIComponent(uUrl.value)}`
+
 import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}`); //&selector=h1
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}`); //&selector=h1
+  const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`); //&selector=h1
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   return data.results;
 };
@@ -75,9 +78,9 @@ onMounted(()=>{
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
 
-    uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
-    fetchU(pUrl.value); //.then();
-    //fetchU("pinfluents.com");
+    //uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
+    //fetchU(pUrl.value); //.then();
+    fetchU("pinfluents.com");
     
   },5800);
 });
