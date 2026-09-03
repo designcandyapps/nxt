@@ -24,15 +24,15 @@ async function fetchGetty(query){
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
+  const data=await response.json(); alert(JSON.stringify(data));
   
   //var data=JSON.parse(data); data.results.map(function(obj){return obj["value"]});
   //const cars=JSON.stringify(data); alert(cars["h1"]);
 
-  var json={"resultCount":3,"results":[{"value":"abc"}]};
+  var json={"resultCount":3,"results": JSON.stringify(data) };
   var newArr=[];
   for(var i=0; i<json.results.length; i++){
-    newArr.push(json.results[i].value);
+    //newArr.push(json.results[i].value);
     alert(json.results[i].value);
   }
 
