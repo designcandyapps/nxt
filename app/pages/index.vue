@@ -25,22 +25,13 @@ async function fetchGetty(query){
 
 
 
-  
-
-//`/api/ws?url=${encodeURIComponent(uUrl.value)}`
-
 import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   return data.results;
 };
-  
-/*addEventListener('fetch',event=>{event.respondWith(handleRequest(event.request))});
-async function handleRequest(request){
-  alert(6);
-}*/
 
 
 
@@ -72,28 +63,14 @@ onMounted(()=>{
     //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //STAR--fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-    //genTktlr();
 
 
 
-    //handleRequest("pinfluents.com");
-    
-    //uUrl.value="pinfluents.com";
+    uUrl.value="pinfluents.com";
     /////pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-
-    
-    //////uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
-//    fetchU(pUrl.value); //.then();
-    fetchU("wordpess.com");
-
-
-
-
-
-
-
-
+    pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    fetchU(pUrl.value); //.then();
+    //fetchU("wordpess.com");
 
 
 
