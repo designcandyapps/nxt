@@ -30,7 +30,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RES1Pz: "+JSON.stringify(data));
-  alert(JSON.stringify(result,null,2));
+  alert(JSON.stringify(result,2));
 
 
   var b="pinfluents.com";
