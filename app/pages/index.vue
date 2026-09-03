@@ -66,9 +66,8 @@ onMounted(()=>{
 
 
 
-    uUrl.value="pinfluents.com";
-    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     fetchU(pUrl.value); //.then();
     //fetchU("wordpess.com");
 
