@@ -3,12 +3,12 @@ import {ref,onMounted} from "vue";
 const uUrl=ref("");
 const pUrl=ref("");
 const bImage=ref("");
-//const isLoading=ref(false);
+const isLoading=ref(false);
 
-const genPal=async()=>{
-  alert(3);
+const genPal=async()=>{alert(3);
   uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
-  isLoading.value=true; pUrl.value=`/api/proxy?url=${encodeURIComponent(uUrl.value)}`;
+  isLoading.value=true;
+  pUrl.value=`/api/proxy?url=${encodeURIComponent(uUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU2z: "+pUrl.value);
 
   /*img.onload=()=>{
