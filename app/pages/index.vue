@@ -27,7 +27,15 @@ const fetchU=async(query)=>{
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   
   //var data=JSON.parse(data); data.results.map(function(obj){return obj["value"]});
-  const cars=JSON.stringify(data); alert(cars["h1"]);
+  //const cars=JSON.stringify(data); alert(cars["h1"]);
+
+  var json={"resultCount":3,"results":[{"value":"abc"}]};
+  var newArr=[];
+  for(var i=0; i<json.results.length; i++){
+    newArr.push(json.results[i].value);
+    alert(json.results[i].value);
+  }
+
   
   return data.results;
 };
