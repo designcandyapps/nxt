@@ -27,8 +27,8 @@ async function fetchGetty(query){
 
 import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}&selector=h1`); //&selector=h1
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   return data.results;
 };
