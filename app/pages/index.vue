@@ -21,24 +21,12 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-
-
-
-
-import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RES1Pz: "+JSON.stringify(data));
-  alert(JSON.stringify(result));
-
-
-  //var b="pinfluents.com"; $.getJSON("https://script.google.com/macros/s/AKfycbyMgb620k8sJr3FrESNboqRaVeMTVR-ZikslQeg2xLUoRnOeLAL/exec?url="+b+"&callback=?",function(json){alert(json.data)});
+  const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
   return data.results;
 };
-
-
-
 
 
 onMounted(()=>{
@@ -49,7 +37,6 @@ onMounted(()=>{
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
     //alert("PR: "+pr);
 
-    const uu:string=new URLSearchParams(location.search).get("selector")??"ign";
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
@@ -70,15 +57,11 @@ onMounted(()=>{
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
 
 
-
-
+    //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
     fetchU("wordpess.com");
-
-
-
 
   },5800);
 });
@@ -147,9 +130,6 @@ export default{
       alert("Test3");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
-
-
-    
   },
 }
 </script>
