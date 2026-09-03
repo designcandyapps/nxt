@@ -104,7 +104,8 @@ onMounted(()=>{
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
     
-    uUrl.value="pinfluents.com";
+    //uUrl.value="pinfluents.com";
+    uUrl.value="https://web.scraper.workers.dev";
     //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
 
