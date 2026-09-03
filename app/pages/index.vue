@@ -111,7 +111,7 @@ onMounted(()=>{
     
     //////uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
 //    fetchU(pUrl.value); //.then();
-    //fetchU("pinfluents.com");
+    fetchU("pinfluents.com");
 
 
 
