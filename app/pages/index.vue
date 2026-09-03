@@ -39,8 +39,7 @@ onMounted(()=>{
     //alert("PR: "+pr);
 
     //const uu:string=new URLSearchParams(location.search).get("uu")??"ign";
-    const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu;
-    alert("UU: "+uu);
+    //const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu; alert("UU: "+uu);
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
