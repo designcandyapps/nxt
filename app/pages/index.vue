@@ -25,7 +25,7 @@ async function fetchGetty(query){
 
 
 
-//import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
@@ -45,6 +45,7 @@ onMounted(()=>{
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
     //alert("PR: "+pr);
 
+    const uu:string=new URLSearchParams(location.search).get("selector")??"ign";
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
