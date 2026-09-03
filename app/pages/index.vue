@@ -31,6 +31,13 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RES1Pz: "+JSON.stringify(data));
   alert(JSON.stringify(result,null,2));
+
+
+  var b="pinfluents.com";
+  $.getJSON("https://script.google.com/macros/s/AKfycbyMgb620k8sJr3FrESNboqRaVeMTVR-ZikslQeg2xLUoRnOeLAL/exec?url="+b+"&callback=?",function(json){
+	  alert(json.data);
+	});
+  
   return data.results;
 };
 
