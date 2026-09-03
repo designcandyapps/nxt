@@ -29,7 +29,7 @@ const fetchU=async(query)=>{
   //var data=JSON.parse(data); data.results.map(function(obj){return obj["value"]});
   //const cars=JSON.stringify(data); alert(cars["h1"]);
 
-  var json={"resultCount":3,"results": JSON.stringify(data) };
+  var json=JSON.stringify(data);
   var newArr=[];
   for(var i=0; i<json.results.length; i++){
     //newArr.push(json.results[i].value);
