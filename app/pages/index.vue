@@ -26,7 +26,7 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   //const h1=data.result.h1[0]; document.querySelector("h1").innerHTML=h1;
-  const sv1=data.result.svg[0].src; document.querySelector("svg").src=sv1;
+  const sv1=data.result.svg[0].src; document.querySelector("h1").innerHTML=sv1;
   return data.results;
 };
 onMounted(()=>{
