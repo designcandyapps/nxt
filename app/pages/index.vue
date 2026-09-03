@@ -25,14 +25,9 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; alert(h1);
-  alert(document.querySelector("h1"));
-  document.querySelector("h1").innerHTML=h1;
+  const h1=data.result.h1[0]; document.querySelector("h1").innerHTML=h1;
   return data.results;
 };
-
-  
-
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
@@ -60,13 +55,11 @@ onMounted(()=>{
     //STAR--fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
     fetchU("wordpess.com");
-
   },5800);
 });
 </script>
@@ -128,8 +121,8 @@ export default{
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
     async send5(){
-      alert(pUrl.value);
-      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:pUrl.value})});
+      alert(uUrl);
+      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl})});
       const data=await response.json();
       alert("Test3");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
