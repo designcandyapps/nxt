@@ -23,6 +23,17 @@ async function fetchGetty(query){
 }
 
 
+
+
+
+
+
+
+
+
+
+  
+
 //`/api/ws?url=${encodeURIComponent(uUrl.value)}`
 
 import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
@@ -38,6 +49,19 @@ async function handleRequest(request){
   alert(6);
 }*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
   
@@ -70,6 +94,12 @@ onMounted(()=>{
     //genTktlr();
 
 
+
+
+
+
+
+    
     
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
@@ -82,6 +112,17 @@ onMounted(()=>{
     //////uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
     fetchU(pUrl.value); //.then();
     //fetchU("pinfluents.com");
+
+
+
+
+
+
+
+
+
+
+
     
   },5800);
 });
