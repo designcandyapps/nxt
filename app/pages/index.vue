@@ -26,7 +26,7 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RES1Pz: "+JSON.stringify(data));
 
-  const cars=JSON.stringify(data); alert(cars[0]);
+  const cars=JSON.stringify(data); alert(cars[h1]);
   
   return data.results;
 };
