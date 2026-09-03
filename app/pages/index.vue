@@ -76,9 +76,6 @@ onMounted(()=>{
     
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
-
-
-    //https://web.scraper.workers.dev?url=pinfluents.com&selector=h1
     
     uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}`;
     //uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
