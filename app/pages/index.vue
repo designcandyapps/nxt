@@ -136,7 +136,8 @@ export default{
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
     async send5(){
-      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl.value})});
+      alert(pUrl.value);
+      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:pUrl.value})});
       const data=await response.json();
       alert("Test3");
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
