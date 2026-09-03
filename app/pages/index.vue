@@ -52,7 +52,6 @@ onMounted(()=>{
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
     //alert("PR: "+pr);
 
-    const uu:string=new URLSearchParams(location.search).get("uu")??"pinfluents.com";
     const pr:string=new URLSearchParams(location.search).get("pr")??"design"; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
@@ -78,9 +77,13 @@ onMounted(()=>{
     //handleRequest("pinfluents.com");
     //uUrl.value=document.getElementById("ee").src; alert("IU1z: "+uUrl.value);
 
+
+    //https://web.scraper.workers.dev?url=pinfluents.com&selector=h1
+    
+    uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}`;
     //uUrl.value="pinfluents.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; //img.src=pUrl.value; alert("PU2z: "+pUrl.value);
-    //fetchU(pUrl.value); //.then();
-    fetchU("pinfluents.com");
+    fetchU(pUrl.value); //.then();
+    //fetchU("pinfluents.com");
     
   },5800);
 });
