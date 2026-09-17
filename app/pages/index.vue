@@ -67,7 +67,6 @@ onMounted(()=>{
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
 
-    //const u="https://www.designcandy.com";
     alert("U0: "+u);
 
     fetchU(u);
