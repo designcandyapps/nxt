@@ -64,7 +64,7 @@ onMounted(()=>{
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     fetchU(u);
-  },5800);
+  },800);
 });
 </script>
 
