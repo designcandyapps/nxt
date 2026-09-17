@@ -49,13 +49,8 @@ onMounted(()=>{
     //const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu; alert("UU: "+uu);
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
-
-    alert("pr: "+pr);
-
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //alert("PROMPT: "+document.querySelector("#prompt").value);
-    //alert("PRP: "+document.getElementById("tr").innerText);
-
+    //alert("PROMPT: "+document.querySelector("#prompt").value); alert("PRP: "+document.getElementById("tr").innerText);
     //document.getElementById("tr").innerText="design";
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT2: "+prompt);
     //const prompt=document.getElementById("h1").innerText; //alert("PROMPT2: "+prompt);
@@ -65,6 +60,7 @@ onMounted(()=>{
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
 
   setTimeout(function(){
+    alert("PR1: "+pr);
     const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
