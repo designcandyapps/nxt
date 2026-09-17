@@ -31,24 +31,24 @@ const fetchU=async(query)=>{
   return data.results;
 };
 onMounted(()=>{    
-    //setTimeout(function(){
-      const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-      //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
-      //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-      //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
-      //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-      /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-      //fetchU(pUrl.value); //.then();
-      //document.getElementById("t").value=document.querySelector("h1").innerText;
-      fetchU("designcandy.com");
-    //},5800);
-    setTimeout(function(){
-      const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
-      //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-      const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
-      const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
-      alert("PR: "+pr);
-    },5800);
+  //setTimeout(function(){
+    const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
+    //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
+    //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+    //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    //fetchU(pUrl.value); //.then();
+    //document.getElementById("t").value=document.querySelector("h1").innerText;
+    fetchU("designcandy.com");
+  //},5800);
+  setTimeout(function(){
+    const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
+    const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
+    alert("PR: "+pr);
+  },800);
 });
 </script>
 
