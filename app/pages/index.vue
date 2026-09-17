@@ -52,7 +52,7 @@ const fetchU=async(query)=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><span id="z"><!--ColorThief /></span><Url /-->
+    <span class="g"><!--span id="z"><ColorThief /></span><Url /-->
       <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr2" v-model="pr2" style="border:2px solid blue;"><input id="t" v-model="t" style="border:2px solid green;">
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
     </span>
