@@ -43,7 +43,7 @@ const fetchU=async(query)=>{
   //},5800);
   //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
-    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR: "+pr);
   //},800);
