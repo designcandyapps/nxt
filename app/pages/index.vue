@@ -31,7 +31,7 @@ const fetchU=async(query)=>{
 };
 //onMounted(()=>{
   //setTimeout(function(){
-    const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
+    //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
@@ -39,7 +39,7 @@ const fetchU=async(query)=>{
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
     //document.getElementById("t").value=document.querySelector("h1").innerText;
-    fetchU("designcandy.com");
+    //<<fetchU("designcandy.com");
   //},5800);
   //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
