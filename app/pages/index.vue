@@ -64,7 +64,9 @@ onMounted(()=>{
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
 
-    var u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?$("#ui").val():"https://www."+u;
+    //const u=new URLSearchParams(location.search).get("u");
+    const u:string=new URLSearchParams(location.search).get("u")??document.querySelector("h1").innerText;
+    u=!u||u=="null"?document.querySelector("h1").innerText:"https://www."+u;
     alert("U0: "+u);
     fetchU(u);
   },800);
