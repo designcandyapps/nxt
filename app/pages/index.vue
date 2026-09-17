@@ -67,8 +67,6 @@ onMounted(()=>{
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
 
-    alert("U0: "+u);
-
     fetchU(u);
   },5800);
 });
