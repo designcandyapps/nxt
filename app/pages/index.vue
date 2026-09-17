@@ -32,20 +32,9 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    //const pr="cars";
-    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //const pr:string=new URLSearchParams(location.search).get("pr")??document.getElementById("prompt").value;
-    //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
-
-    //const uu:string=new URLSearchParams(location.search).get("uu")??"ign";
-    //const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu; alert("UU: "+uu);
-    const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
-    //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
+    const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //alert("PROMPT: "+document.querySelector("#prompt").value); alert("PRP: "+document.getElementById("tr").innerText);
-    //document.getElementById("tr").innerText="design";
-    const prompt=document.querySelector("#prompt").value; //alert("PROMPT2: "+prompt);
-    //const prompt=document.getElementById("h1").innerText; //alert("PROMPT2: "+prompt);
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
