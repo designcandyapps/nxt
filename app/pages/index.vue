@@ -36,9 +36,6 @@ onMounted(()=>{
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
-    const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
-    const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
-    const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
     alert("PR1: "+pr);
   //},5800);
 
@@ -51,7 +48,6 @@ onMounted(()=>{
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
-
     document.getElementById("t").value=document.querySelector("h1").innerText;
     fetchU("designcandy.com");
   },5800);
@@ -61,9 +57,8 @@ onMounted(()=>{
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <span class="g"><input id="t" v-model="t" style="border:2px solid blue;">
-    <span id="z"><ColorThief /></span><Url /><input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
-      <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
-      <span id="response" v-if="response">{{response}}</span>
+    <span id="z"><ColorThief /></span><Url /><input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr2" v-model="pr2">
+      <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
     </span>
     <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
   </ULandingHero>
