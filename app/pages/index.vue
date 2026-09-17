@@ -30,15 +30,7 @@ const fetchU=async(query)=>{
   //const sv1=data.result.svg[0].src; document.querySelector("h1").innerHTML=sv1;
   return data.results;
 };
-onMounted(()=>{
-      //setTimeout(function(){
-        const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
-        document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-        const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
-        const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
-        alert("PR1: "+pr);
-      //},5800);
-    
+onMounted(()=>{    
       //setTimeout(function(){
         const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
         //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
@@ -51,6 +43,13 @@ onMounted(()=>{
         document.getElementById("t").value=document.querySelector("h1").innerText;
         fetchU("designcandy.com");
       //},5800);
+      setTimeout(function(){
+        const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
+        document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+        const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
+        const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
+        alert("PR: "+pr);
+      },5800);
 });
 </script>
 
