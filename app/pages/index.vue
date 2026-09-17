@@ -77,12 +77,7 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{prompt:"",prp:"",response:null}},
-  mounted(){
-    //setTimeout(()=>{
-      this.send()
-    //},7800);
-    //setTimeout(()=>{this.send2()},8800);
-  },
+  mounted(){this.send()},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
