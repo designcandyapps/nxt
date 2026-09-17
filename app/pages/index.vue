@@ -67,7 +67,11 @@ onMounted(()=>{
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
 
-
+    //const u=ref("");
+    //const u=new URLSearchParams(location.search).get("u");
+    //const u:string=new URLSearchParams(location.search).get("u");
+    //u=!u||u=="null"?"des":"https://www."+u; //??document.querySelector("h1").innerText;
+    const u="https://www.designcandy.com";
     alert("U0: "+u);
 
     fetchU(u);
