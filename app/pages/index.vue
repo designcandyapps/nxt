@@ -45,8 +45,7 @@ onMounted(()=>{
   setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
     //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
-    const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
+    const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR: "+pr);
   },800);
 });
@@ -77,7 +76,6 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      //alert("T1: "+document.querySelector("#tr").innerText);
       document.querySelector("#h1n").innerText=this.response;
     },
     async send2(){
