@@ -30,11 +30,6 @@ const fetchU=async(query)=>{
   //const sv1=data.result.svg[0].src; document.querySelector("h1").innerHTML=sv1;
   return data.results;
 };
-//import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
-//uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-/////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-//fetchU(pUrl.value); //.then();
-
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
@@ -60,9 +55,16 @@ onMounted(()=>{
 
   setTimeout(function(){
     const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
-    fetchU(u);
+
+
+
+    //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+    //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    //fetchU(pUrl.value); //.then();
+    fetchU("wordpress.com");
   },5800);
 });
 </script>
