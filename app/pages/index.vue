@@ -24,7 +24,7 @@ async function fetchGetty(query){
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1&selector=p`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.querySelector("h1").innerHTML=h1;
   const p1=data.result.p[0]; document.querySelector("div").innerHTML=p1;
   //const sv1=data.result.svg[0].src; document.querySelector("h1").innerHTML=sv1;
@@ -56,7 +56,7 @@ onMounted(()=>{
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <span class="g"><input id="t" v-model="t" style="border:2px solid blue;">
-    <span id="z"><ColorThief /></span><Url /><input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr2" v-model="pr2">
+    <span id="z"><ColorThief /></span><!--Url /--><input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr2" v-model="pr2">
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
     </span>
     <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
@@ -80,7 +80,6 @@ export default{
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //alert("T1: "+document.querySelector("#tr").innerText);
       document.querySelector("#h1n").innerText=this.response;
-      //document.querySelector("#tr").innerText="sdesign";
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
@@ -91,19 +90,19 @@ export default{
     async send3(){
       const response=await fetch("https://api.tickettailor.com/v1/events/:2036131",{
         headers:{Accept:"application/json",Authorization:"Basic "+Buffer.from("sk_14995_133548_95cbe0f619ded70f2d57a144acefffc5:").toString("base64")}});
-        const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+        const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
         return data;
     },
     async send4(){
       const response=await fetch("/api/tt",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json(); alert("RES2P: "+JSON.stringify(data));
-      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
+      this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
     async send5(){
       alert(uUrl);
       const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl})});
-      const data=await response.json(); alert("RES3P: "+JSON.stringify(data));
-      this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
+      const data=await response.json(); //alert("RES3P: "+JSON.stringify(data));
+      this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
   },
 }
