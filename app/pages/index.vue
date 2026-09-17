@@ -62,7 +62,7 @@ onMounted(()=>{
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-    import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+    import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref(""); const u=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
