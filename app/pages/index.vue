@@ -60,8 +60,8 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><input id="t" v-model="t" style="border:2px solid red;">
-    <span id="z"><ColorThief /></span><Url /><input id="prompt" v-model="prompt"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
+    <span class="g"><input id="t" v-model="t" style="border:2px solid blue;">
+    <span id="z"><ColorThief /></span><Url /><input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pho" v-model="pho"><input id="pho2" v-model="pho2">
       <input id="pr2" v-model="pr2"><br><input id="pr3" v-model="pr3"><br><input id="pr4" v-model="pr4"><br><input id="pr5" v-model="pr5">
       <span id="response" v-if="response">{{response}}</span>
     </span>
