@@ -42,6 +42,9 @@ onMounted(()=>{
     //const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu; alert("UU: "+uu);
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText; //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
     //const pr2:string=new URLSearchParams(location.search).get("pr2")??"gn";
+
+    alert("pr: "+pr);
+
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //alert("PROMPT: "+document.querySelector("#prompt").value);
     //alert("PRP: "+document.getElementById("tr").innerText);
@@ -59,15 +62,16 @@ onMounted(()=>{
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-    //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
+    import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
 
-    //const u=new URLSearchParams(location.search).get("u");
-    const u:string=new URLSearchParams(location.search).get("u")??document.querySelector("h1").innerText;
-    u=!u||u=="null"?document.querySelector("h1").innerText:"https://www."+u;
+    const u=new URLSearchParams(location.search).get("u"); u=!u||u=="null"?document.querySelector("h1").innerText:"https://www."+u;
+    const u:string=new URLSearchParams(location.search).get("u"); //??document.querySelector("h1").innerText;
+    //u=!u||u=="null"?document.querySelector("h1").innerText:"https://www."+u;
     alert("U0: "+u);
+
     fetchU(u);
   },800);
 });
