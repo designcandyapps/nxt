@@ -39,7 +39,7 @@ onMounted(()=>{
     alert("PR1: "+pr);
   //},5800);
 
-  setTimeout(function(){
+  //setTimeout(function(){
     const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
@@ -50,7 +50,7 @@ onMounted(()=>{
     //fetchU(pUrl.value); //.then();
     document.getElementById("t").value=document.querySelector("h1").innerText;
     fetchU("designcandy.com");
-  },5800);
+  //},5800);
 });
 </script>
 
@@ -71,7 +71,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",prp:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){this.send()},
   methods:{
     async send(){
