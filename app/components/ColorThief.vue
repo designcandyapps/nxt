@@ -11,17 +11,13 @@ const generatePalette=async()=>{alert(1);
     var i=0; for(const type of Object.keys(palettesz)){
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
-    }
-    //alert("Y: "+document.getElementById("y").innerHTML);
+    }//alert("Y: "+document.getElementById("y").innerHTML);
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
     const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
     document.body.style.backgroundColor=r0;
-
-    //document.getElementById("tr").innerText="sear";
-    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
@@ -29,8 +25,7 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{
-  alert(0);
+onMounted(()=>{alert(0);
   setTimeout(function(){
     generatePalette();
   },1800);
