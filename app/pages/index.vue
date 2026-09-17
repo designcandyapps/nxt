@@ -58,9 +58,9 @@ onMounted(()=>{
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
     const pr4=document.querySelector("#pr4").value; //alert("PR4: "+pr4);
     const pr5=document.querySelector("#pr5").value; //alert("PR5: "+pr5);
+    alert("PR1: "+pr);
 
   setTimeout(function(){
-    alert("PR1: "+pr);
     const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
