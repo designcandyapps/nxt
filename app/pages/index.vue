@@ -35,14 +35,12 @@ const fetchU=async(query)=>{
 /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
 //fetchU(pUrl.value); //.then();
 
-
 onMounted(()=>{
   //setTimeout(function(){
     //const pr="cars";
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const pr:string=new URLSearchParams(location.search).get("pr")??document.getElementById("prompt").value;
     //pr=pr&&pr!="Innovation for the energy of today and tomorrow"?pr:document.getElementById("prompt").value;
-    //alert("PR: "+pr);
 
     //const uu:string=new URLSearchParams(location.search).get("uu")??"ign";
     //const uu=new URLSearchParams(location.search).get("uu"); uu=!uu||uu=="null"?$("#ui").val():"https://www."+uu; alert("UU: "+uu);
