@@ -29,7 +29,7 @@ const fetchU=async(query)=>{
   //const sv1=data.result.svg[0].src; document.querySelector("h1").innerHTML=sv1;
   return data.results;
 };
-onMounted(()=>{    
+onMounted(()=>{
   //setTimeout(function(){
     const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
@@ -43,7 +43,7 @@ onMounted(()=>{
   //},5800);
   setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
-    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR: "+pr);
   },800);
