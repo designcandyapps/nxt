@@ -32,8 +32,9 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
-    document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    //const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
+    //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+
     const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
     const pr2=document.querySelector("#pr2").value; //alert("PR2: "+pr2);
     const pr3=document.querySelector("#pr3").value; //alert("PR3: "+pr3);
@@ -99,26 +100,19 @@ export default{
     },
     async send3(){
       const response=await fetch("https://api.tickettailor.com/v1/events/:2036131",{
-        headers:{
-          Accept:"application/json",
-          Authorization:"Basic "+Buffer.from("sk_14995_133548_95cbe0f619ded70f2d57a144acefffc5:").toString("base64")},
-        });
-        const data=await response.json();
-        alert("Test1");
-        //alert("RES1P: "+JSON.stringify(data));
+        headers:{Accept:"application/json",Authorization:"Basic "+Buffer.from("sk_14995_133548_95cbe0f619ded70f2d57a144acefffc5:").toString("base64")}});
+        const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
         return data;
     },
     async send4(){
       const response=await fetch("/api/tt",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json();
-      alert("Test2");
+      const data=await response.json(); alert("RES2P: "+JSON.stringify(data));
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
     async send5(){
       alert(uUrl);
       const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl})});
-      const data=await response.json();
-      alert("Test3");
+      const data=await response.json(); alert("RES3P: "+JSON.stringify(data));
       this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
     },
   },
