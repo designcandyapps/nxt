@@ -75,7 +75,7 @@ onMounted(()=>{
     alert("U0: "+u);
 
     fetchU(u);
-  },800);
+  },5800);
 });
 </script>
 
