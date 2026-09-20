@@ -44,12 +44,7 @@ onMounted(()=>{
     //<<fetchU("designcandy.com");
   //},5800);
   //setTimeout(function(){
-    const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("h1").innerText;
-    //const pr=new URLSearchParams(location.search).get("u");
-
-    pr=document.querySelector("#h1n").innerText;
-    alert("PR: "+pr);
-
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#h1n").innerText
     //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR2: "+pr);
