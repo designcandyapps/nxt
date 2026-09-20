@@ -47,6 +47,8 @@ onMounted(()=>{
     const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("h1").innerText; //document.querySelector("#prompt").value
     //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    alert("PR: "+pr);
+    pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
     alert("PR2: "+pr);
     fetchU(pr);
   //},7800);
