@@ -45,11 +45,16 @@ onMounted(()=>{
   //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; document.querySelector("h1").innerText;
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    
+    //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
     alert("PR: "+pr);
     fetchU(pr);
-  //},300);
+
+  setTimeout(function(){
+    document.querySelector("#prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+  },2300);
 });
 </script>
 
@@ -75,7 +80,7 @@ export default{
     setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
       this.send()
-    },800);
+    },8800);
   },
   methods:{
     async send(){
