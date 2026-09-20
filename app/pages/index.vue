@@ -26,7 +26,7 @@ const fetchU=async(query)=>{
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   //setTimeout(function(){
-    document.querySelector("#h1n").innerText=h1; document.getElementById("prompt").value=h1;
+    document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //},7800);
   return data.results;
@@ -44,7 +44,7 @@ onMounted(()=>{
     //<<fetchU("designcandy.com");
   //},5800);
   //setTimeout(function(){
-    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#h1n").innerText
+    const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("#prompt").value; //document.querySelector("h1").innerText
     //document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR2: "+pr);
