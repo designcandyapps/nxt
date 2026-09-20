@@ -72,10 +72,10 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
       this.send()
-    //},800);
+    },800);
   },
   methods:{
     async send(){
