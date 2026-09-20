@@ -24,6 +24,9 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
+  setTimeout(function(){
+    document.getElementById("tr").innerText=h1;
+  },2800);
   const h1=data.result.h1[0];
   return data.results;
 };
