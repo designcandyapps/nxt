@@ -21,7 +21,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1&selector=p`);
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.querySelector("h1").innerHTML=h1;
@@ -41,12 +41,12 @@ onMounted(()=>{
     //document.getElementById("t").value=document.querySelector("h1").innerText;
     //<<fetchU("designcandy.com");
   //},5800);
-  setTimeout(function(){
+  //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("pr")??document.querySelector("h1").innerText;
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     alert("PR: "+pr);
-  },2800);
+  //},7800);
 });
 </script>
 
