@@ -25,9 +25,9 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  setTimeout(function(){
+  //setTimeout(function(){
     document.getElementById("tr").innerText=h1;
-  },2800);
+  //},2800);
   return data.results;
 };
 onMounted(()=>{
@@ -42,14 +42,14 @@ onMounted(()=>{
     //document.getElementById("t").value=document.querySelector("h1").innerText;
     //<<fetchU("designcandy.com");
   //},5800);
-  setTimeout(function(){
+  //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("h1").innerText;
     document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
     alert("PR: "+pr);
     fetchU(pr);
-  },300);
+  //},300);
 });
 </script>
 
@@ -81,7 +81,8 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      document.querySelector("#h1n").innerText=this.response;
+      
+      
     },
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
