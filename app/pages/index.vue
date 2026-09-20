@@ -25,7 +25,7 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  setTimeout(function(){
+  //setTimeout(function(){
     document.querySelector("#h1n").innerText=h1; document.getElementById("prompt").value=h1;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   },7800);
@@ -72,7 +72,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    this.send()
+    setTimeout(function(){
+      this.send()
+    },7800);
   },
   methods:{
     async send(){
