@@ -25,7 +25,6 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  //const query=getQuery(event); const uUrl=query.url as string;
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
@@ -33,7 +32,7 @@ const fetchU=async(query)=>{
 
   //document.querySelector("#prompt").value=h1;
   document.getElementById("tr").innerText=h1;
-//-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  //-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
@@ -106,9 +105,11 @@ export default{
   },
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      //document.getElementById("tr").innerText=h1;
+  
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.getElementById("tr").innerText})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      document.querySelector("#h1n").innerText=this.response;
+      //document.querySelector("#h1n").innerText=this.response;
     },
     async sendX(){
       const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
