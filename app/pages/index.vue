@@ -33,7 +33,7 @@ const fetchU=async(query)=>{
 
   //document.querySelector("#prompt").value=h1;
   document.getElementById("tr").innerText=h1;
-  document.getElementById("prompt").value=document.getElementById("tr").innerText;
+//-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
@@ -74,6 +74,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
+  document.getElementById("prompt").value=document.getElementById("tr").innerText;
   setTimeout(function(){
     generatePalette();
   },1800);
