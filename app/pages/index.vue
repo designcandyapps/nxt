@@ -51,7 +51,7 @@ onMounted(()=>{
   //alert("PR2: "+document.querySelector("#pr2").value);
   //const pr=document.querySelector("#pr2").value; //"designcandy.com";
   //alert("PR: "+pr);
-fetchU(prompt);
+fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
 const prompt=document.querySelector("#pr2").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
