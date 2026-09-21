@@ -46,7 +46,7 @@ const fetchU=async(query)=>{
   
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
-  prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+//<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
 
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
   uUrl.value=document.getElementById("sp").innerText;
@@ -73,6 +73,7 @@ const generatePalette=async()=>{alert(9);
     document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
+  prompt.value=document.getElementById("tr").innerText; alert("PR98: "+prompt.value);
 };
 function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,30,60],triadic:[0,120,240],tetradic:[0,90,180,270],complementary:[0,180],splitComplementary:[0,150,210]}; const palettes={}; for(const type of Object.keys(targetHueSteps)){palettes[type]=targetHueSteps[type].map((step)=>({mode:"lch",l:baseColor.l,c:baseColor.c,h:(baseColor.h+step)%360}))} return palettes}
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
