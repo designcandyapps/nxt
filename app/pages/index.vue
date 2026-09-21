@@ -23,7 +23,8 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
@@ -50,7 +51,7 @@ onMounted(()=>{
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-
+    //const query=getQuery(event); const uUrl=query.url as string;
     uUrl.value=document.getElementById("sp").innerText;
     //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
