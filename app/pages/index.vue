@@ -42,6 +42,7 @@ onMounted(()=>{
     //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
 
     var pr=new URLSearchParams(location.search).get("u"); //u=!u||u=="null"?$("#pr2").val():u;
+    pr=pr&&pr!=""?document.querySelector("#pr").value;
     alert("PR: "+pr);
   
     //const pr=document.querySelector("#pr").value; alert("PR: "+pr);
