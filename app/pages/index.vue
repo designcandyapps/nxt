@@ -66,6 +66,7 @@ onMounted(()=>{
 
 
   //alert("PR: "+pr);
+document.getElementById("prompt").value="Et"; document.getElementById("tr").innerText;
 fetchU(pr);
 
 //prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
