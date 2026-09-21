@@ -105,10 +105,10 @@ onMounted(()=>{alert(8);
 export default{
   data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       //fetchU(uUrl.value);
       //generatePalette();
-    },1800);
+    //},1800);
     setTimeout(function(){
       this.send()
     },2300);
