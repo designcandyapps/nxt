@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-//import {ref,onMounted} from "vue"; const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
+import {ref,onMounted} from "vue"; const prompt=ref(""); //document.querySelector("#prompt").value;
+//const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
@@ -67,7 +68,7 @@ onMounted(()=>{
   //alert("PR: "+pr);
 fetchU(pr);
 
-  const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+  prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   alert("PROMPT: "+prompt);
 });
 </script>
