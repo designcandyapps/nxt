@@ -44,7 +44,7 @@ onMounted(()=>{
     const prompt=document.querySelector("#prompt").value;
     const pr2=document.querySelector("#pr2").value;
     alert(document.querySelector("#sp").innerText);
-    const pr=new URLSearchParams(location.search).get("u")??document.querySelector("#sp").innerText; //:string
+    const pr=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#sp").innerText; //:string
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
   //alert(document.getElementById("tr").innerText);
