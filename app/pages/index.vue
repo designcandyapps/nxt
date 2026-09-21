@@ -24,7 +24,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   return data.results;
 };
 onMounted(()=>{
@@ -41,9 +41,10 @@ onMounted(()=>{
   //},5800);
 
   //setTimeout(function(){
-    const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value;
+    const prompt=document.querySelector("#prompt").value;
+    //const pr2=document.querySelector("#pr2").value;
     //alert(document.querySelector("#sp"));
-    const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("#sp").innerText; //"wordpress.com";
+    const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("#tr").innerText; //"wordpress.com";
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
   //alert(document.getElementById("tr").innerText);
