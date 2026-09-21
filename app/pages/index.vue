@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {ref,onMounted} from "vue"; const prompt=ref(""); //document.querySelector("#prompt").value;          //const proxyUrl=ref(""); const pr2=document.querySelector("#pr2");
+//import {ref,onMounted} from "vue"; const prompt=ref(""); const pr=document.querySelector("#prompt"); const pr2=document.querySelector("#pr2");
+//const proxyUrl=ref("");
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
@@ -36,49 +37,26 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    //const prompt=document.querySelector("#prompt").value;
-    //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-    //alert("PROMPT: "+prompt);
-    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
-    pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
-    alert("PR: "+pr);
-    document.querySelector("#prompt").value=pr;
-    const prompt=document.querySelector("#prompt").value;
-  
+    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt"); alert("PROMPT: "+prompt.value);
+    const pr2=document.querySelector("#pr2"); alert("PR2: "+pr2.value); //alert(document.querySelector("#sp"));
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+
+
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
+    //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
+    //alert("PR: "+pr);
+  
+
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
-    //document.getElementById("t").value=document.querySelector("h1").innerText;
-    //<<fetchU("designcandy.com");
-  //},5800);
 
-  //setTimeout(function(){
-//const prompt=document.querySelector("#prompt").value;
-    //const pr2=document.querySelector("#pr2").value;
-    //alert(document.querySelector("#sp"));
-//>>const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
-
-    //--const pr=document.querySelector("#pr2").value;
-    //document.getElementById("tr").innerText=pr;
-  //alert(document.getElementById("tr").innerText);
-  //document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-    //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
-  //alert("PR2: "+document.querySelector("#pr2").value);
-  //const pr=document.querySelector("#pr2").value; //"designcandy.com";
-
-
-  //alert("PR: "+pr);
-//document.getElementById("prompt").value="Et"; document.getElementById("tr").innerText;
-
-
-
-
-fetchU(pr);
+    fetchU(pr);
+//},5800);
 });
 </script>
 
