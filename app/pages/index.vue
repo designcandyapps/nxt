@@ -27,7 +27,8 @@ const fetchU=async(query)=>{
   const h1=data.result.h1[0];
 
   //document.querySelector("#prompt").value=h1;
-  document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  document.getElementById("tr").innerText=h1;
+  document.getElementById("prompt").value=document.getElementById("tr").innerText;
   
   return data.results;
 };
