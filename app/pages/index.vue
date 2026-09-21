@@ -36,9 +36,12 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
+    const prompt=document.querySelector("#prompt").value;
+    const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    //alert("PROMPT: "+prompt);
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    fetchPh(pr2).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
@@ -69,10 +72,9 @@ onMounted(()=>{
 //document.getElementById("prompt").value="Et"; document.getElementById("tr").innerText;
 
 
-const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-alert("PROMPT: "+prompt);
 
-//fetchU(pr);
+
+fetchU(pr);
 });
 </script>
 
