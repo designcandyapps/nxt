@@ -53,7 +53,7 @@ onMounted(()=>{
     //uUrl.value="designcandy.com";
     //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    fetchU(pr); //pUrl.value
+    //fetchU(pr); //pUrl.value
 
     //document.getElementById("tr").innerText=h1;
     document.getElementById("prompt").value=document.getElementById("tr").innerText;
@@ -81,9 +81,9 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       this.send()
-    },5800);
+    //},5800);
   },
   methods:{
     async send(){
