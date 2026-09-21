@@ -76,7 +76,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
-      alert(document.querySelector("#pr2").value);
+      alert("PR2: "+document.querySelector("#pr2").value);
       this.send()
     //},8800);
   },
