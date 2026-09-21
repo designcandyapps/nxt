@@ -24,7 +24,11 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; //document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  const h1=data.result.h1[0];
+
+  //document.querySelector("#prompt").value=h1;
+  document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  
   return data.results;
 };
 onMounted(()=>{
@@ -59,7 +63,7 @@ onMounted(()=>{
 fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+const prompt=document.querySelector("#t").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   //},5800);
 });
@@ -85,8 +89,6 @@ export default{
   data(){return{prompt:"",pr2:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
-      //alert("PR22: "+document.querySelector("#pr2").value);
       this.send()
     //},8800);
   },
