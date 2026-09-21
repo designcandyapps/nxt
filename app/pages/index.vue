@@ -54,10 +54,6 @@ const generatePalette=async()=>{alert(9);
                 //alert("pUrl: "+pUrl.value);
                // fetchU(uUrl.value);
 
-
-  uUrl.value=document.getElementById("sp").innerText;
-  fetchU(document.getElementById("sp").innerText);
-
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
@@ -81,7 +77,10 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
-  const prompt=document.querySelector("#prompt").value;
+  uUrl.value=document.getElementById("sp").innerText;
+  fetchU(document.getElementById("sp").innerText);
+  const prompt=document.querySelector("#t").value;
+
   setTimeout(function(){
     generatePalette();
   },1800);
