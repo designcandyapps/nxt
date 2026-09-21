@@ -55,6 +55,7 @@ onMounted(()=>{
     uUrl.value=document.getElementById("sp").innerText;
     //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    alert("pUrlll: "+pUrl.value);
     fetchU(pUrl.value); //pUrl.value
   //},5800);
 });
