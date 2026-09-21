@@ -21,15 +21,14 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=body`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
-  const im=data.result.img[0].src;
   //setTimeout(function(){
     //document.getElementById("tr").innerText=h1;
 
-    alert("IM: "+im);
+    //alert("IM: "+im);
     //document.getElementById("ee").innerText=h1.src;
   
   //},2800);
