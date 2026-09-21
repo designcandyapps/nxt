@@ -43,7 +43,7 @@ onMounted(()=>{
 
   //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("h1").innerText;
   const pr=document.getElementById("pr2").value;
-  //>>document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
   alert("PR: "+pr);
