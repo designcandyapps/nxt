@@ -62,12 +62,13 @@ onMounted(()=>{
 
   //alert("PR: "+pr);
 fetchU(pr);
-  
-//document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-const pro=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-alert("PRO: "+pro); //document.querySelector("#prompt").value
+
+setTimeout(function(){
+  //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
+  const pro=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+  alert("PRO: "+pro); //document.querySelector("#prompt").value
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
-  //},5800);
+  },5800);
 });
 </script>
 
@@ -90,9 +91,9 @@ alert("PRO: "+pro); //document.querySelector("#prompt").value
 export default{
   data(){return{prompt:"",prp:"",pro:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       this.send()
-    },8800);
+    //},8800);
   },
   methods:{
     async send(){
