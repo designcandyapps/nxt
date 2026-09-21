@@ -40,6 +40,9 @@ onMounted(()=>{
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
+
+    var pr=new URLSearchParams(location.search).get("u"); //u=!u||u=="null"?$("#pr2").val():u;
+    alert("PR: "+u);
   
     //const pr=document.querySelector("#pr").value; alert("PR: "+pr);
     //const pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2); //alert(document.querySelector("#sp"));
