@@ -1,6 +1,6 @@
 <script setup>
 import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
+const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const generatePalette=async()=>{//alert(1);
