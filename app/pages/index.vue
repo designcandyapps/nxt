@@ -69,9 +69,9 @@ onMounted(()=>{alert(8);
   fetchU(document.getElementById("sp").innerText);
   const prompt=document.querySelector("#prompt").value;
 
-  //setTimeout(function(){
+  setTimeout(function(){
     generatePalette();
-  //},1800);
+  },1800);
 });
 </script>
 
