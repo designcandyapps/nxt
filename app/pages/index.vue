@@ -63,7 +63,7 @@ onMounted(()=>{
 fetchU(pr);
   
 //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-const prompt=document.querySelector("#sp").innerText;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   //},5800);
 });
@@ -86,7 +86,7 @@ const prompt=document.querySelector("#sp").innerText;                   //const 
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",pr2:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
       this.send()
@@ -94,7 +94,7 @@ export default{
   },
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#sp").innerText})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
     },
     async sendX(){
