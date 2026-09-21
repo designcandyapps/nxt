@@ -2,7 +2,9 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-//const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
+const prompt=ref("");
+const prompt=document.getElementById("prompt").value;
+//const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
 const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
@@ -42,13 +44,16 @@ const fetchU=async(query)=>{
 
   
 const generatePalette=async()=>{alert(9);
-  //prompt.value=document.querySelector("#prompt").value; alert("PR99: "+prompt.value);
+  //prompt.value=document.querySelector("#prompt").value;
+  prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
   uUrl.value=document.getElementById("sp").innerText;
   pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
   ////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl: "+pUrl.value);
   fetchU(uUrl.value);
+
   
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -73,7 +78,6 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
-  const prompt=document.getElementById("tr").innerText;
   setTimeout(function(){
     generatePalette();
   },1800);
@@ -107,7 +111,7 @@ export default{
     async send(){
       //document.getElementById("tr").innerText=h1;
   
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.getElementById("tr").innerText})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.getElementById("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#h1n").innerText=this.response;
     },
