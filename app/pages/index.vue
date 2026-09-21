@@ -90,9 +90,9 @@ alert("PRO: "+pro); //document.querySelector("#prompt").value
 export default{
   data(){return{prompt:"",prp:"",pro:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.send()
-    //},8800);
+    },8800);
   },
   methods:{
     async send(){
