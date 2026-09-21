@@ -47,7 +47,7 @@ onMounted(()=>{
     document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
-    alert("PR: "+document.querySelector("#pr2").value);
+    alert("PR2: "+document.querySelector("#pr2").value);
     fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
@@ -78,7 +78,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
-      alert("PR2: "+document.querySelector("#pr2").value);
+      alert("PR22: "+document.querySelector("#pr2").value);
       this.send()
     //},8800);
   },
