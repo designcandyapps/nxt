@@ -57,7 +57,7 @@ const generatePalette=async()=>{alert(9);
   //fetchU(uUrl.value);
 
   const prompt=document.querySelector("#prompt").value;
-  fetchU(prompt);
+  fetchU(uUrl.value);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
