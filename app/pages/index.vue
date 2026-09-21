@@ -47,14 +47,7 @@ const fetchU=async(query)=>{
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
 //<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
-
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
-  uUrl.value=document.getElementById("sp").innerText;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-  ////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  alert("pUrl: "+pUrl.value);
-  fetchU(uUrl.value);
-
   
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -81,6 +74,12 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{alert(8);
   setTimeout(function(){
     generatePalette();
+    uUrl.value=document.getElementById("sp").innerText;
+    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    ////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    alert("pUrl: "+pUrl.value);
+    fetchU(uUrl.value);
+    
     prompt.value=document.getElementById("tr").innerText; alert("PR98: "+prompt.value);
   },1800);
 });
