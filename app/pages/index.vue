@@ -2,6 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 //import {ref,onMounted} from "vue"; const prompt=ref(""); const pr=document.querySelector("#prompt"); const pr2=document.querySelector("#pr2");
+import {ref,onMounted} from "vue"; const prompt=ref(""); const uUrl=ref(""); const pUrl=ref("");
 //const proxyUrl=ref("");
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
@@ -38,16 +39,15 @@ const fetchU=async(query)=>{
 onMounted(()=>{
   //setTimeout(function(){
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt"); alert("PROMPT: "+prompt.value);
+    prompt=document.querySelector("#prompt"); alert("PROMPT: "+prompt.value);
     //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
-    const pr=document.querySelector("#pr"); pr=pr&&pr!=""?pr.value; alert("PR: "+pr);
-    const pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2.value); //alert(document.querySelector("#sp"));
+    pr=document.querySelector("#pr"); pr=pr&&pr!=""?pr.value; alert("PR: "+pr);
+    pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2.value); //alert(document.querySelector("#sp"));
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
 
-    //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //fetchU(pUrl.value); //.then();
