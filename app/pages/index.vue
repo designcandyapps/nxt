@@ -42,7 +42,7 @@ onMounted(()=>{
 
   //setTimeout(function(){
     const prompt=document.querySelector("#prompt").value;
-    const pr=new URLSearchParams(location.search).get("u")??prompt; //document.querySelector("h1").innerText;
+    const pr=new URLSearchParams(location.search).get("u")??document.querySelector("#tr").innerText; //:string
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
   //alert(document.getElementById("tr").innerText);
