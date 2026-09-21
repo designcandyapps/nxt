@@ -82,7 +82,7 @@ export default{
   data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.sendX()
+      this.send()
     //},5800);
   },
   methods:{
