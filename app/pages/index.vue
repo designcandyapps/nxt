@@ -40,7 +40,7 @@ onMounted(()=>{
     //<<fetchU("designcandy.com");
   //},5800);
 
-  setTimeout(function(){
+  //setTimeout(function(){
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("h1").innerText;
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
@@ -54,9 +54,9 @@ onMounted(()=>{
 fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-const prompt=document.querySelector("#pr2").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
-  },5800);
+  //},5800);
 });
 </script>
 
