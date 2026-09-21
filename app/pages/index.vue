@@ -36,8 +36,7 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    const prompt=document.querySelector("#prompt").value;
-    const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //alert("PROMPT: "+prompt);
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
@@ -74,7 +73,7 @@ onMounted(()=>{
 
 
 
-fetchU(pr);
+//fetchU(pr);
 });
 </script>
 
