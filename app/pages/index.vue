@@ -41,7 +41,7 @@ onMounted(()=>{
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
-    //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
+    fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
