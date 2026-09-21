@@ -48,7 +48,8 @@ onMounted(()=>{
     //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
     alert("PR2: "+document.querySelector("#pr2").value);
-    const pr="designcandy.com";
+    const pr=document.querySelector("#pr2").value; //"designcandy.com";
+    alert("PR: "+pr);
     fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
