@@ -36,12 +36,18 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    //const prompt=document.querySelector("#prompt").value;
+    //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
     //alert("PROMPT: "+prompt);
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
+    pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
+    alert("PR: "+pr);
+    document.querySelector("#prompt").value=pr;
+    const prompt=document.querySelector("#prompt").value;
+  
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
-    fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
@@ -55,7 +61,6 @@ onMounted(()=>{
     //const pr2=document.querySelector("#pr2").value;
     //alert(document.querySelector("#sp"));
 //>>const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
-    //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
 
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
@@ -73,7 +78,7 @@ onMounted(()=>{
 
 
 
-//fetchU(pr);
+fetchU(pr);
 });
 </script>
 
