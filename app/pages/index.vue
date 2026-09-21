@@ -1,11 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-//const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
-//const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
-//const pr=ref(""); const pr2=ref("");
-const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
+import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
@@ -29,21 +25,13 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0];
-
-  //document.querySelector("#prompt").value=h1;
-  document.getElementById("tr").innerText=h1;
-  //-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
-  //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-
-  //prompt.value=h1;
-  //const prompt=document.getElementById("prompt").value;
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   return data.results;
 };
 
 
 
-  
+
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
   //prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
@@ -89,7 +77,7 @@ onMounted(()=>{alert(8);
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><span id="z"><!--ColorThief /--></span><!--Url /-->
+    <span class="g"><span id="z"><!--ColorThief /--></span>
       <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr" v-model="pr" style="border:2px solid pink;"><input id="pr2" v-model="pr2" style="border:2px solid blue;"><input id="t" v-model="t" style="border:2px solid green;">
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
     </span>
@@ -113,7 +101,7 @@ export default{
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
       //document.querySelector("#h1n").innerText=this.response;
     },
     async sendX(){
