@@ -60,9 +60,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{alert(8);
   setTimeout(function(){
     //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
-    //generatePalette();
+    generatePalette();
   },1800);
 });
 </script>
