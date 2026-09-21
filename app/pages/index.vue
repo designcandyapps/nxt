@@ -53,7 +53,7 @@ onMounted(()=>{
     //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
   //alert("PR2: "+document.querySelector("#pr2").value);
   //const pr=document.querySelector("#pr2").value; //"designcandy.com";
-  //alert("PR: "+pr);
+  alert("PR: "+pr);
 fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
