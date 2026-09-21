@@ -6,7 +6,6 @@ import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatH
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
 const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
-
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
@@ -42,8 +41,7 @@ const fetchU=async(query)=>{
 
 
 
-
-
+  
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
@@ -80,10 +78,6 @@ onMounted(()=>{alert(8);
     generatePalette();
   },1800);
 });
-
-
-
-
 </script>
 
 <template>
@@ -105,10 +99,6 @@ onMounted(()=>{alert(8);
 export default{
   data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
   mounted(){
-    //setTimeout(function(){
-      //fetchU(uUrl.value);
-      //generatePalette();
-    //},1800);
     setTimeout(function(){
       this.send()
     },2300);
