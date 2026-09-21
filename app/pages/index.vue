@@ -53,7 +53,7 @@ onMounted(()=>{
     uUrl.value="designcandy.com";
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    fetchU(uUrl.value);
+    fetchU(pUrl.value);
 
     //fetchU(pr);
     //document.getElementById("tr").innerText=h1;
