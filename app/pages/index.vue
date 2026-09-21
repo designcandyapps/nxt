@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
+//import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
@@ -94,9 +94,9 @@ onMounted(()=>{alert(8);
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    setTimeout(function(){
+    //setTimeout(function(){
       this.send()
-    },7800);
+    //},7800);
   },
   methods:{
     async send(){
