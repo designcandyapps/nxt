@@ -28,6 +28,6 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{//alert(0);
   setTimeout(function(){
     generatePalette();
-  },800);
+  },1800);
 });
 </script>
