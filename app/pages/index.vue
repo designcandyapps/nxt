@@ -41,8 +41,7 @@ onMounted(()=>{
   //},5800);
 
   setTimeout(function(){
-    const prompt=document.querySelector("#pr2").value;
-    //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("h1").innerText;
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("h1").innerText;
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
   //alert(document.getElementById("tr").innerText);
@@ -55,7 +54,7 @@ onMounted(()=>{
 fetchU(prompt);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-prompt=document.querySelector("#pr2").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+const prompt=document.querySelector("#pr2").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   },5800);
 });
