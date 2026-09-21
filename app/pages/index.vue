@@ -64,8 +64,8 @@ onMounted(()=>{
 fetchU(pr);
   
 //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-const prompt=document.querySelector("#t").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-alert("PROMPT: "+prompt); //document.querySelector("#prompt").value
+const pro=document.querySelector("#t").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+alert("PRO: "+pro); //document.querySelector("#prompt").value
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   //},5800);
 });
@@ -88,7 +88,7 @@ alert("PROMPT: "+prompt); //document.querySelector("#prompt").value
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",prp:"",pro:"",response:null}},
   mounted(){
     //setTimeout(function(){
       this.send()
