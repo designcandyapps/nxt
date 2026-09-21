@@ -68,7 +68,8 @@ onMounted(()=>{
   //alert("PR: "+pr);
 fetchU(pr);
 
-
+//prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+//alert("PROMPT: "+prompt);
 });
 </script>
 
@@ -92,8 +93,6 @@ export default{
   data(){return{prompt:"",prp:"",pro:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-      alert("PROMPT1: "+prompt);
       this.send()
     //},8800);
   },
