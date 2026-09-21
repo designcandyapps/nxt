@@ -30,13 +30,11 @@ const fetchU=async(query)=>{
   document.getElementById("tr").innerText=h1;
   document.getElementById("prompt").value="Te"; //document.getElementById("tr").innerText;
 
-//setTimeout(function(){
   //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-  const pro=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-  alert("PRO: "+pro); //document.querySelector("#prompt").value
+  const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+  alert("PROMPT: "+prompt); //document.querySelector("#prompt").value
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
-//},5800);
-  
+
   return data.results;
 };
 onMounted(()=>{
