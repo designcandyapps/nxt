@@ -6,7 +6,7 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 const generatePalette=async()=>{alert(1);
   //prompt.value=document.querySelector("#prompt").value; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
-  uUrl.value="designcandy.com";
+  uUrl.value="designcandy.com"; //u=!u||u=="null"?$("#pr2").val():u;
   //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl: "+pUrl.value);
