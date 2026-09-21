@@ -74,6 +74,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{alert(8);
   setTimeout(function(){
     generatePalette();
+
+  },1800);
+  setTimeout(function(){
     uUrl.value=document.getElementById("sp").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     ////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
@@ -81,7 +84,7 @@ onMounted(()=>{alert(8);
     fetchU(uUrl.value);
     
     prompt.value=document.getElementById("tr").innerText; alert("PR98: "+prompt.value);
-  },1800);
+  },3800);
 });
 </script>
 
