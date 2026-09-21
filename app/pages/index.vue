@@ -1,9 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-//import {ref,onMounted} from "vue"; const prompt=ref(""); const pr=document.querySelector("#prompt"); const pr2=document.querySelector("#pr2");
-import {ref,onMounted} from "vue"; const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
-//const proxyUrl=ref("");
+//import {ref,onMounted} from "vue"; const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
+//import {ref,onMounted} from "vue"; const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
   proxyUrl.value=`/api/proxy?url=${encodeURIComponent(document.querySelector("#pr2").value)}`; //pr2.value
@@ -39,9 +38,9 @@ const fetchU=async(query)=>{
 onMounted(()=>{
   //setTimeout(function(){
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt"); alert("PROMPT: "+prompt.value);
+    const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
-    const pr=document.querySelector("#pr"); pr=pr&&pr!=""?pr.value; alert("PR: "+pr);
+    const pr=document.querySelector("#pr").value; alert("PR: "+pr);
     //const pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2); //alert(document.querySelector("#sp"));
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
