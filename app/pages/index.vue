@@ -37,7 +37,11 @@ const fetchU=async(query)=>{
   document.getElementById("tr").innerText=h1;
   //-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-  //alert("PRO: "+document.querySelector("#prompt").value);
+
+  prompt.value=h1; alert("PR98: "+prompt.value);
+  const prompt=prompt.value;
+
+  alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
 };
 
@@ -53,9 +57,6 @@ const generatePalette=async()=>{alert(9);
   pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl: "+pUrl.value);
   fetchU(uUrl.value);
-
-  prompt.value=document.getElementById("tr").innerText; alert("PR98: "+prompt.value);
-  const prompt=prompt.value;
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -114,8 +115,6 @@ export default{
   },
   methods:{
     async send(){
-      //document.getElementById("tr").innerText=h1;
-  
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.getElementById("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#h1n").innerText=this.response;
