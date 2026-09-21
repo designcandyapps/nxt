@@ -5,7 +5,7 @@ import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatH
 //const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
 //const pr=ref(""); const pr2=ref("");
-const uUrl=ref(""); const pUrl=ref("");
+const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
@@ -49,6 +49,7 @@ const generatePalette=async()=>{alert(9);
   //<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
   uUrl.value=document.getElementById("sp").innerText;
+  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
   //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl: "+pUrl.value);
@@ -56,6 +57,9 @@ const generatePalette=async()=>{alert(9);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
+
+
+
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
