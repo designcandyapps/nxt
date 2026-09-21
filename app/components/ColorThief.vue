@@ -2,7 +2,7 @@
 import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
 const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
-const generatePalette=async()=>{alert(1);
+const generatePalette=async()=>{//alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
@@ -25,7 +25,7 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{alert(0);
+onMounted(()=>{//alert(0);
   setTimeout(function(){
     generatePalette();
   },800);
