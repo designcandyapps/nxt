@@ -29,7 +29,7 @@ const fetchU=async(query)=>{
   //setTimeout(function(){
     //document.getElementById("tr").innerText=h1;
 
-    alert("IM: "+img.src);
+    alert("IM: "+im.src);
     //document.getElementById("ee").innerText=h1.src;
   
   //},2800);
