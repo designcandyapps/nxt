@@ -34,7 +34,7 @@ const fetchU=async(query)=>{
 
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
-  //prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+  prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
                // uUrl.value=document.getElementById("sp").innerText;
                // pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
