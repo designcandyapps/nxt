@@ -83,14 +83,14 @@ onMounted(()=>{alert(8);
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.send()
-    //},7800);
+    },12800);
   },
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); console.log(data.message.content);
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#h1n").innerText=this.response;
     },
     async send2(){
