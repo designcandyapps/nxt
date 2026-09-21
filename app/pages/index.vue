@@ -107,12 +107,12 @@ export default{
   data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
   mounted(){
     setTimeout(function(){
-      this.send()
-    },100);
-    setTimeout(function(){
       //fetchU(uUrl.value);
       generatePalette();
     },1800);
+    setTimeout(function(){
+      this.send()
+    },2300);
   },
   methods:{
     async send(){
