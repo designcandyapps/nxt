@@ -24,7 +24,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   return data.results;
 };
 onMounted(()=>{
@@ -46,7 +46,7 @@ onMounted(()=>{
   document.getElementById("tr").innerText=pr; document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //pr=!pr||pr==""?document.querySelector("#prompt").value:pr;
-  alert("PR: "+pr);
+  alert("PR: "+document.querySelector("#pr2").value);
   fetchU(pr);
 
   document.querySelector("#prompt").value=document.getElementById("tr").innerText;
