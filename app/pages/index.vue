@@ -29,9 +29,8 @@ const fetchU=async(query)=>{
   //document.querySelector("#prompt").value=h1;
   document.getElementById("tr").innerText=h1;
   document.getElementById("prompt").value=document.getElementById("tr").innerText;
-  const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-  alert("PROMPT: "+prompt); //document.querySelector("#prompt").value
-  //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
+  const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+  alert("PROMPT: "+prompt);
 
   return data.results;
 };
