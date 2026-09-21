@@ -54,10 +54,11 @@ onMounted(()=>{
 //fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
-  const prompt=document.querySelector("#pr2").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+//const prompt=document.querySelector("#pr2").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   },5800);
 });
+const prompt=document.querySelector("#pr2").value;
 </script>
 
 <template>
@@ -81,7 +82,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
-      alert("PR22: "+document.querySelector("#pr2").value);
+      //alert("PR22: "+document.querySelector("#pr2").value);
       this.send()
     //},8800);
   },
