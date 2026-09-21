@@ -21,8 +21,8 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; //document.getElementById("prompt").value=document.getElementById("tr").innerText;
   return data.results;
@@ -78,12 +78,13 @@ fetchU(prompt);
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",pr2:"",response:null}},
   mounted(){
     //setTimeout(function(){
       //document.querySelector("h1").innerText=h1; document.querySelector("#prompt").value=h1;
       //alert("PR22: "+document.querySelector("#pr2").value);
-      this.send()
+      this.send();
+      this.sendX();
     //},8800);
   },
   methods:{
@@ -91,6 +92,16 @@ export default{
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
     },
+    async sendX(){
+      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+    },
+
+
+
+
+
+    
     async send2(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
