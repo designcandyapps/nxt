@@ -33,15 +33,14 @@ const fetchU=async(query)=>{
   document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
   //alert("PRO: "+document.querySelector("#prompt").value);
-
   return data.results;
 };
 onMounted(()=>{
   //setTimeout(function(){
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
-    //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
-    const pr=document.querySelector("#pr").value; alert("PR: "+pr);
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
+    //const pr=document.querySelector("#pr").value; alert("PR: "+pr);
     //const pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2); //alert(document.querySelector("#sp"));
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
@@ -49,17 +48,17 @@ onMounted(()=>{
 
 
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    /////pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    //fetchU(pUrl.value); //.then();
+    pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    fetchU(pUrl.value); //.then();
 
-    fetchU(pr);
+    //fetchU(pr);
 //},5800);
 });
 </script>
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><!--span id="z"><ColorThief /></span--><!--Url /-->
+    <span class="g"><span id="z"><ColorThief /></span><!--Url /-->
       <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr" v-model="pr" style="border:2px solid pink;"><input id="pr2" v-model="pr2" style="border:2px solid blue;"><input id="t" v-model="t" style="border:2px solid green;">
       <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
     </span>
