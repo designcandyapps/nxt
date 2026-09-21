@@ -46,19 +46,20 @@ const fetchU=async(query)=>{
   
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
-  //<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+  //prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
+               // uUrl.value=document.getElementById("sp").innerText;
+               // pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+                //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+                //alert("pUrl: "+pUrl.value);
+               // fetchU(uUrl.value);
+
+
   uUrl.value=document.getElementById("sp").innerText;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  alert("pUrl: "+pUrl.value);
-  fetchU(uUrl.value);
+  fetchU(document.getElementById("sp").innerText);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-
-
-
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span class="content"></span>`;
