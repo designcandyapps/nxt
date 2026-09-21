@@ -65,6 +65,7 @@ fetchU(pr);
   
 //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
 const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+alert("PROMPT: "+prompt); //document.querySelector("#prompt").value
   //document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   //},5800);
 });
@@ -95,7 +96,6 @@ export default{
   },
   methods:{
     async send(){
-      alert("PROMPT: "+prompt);
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
     },
