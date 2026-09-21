@@ -26,7 +26,7 @@ const fetchU=async(query)=>{
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0];
   //setTimeout(function(){
-    document.getElementById("tr").innerText=h1; document.getElementById("h1n").innerText=document.getElementById("response").innerText;
+    document.getElementById("tr").innerText=h1;
 
     //alert("IM: "+im);
     //document.getElementById("ee").innerText=h1.src;
@@ -58,6 +58,7 @@ onMounted(()=>{
   //setTimeout(function(){
     document.querySelector("#prompt").value=document.getElementById("tr").innerText;
     const prompt=document.querySelector("#prompt").value; const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
+    document.getElementById("h1n").innerText=document.getElementById("response").innerText;
   //},2300);
 });
 </script>
