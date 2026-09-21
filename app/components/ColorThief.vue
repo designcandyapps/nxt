@@ -3,7 +3,7 @@ import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatH
 const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
-const generatePalette=async()=>{//alert(1);
+const generatePalette=async()=>{alert(1);
   //prompt.value=document.querySelector("#prompt").value; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
   uUrl.value="designcandy.com";
