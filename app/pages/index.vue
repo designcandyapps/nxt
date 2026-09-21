@@ -37,8 +37,9 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
-    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
+    //document.getElementById("tr").innerText=h1;
+    document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);  
     const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
     //const pr=new URLSearchParams(location.search).get("u"); pr=pr&&pr!=""?document.querySelector("#pr").value; //u=!u||u=="null"?$("#pr2").val():u;
     //alert("PR: "+pr);
@@ -53,12 +54,8 @@ onMounted(()=>{
     uUrl.value="designcandy.com";
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    fetchU(pr); //pUrl.value
-
-    //document.getElementById("tr").innerText=h1;
-    document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
-//},5800);
+    fetchU(uUrl.value); //pUrl.value
+  //},5800);
 });
 </script>
 
