@@ -39,10 +39,8 @@ onMounted(()=>{
   //setTimeout(function(){
     //document.getElementById("prompt").value=document.getElementById("tr").innerText;
     //const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
-    //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
-
-    const pr=new URLSearchParams(location.search).get("u"); //u=!u||u=="null"?$("#pr2").val():u;
-    pr=pr&&pr!=""?document.querySelector("#pr").value;
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
+    //const pr=new URLSearchParams(location.search).get("u"); pr=pr&&pr!=""?document.querySelector("#pr").value; //u=!u||u=="null"?$("#pr2").val():u;
     //alert("PR: "+pr);
   
     //const pr=document.querySelector("#pr").value; alert("PR: "+pr);
