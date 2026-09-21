@@ -9,7 +9,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 };*/
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
 async function fetchGetty(query){
@@ -36,8 +36,9 @@ const fetchU=async(query)=>{
 };
 onMounted(()=>{
   //setTimeout(function(){
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //<<const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-    //>>fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
+    fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(prp).then(image=>{pho2.value=image.display_sizes[0].uri});
     //import {ref,onMounted} from "vue"; const uUrl=ref(""); const pUrl=ref("");
     //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
@@ -51,7 +52,7 @@ onMounted(()=>{
 //const prompt=document.querySelector("#prompt").value;
     //const pr2=document.querySelector("#pr2").value;
     //alert(document.querySelector("#sp"));
-    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
+//>>const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //pr=pr&&pr!=""?pr:document.getElementById("prompt").value;
 
     //--const pr=document.querySelector("#pr2").value;
@@ -71,7 +72,7 @@ onMounted(()=>{
 const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
 alert("PROMPT: "+prompt);
 
-fetchU(prompt);
+//fetchU(pr);
 });
 </script>
 
