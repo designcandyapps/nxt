@@ -74,7 +74,7 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
-  document.getElementById("prompt").value=document.getElementById("tr").innerText;
+  const prompt=document.getElementById("tr").innerText;
   setTimeout(function(){
     generatePalette();
   },1800);
