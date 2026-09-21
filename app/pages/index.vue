@@ -38,8 +38,6 @@ const fetchU=async(query)=>{
 
   //prompt.value=h1;
   //const prompt=document.getElementById("prompt").value;
-  //alert("PR97: "+prompt);
-  //alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
 
 
@@ -50,7 +48,8 @@ const fetchU=async(query)=>{
   //fetchU(uUrl.value);
 
   const prompt=document.querySelector("#prompt").value;
-  //fetchU(uUrl.value);
+  alert("PR97: "+prompt);
+  alert("PRO: "+document.querySelector("#prompt").value);
 };
 
 
