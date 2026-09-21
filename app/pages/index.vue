@@ -39,17 +39,6 @@ const fetchU=async(query)=>{
   //prompt.value=h1;
   //const prompt=document.getElementById("prompt").value;
   return data.results;
-
-
-  uUrl.value=document.getElementById("sp").innerText;
-  //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  alert("pUrl: "+pUrl.value);
-  //fetchU(uUrl.value);
-
-  const prompt=document.querySelector("#prompt").value;
-  alert("PR97: "+prompt);
-  alert("PRO: "+document.querySelector("#prompt").value);
 };
 
 
@@ -84,6 +73,15 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
+  uUrl.value=document.getElementById("sp").innerText;
+  //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  alert("pUrl: "+pUrl.value);
+  fetchU(pUrl.value);
+
+  const prompt=document.querySelector("#prompt").value;
+  alert("PR97: "+prompt);
+  alert("PRO: "+document.querySelector("#prompt").value);
   setTimeout(function(){
     generatePalette();
   },1800);
