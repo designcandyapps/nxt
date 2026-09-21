@@ -44,7 +44,7 @@ onMounted(()=>{
 //const prompt=document.querySelector("#prompt").value;
     //const pr2=document.querySelector("#pr2").value;
     //alert(document.querySelector("#sp"));
-    const pr:string=new URLSearchParams(location.search).get("u")??document.querySelector("#tr").innerText; //"wordpress.com";
+    const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText
     //--const pr=document.querySelector("#pr2").value;
     //document.getElementById("tr").innerText=pr;
   //alert(document.getElementById("tr").innerText);
@@ -56,7 +56,7 @@ onMounted(()=>{
 
 
   //alert("PR: "+pr);
-fetchU(document.querySelector("#sp").innerText);
+fetchU(pr);
   
     //document.querySelector("#prompt").value=document.getElementById("tr").innerText;
 const prompt=document.querySelector("#prompt").value;                   //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
