@@ -81,8 +81,6 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(8);
   const prompt=document.querySelector("#prompt").value;
-  alert("PR97: "+prompt);
-  alert("PRO: "+document.querySelector("#prompt").value);
   setTimeout(function(){
     generatePalette();
   },1800);
