@@ -37,9 +37,8 @@ const fetchU=async(query)=>{
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
 
   //prompt.value=h1;
-  const prompt=document.getElementById("prompt").value;
-  alert("PR97: "+prompt);
-
+  //const prompt=document.getElementById("prompt").value;
+  //alert("PR97: "+prompt);
   //alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
 };
@@ -49,12 +48,15 @@ const fetchU=async(query)=>{
   
 const generatePalette=async()=>{alert(9);
   //prompt.value=document.querySelector("#prompt").value;
-``//<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+  //<<prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
   uUrl.value=document.getElementById("sp").innerText;
   //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl: "+pUrl.value);
+  //fetchU(uUrl.value);
+
+  const prompt=document.querySelector("#prompt").value;
   fetchU(uUrl.value);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
@@ -83,9 +85,6 @@ onMounted(()=>{alert(8);
   setTimeout(function(){
     generatePalette();
   },1800);
-  setTimeout(function(){    
-    //prompt.value=document.getElementById("tr").innerText; alert("PR98: "+prompt.value);
-  },8800);
 });
 </script>
 
@@ -106,7 +105,7 @@ onMounted(()=>{alert(8);
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",pr2:"",prp:"",pro:"",response:null}},
+  data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
       this.send()
@@ -114,7 +113,7 @@ export default{
   },
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.getElementById("#prompt").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#h1n").innerText=this.response;
     },
