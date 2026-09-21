@@ -30,7 +30,7 @@ const fetchU=async(query)=>{
   document.getElementById("tr").innerText=h1;
   document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-  alert("PROMPT: "+document.querySelector("#prompt").value);
+  alert("PRO: "+document.querySelector("#prompt").value);
 
   return data.results;
 };
