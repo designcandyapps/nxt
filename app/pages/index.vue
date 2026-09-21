@@ -21,22 +21,6 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-async function fetchZ(query){
-  //try{
-    const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`});
-    //if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); alert("RES3P: "+JSON.stringify(data));
-    const h1=data.result.h1[0];
-
-    //document.querySelector("#prompt").value=h1;
-    document.getElementById("tr").innerText=h1;
-    document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
-    alert("PRO1: "+document.querySelector("#prompt").value);
-
-    return data.results;
-  //}catch(error){console.error("Error3:",error)}
-}
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
@@ -83,7 +67,7 @@ onMounted(()=>{
 
   //alert("PR: "+pr);
 //document.getElementById("prompt").value="Et"; document.getElementById("tr").innerText;
-fetchZ(pr);
+fetchU(pr);
 
 //prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
 //alert("PROMPT: "+prompt);
