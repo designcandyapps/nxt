@@ -6,6 +6,11 @@ const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const bac
 const generatePalette=async()=>{//alert(1);
   //prompt.value=document.querySelector("#prompt").value; alert("PR99: "+prompt.value);
   //pr.value=document.querySelector("#pr").value; pr2.value=document.querySelector("#pr2").value;
+
+  uUrl.value="designcandy.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("pUrl: "+pUrl.value);
+  
+  
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
@@ -30,6 +35,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{//alert(0);
   setTimeout(function(){
+
+    fetchU(uUrl.value); //.then();
     generatePalette();
   },1800);
 });
