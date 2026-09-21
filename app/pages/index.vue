@@ -106,9 +106,9 @@ onMounted(()=>{alert(8);
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.send()
-    //},2300);
+    },7800);
   },
   methods:{
     async send(){
