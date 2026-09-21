@@ -2,12 +2,10 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 import {ref,onMounted} from "vue"; import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-//const prompt=ref("");
-//const prompt=document.getElementById("prompt").value;
-
-//const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
+//const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
-const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref("");
+//const pr=ref(""); const pr2=ref("");
+const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
@@ -38,10 +36,11 @@ const fetchU=async(query)=>{
   //-------document.getElementById("prompt").value=document.getElementById("tr").innerText;
   //const prompt=document.querySelector("#prompt").value; //const pr2=document.querySelector("#pr2").value; //alert("PROMPT: "+prompt); alert("PR2: "+pr2);
 
-  prompt.value=h1; alert("PR98: "+prompt.value);
-  const prompt=prompt.value;
+  //prompt.value=h1;
+  const prompt=document.getElementById("prompt").value;
+  alert("PR97: "+prompt);
 
-  alert("PRO: "+document.querySelector("#prompt").value);
+  //alert("PRO: "+document.querySelector("#prompt").value);
   return data.results;
 };
 
