@@ -53,8 +53,8 @@ onMounted(()=>{
     //fetchU(uUrl.value); //.then();
 
     //fetchU(pr);
-    document.getElementById("prompt").value=document.getElementById("tr").innerText;
-    const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
+    //document.getElementById("prompt").value=document.getElementById("tr").innerText;
+    const prompt=document.querySelector("#prompt").value; //alert("PROMPT: "+prompt);
 //},5800);
 });
 </script>
