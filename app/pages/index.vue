@@ -53,10 +53,10 @@ onMounted(()=>{
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
     uUrl.value=document.getElementById("sp").innerText;
-    //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //alert("pUrlll: "+pUrl.value);
-    fetchU(pUrl.value);
+    fetchU(uUrl.value);
   //},5800);
 });
 </script>
