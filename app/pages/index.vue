@@ -95,9 +95,9 @@ fetchU(prompt);
 export default{
   data(){return{prompt:"",prp:"",pro:"",response:null}},
   mounted(){
-    //setTimeout(function(){
+    setTimeout(function(){
       this.send()
-    //},8800);
+    },5800);
   },
   methods:{
     async send(){
