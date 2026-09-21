@@ -2,7 +2,7 @@
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 //import {ref,onMounted} from "vue";
-const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
+//const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
 /*const genTktlr=async()=>{//alert(5);
   const proxyUrl=ref("");
