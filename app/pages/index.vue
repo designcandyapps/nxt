@@ -41,9 +41,9 @@ onMounted(()=>{
     //const prompt=document.querySelector("#prompt").value; alert("PROMPT: "+prompt);
     //const pr:string=new URLSearchParams(location.search).get("u")??"wordpress.com"; //document.querySelector("#tr").innerText;
 
-    var pr=new URLSearchParams(location.search).get("u"); //u=!u||u=="null"?$("#pr2").val():u;
+    const pr=new URLSearchParams(location.search).get("u"); //u=!u||u=="null"?$("#pr2").val():u;
     pr=pr&&pr!=""?document.querySelector("#pr").value;
-    alert("PR: "+pr);
+    //alert("PR: "+pr);
   
     //const pr=document.querySelector("#pr").value; alert("PR: "+pr);
     //const pr2=document.querySelector("#pr2"); pr2=pr2&&pr2!=""?pr2.value; alert("PR2: "+pr2); //alert(document.querySelector("#sp"));
@@ -52,9 +52,10 @@ onMounted(()=>{
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
 
-    //uUrl.value="pinfluents.com"; pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+    uUrl.value="designcandy.com";
+    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    //fetchU(uUrl.value); //.then();
+    fetchU(uUrl.value);
 
     //fetchU(pr);
     //document.getElementById("tr").innerText=h1;
