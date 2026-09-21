@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
+//const uUrl=ref(""); const pUrl=ref("");
 //import {ref,onMounted} from "vue";
 //const prompt=ref(""); const pr=ref(""); const pr2=ref(""); const uUrl=ref(""); const pUrl=ref(""); //const proxyUrl=ref("");
 //const prompt=document.querySelector("#prompt"); const pr=document.querySelector("#pr"); const pr2=document.querySelector("#pr2");
@@ -23,6 +24,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
+  const query=getQuery(event); const uUrl=query.url as string;
   //const response=await fetch(`${encodeURIComponent(query)}`);
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
@@ -51,12 +53,11 @@ onMounted(()=>{
     //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-    //const query=getQuery(event); const uUrl=query.url as string;
     uUrl.value=document.getElementById("sp").innerText;
     //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-    pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     //alert("pUrlll: "+pUrl.value);
-    fetchU(pUrl.value); //pUrl.value
+    fetchU(uUrl.value);
   //},5800);
 });
 </script>
