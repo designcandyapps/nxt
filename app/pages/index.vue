@@ -20,7 +20,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
+  const h1=data.result.h1[0]; document.getElementById("hr").innerText=h1;
   //prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
   return data.results;
 };
