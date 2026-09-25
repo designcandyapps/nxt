@@ -32,7 +32,7 @@ const generatePalette=async()=>{alert(1);
   uUrl.value=document.getElementById("sp").innerText; alert("uUrl: "+uUrl.value);
   pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
   //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("pUrl: "+pUrl.value);
-  fetchU(uUrl.value);
+  fetchU(pUrl.value); alert("pUrl: "+pUrl.value);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
