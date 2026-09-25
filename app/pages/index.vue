@@ -28,11 +28,10 @@ const fetchU=async(query)=>{
 
 
 
-const generatePalette=async()=>{//alert(9);
-  uUrl.value=document.getElementById("sp").innerText;
+const generatePalette=async()=>{alert(9);
+  uUrl.value=document.getElementById("sp").innerText; alert("uUrl: "+uUrl.value);
   pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //alert("pUrl: "+pUrl.value);
+  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("pUrl: "+pUrl.value);
   fetchU(uUrl.value);
 
   imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
