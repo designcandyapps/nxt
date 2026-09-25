@@ -29,12 +29,8 @@ const fetchU=async(query)=>{
 
 
 const generatePalette=async()=>{alert(1);
-  /*
-  uUrl.value=document.getElementById("sp").innerText; alert("uUrl: "+uUrl.value);
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
-  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("pUrl: "+pUrl.value);
-  fetchU(pUrl.value); alert("pUrl: "+pUrl.value);
-  */
+  uUrl.value=document.getElementById("ee").src; alert("0uUrl: "+uUrl.value);
+  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("0pUrl: "+pUrl.value);
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -65,13 +61,13 @@ onMounted(()=>{alert(9);
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   setTimeout(function(){alert(0);
-    uUrl.value=document.getElementById("sp").innerText; alert("1uUrl: "+uUrl.value);
-    pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("1pUrl: "+pUrl.value);
-    fetchU(pUrl.value); alert("pUrl: "+pUrl.value);
+    uUrl.value=document.getElementById("sp").innerText; alert("0uUrl: "+uUrl.value);
+    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`; alert("0pUrl: "+pUrl.value);
+    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("1pUrl: "+pUrl.value);
+    fetchU(pUrl.value);
 
-
-      generatePalette();
-    },1800);
+    generatePalette();
+  },1800);
 });
 </script>
 
