@@ -87,7 +87,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       alert("Test0");
-      this.send()
+      //this.send()
     //},12800);
   },
   methods:{
