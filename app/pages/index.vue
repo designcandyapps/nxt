@@ -62,7 +62,7 @@ onMounted(()=>{alert(9);
     uUrl.value="designcandy.com"; //alert("0uUrl: "+uUrl.value); //document.getElementById("tr").innerText
    //>//pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`; alert("0pUrl: "+pUrl.value);
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("1pUrl: "+pUrl.value);
-    fetchU(uUrl.value);
+    //fetchU(uUrl.value);
 
     generatePalette();
   //},1800);
