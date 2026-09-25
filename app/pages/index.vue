@@ -61,7 +61,7 @@ onMounted(()=>{alert(9);
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
 //setTimeout(function(){alert(0);
-    uUrl.value=document.getElementById("h1n").innerText; alert("0uUrl: "+uUrl.value);
+    uUrl.value=document.getElementById("tr").innerText; alert("0uUrl: "+uUrl.value);
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`; alert("0pUrl: "+pUrl.value);
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("1pUrl: "+pUrl.value);
     fetchU(pUrl.value);
