@@ -61,8 +61,6 @@ onMounted(()=>{alert(0);
     //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
-
-    alert("Test2");    
     generatePalette();
   },1800);
 });
@@ -88,8 +86,8 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      alert("Test");
-      //this.send()
+      alert("Test0");
+      this.send()
     //},12800);
   },
   methods:{
