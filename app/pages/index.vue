@@ -26,8 +26,6 @@ const fetchU=async(query)=>{
 };
 
 
-
-
 const generatePalette=async()=>{alert(1);
   //uUrl.value=document.getElementById("ee").src; alert("0uUrl: "+uUrl.value);
   //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("0pUrl: "+pUrl.value);
