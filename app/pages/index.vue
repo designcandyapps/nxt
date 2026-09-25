@@ -62,11 +62,7 @@ onMounted(()=>{alert(8);
     //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
     //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-    //setTimeout(function(){
-      alert("Test2");
-      this.send()
-    //},12800);
-    
+    alert("Test2");    
     generatePalette();
   },1800);
 });
