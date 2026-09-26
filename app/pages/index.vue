@@ -88,7 +88,7 @@ export default{
   data(){return{prompt:"",t:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.send()
+      //this.send()
     //},7800);
   },
   methods:{
