@@ -4,7 +4,7 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 //import {ref,onMounted} from "vue";
 import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 //const uUrl=ref(""); const pUrl=ref("");
-//const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -54,8 +54,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(9);
   //const uUrl=ref(""); const pUrl=ref("");
-  //const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref("");
-  const toLCH=converter("lch"); const isLoading=ref(false);
+  //const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
   //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
