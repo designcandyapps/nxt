@@ -25,11 +25,9 @@ const fetchU=async(query)=>{
   const h1=data.result.h1[0];
   
   document.getElementById("tr").innerText=h1;
-  //alert("TR: "+document.getElementById("tr").innerText);
   //prompt.value=document.getElementById("tr").innerText;
-  //t.value=query;
-  //document.getElementById("tr").innerText;
-  alert("T2: "+document.getElementById("t").value);
+  t.value=query;
+  //document.getElementById("t").value=query;
   return data.results;
 };
 
@@ -62,9 +60,7 @@ onMounted(()=>{alert(9);
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //alert("uUrl: "+uUrl.value);
-  document.getElementById("t").value=uUrl.value;
-  //alert("T1: "+document.getElementById("t").value);
+  //document.getElementById("t").value=uUrl.value;
   fetchU(prompt); //uUrl.value
   setTimeout(function(){alert(0);
     generatePalette();
