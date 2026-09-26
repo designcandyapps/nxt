@@ -5,25 +5,12 @@ import {converter,differenceEuclidean,formatHex,nearest} from "culori";
 const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
 const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
-const fetchPh=async(query)=>{
-  const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
-  return data.results;
-};
-async function fetchPh2(query){
+async function fetchPh(query){
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results;
 }
-async function fetchGetty(query){
-  try{
-    const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
-    if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
-    if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-  }catch(error){console.error("Error2:",error)}
-}
-const fetchU=async(query)=>{
+async function fetchU(query){
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
@@ -34,7 +21,7 @@ const fetchU=async(query)=>{
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   document.getElementById("pr").value=uu;
   return data.results;
-};
+}
 
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
@@ -61,8 +48,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(9);
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-  fetchPh2(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
-  //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
+  //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
 
   var uu=document.getElementById("et").innerText; //alert("uu: "+uu);
   fetchU(uu);
