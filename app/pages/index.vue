@@ -24,7 +24,7 @@ const fetchU=async(query)=>{
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   prompt.value=document.getElementById("tr").innerText;
-  pr.value=document.getElementById("tr").innerText;
+  pr.value=query;
   t.value=document.getElementById("tr").innerText;
   //document.getElementById("t").value=query;
   return data.results;
