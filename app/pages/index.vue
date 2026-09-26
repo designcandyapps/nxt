@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
-const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
-const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
+const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -12,7 +10,7 @@ const fetchPh=async(query)=>{
 };
 async function fetchPh2(query){
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
 }
 async function fetchGetty(query){
@@ -37,7 +35,7 @@ const fetchU=async(query)=>{
 };
 
 const generatePalette=async()=>{alert(1);
-  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
+  imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -59,14 +57,12 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{alert(9);
+onMounted(()=>{//alert(9);
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-  fetchPh2(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
+  fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-
-  var uu=document.getElementById("et").innerText; //alert("uu: "+uu);
-  fetchU(uu);
-  setTimeout(function(){alert(0);
+  var uu=document.getElementById("et").innerText; fetchU(uu);
+  setTimeout(function(){//alert(0);
     generatePalette();
   },1800);
 });
@@ -102,12 +98,6 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#tr").innerText=this.response;
       //document.querySelector("#h1n").innerText=this.response;
-    },
-    async send9(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-      //alert("S: "+document.querySelector(".slick-slide"));
-      document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
   },
 }
