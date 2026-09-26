@@ -28,7 +28,7 @@ const fetchU=async(query)=>{
   t.value=uu; //document.getElementById("et").innerText
 
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  document.getElementById("pr").value=uu; //document.getElementById("t").value=uUrl.value;
+  pr.value=uu; //document.getElementById("t").value=uUrl.value;
 
   return data.results;
 };
