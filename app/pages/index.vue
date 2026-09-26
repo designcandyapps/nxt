@@ -64,7 +64,7 @@ onMounted(()=>{alert(9);
   uUrl.value="designcandy.com";
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //document.getElementById("t").value=uUrl.value;
-  fetchU(uUrl.value);
+  fetchU(uu);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
