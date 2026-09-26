@@ -101,6 +101,7 @@ export default{
       const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#tr").innerText=this.response;
       //document.querySelector("#h1n").innerText=this.response;
+      //--document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
     async send2(){
       const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
@@ -110,9 +111,10 @@ export default{
       //document.querySelector("#h1n").innerText=this.response;
     },
     async send3(){
-      const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
+      //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
       //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-      const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
+      const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
       const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
       //prompt.value=document.getElementById("tr").innerText;
       var uu=document.getElementById("et").innerText;
@@ -120,12 +122,6 @@ export default{
       //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
       document.getElementById("pr").value=uu;
       return data.results;
-    },
-    async send9(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
-      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
-      //alert("S: "+document.querySelector(".slick-slide"));
-      document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
   },
 }
