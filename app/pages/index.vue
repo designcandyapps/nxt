@@ -19,8 +19,6 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  //alert("Q: "+query);
-  t.value=query;
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
@@ -28,8 +26,9 @@ const fetchU=async(query)=>{
   
   document.getElementById("tr").innerText=h1;
   //alert("TR: "+document.getElementById("tr").innerText);
-  prompt.value=document.getElementById("tr").innerText;
-  //t.value=document.getElementById("tr").innerText;
+  //prompt.value=document.getElementById("tr").innerText;
+  t.value=query;
+  //document.getElementById("tr").innerText;
   alert("T2: "+document.getElementById("t").value);
   return data.results;
 };
@@ -66,7 +65,7 @@ onMounted(()=>{alert(9);
   //alert("uUrl: "+uUrl.value);
   document.getElementById("t").value=uUrl.value;
   //alert("T1: "+document.getElementById("t").value);
-  fetchU(uUrl.value);
+  fetchU(prompt); //uUrl.value
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
