@@ -22,6 +22,7 @@ const fetchU=async(query)=>{
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   prompt.value=document.getElementById("tr").innerText; alert("PR99: "+prompt.value);
+  t.value=document.getElementById("tr").innerText; alert("T: "+t.value);
   return data.results;
 };
 
