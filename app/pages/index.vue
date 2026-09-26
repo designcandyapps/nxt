@@ -59,8 +59,9 @@ onMounted(()=>{alert(9);
 
   //const pr=document.querySelector("#pr");
   uUrl.value="designcandy.com";
-  alert("uUrl: "+uUrl.value);
-  fetchU(uUrl.value);
+  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  alert("pUrl: "+pUrl.value);
+  fetchU(pUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
