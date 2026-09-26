@@ -24,7 +24,7 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  prompt.value=document.getElementById("tr").innerText;
+  //prompt.value=document.getElementById("tr").innerText;
   t.value=document.getElementById("tr").innerText;
   return data.results;
 };
@@ -58,7 +58,7 @@ onMounted(()=>{alert(9);
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  alert("uUrl: "+uUrl);
+  alert("uUrl: "+uUrl.value);
   fetchU(uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
