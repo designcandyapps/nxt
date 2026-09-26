@@ -65,6 +65,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   //var uu=document.getElementById("et").innerText; fetchU(uu);
+
+  uUrl.value="designcandy.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; fetchU(pUrl.value);
   /*setTimeout(function(){alert(0);
     generatePalette();
   },1800);*/
@@ -111,8 +113,8 @@ export default{
       //document.querySelector("#h1n").innerText=this.response;
     },
     async send3(){
-      const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
-      //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+      //const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl.value})});
+      const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
       //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
       const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
       const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
