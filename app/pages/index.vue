@@ -59,9 +59,7 @@ onMounted(()=>{alert(9);
 
   uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //document.getElementById("t").value=uUrl.value;
-  //alert("PROMPT: "+prompt);
-  //alert("PROMPT2: "+prompt.value);
-  fetchU(prompt); //uUrl.value
+  fetchU(uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
