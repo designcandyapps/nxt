@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const pUrl=ref("");
+const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
 const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
