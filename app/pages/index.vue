@@ -57,7 +57,8 @@ onMounted(()=>{alert(9);
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   uUrl.value="designcandy.com";
-  fetchU(uUrl.value);
+  fetchU(document.querySelector("#pr").value);
+  //uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
