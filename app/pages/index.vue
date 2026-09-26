@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const pUrl=ref("");
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
 const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
@@ -56,10 +56,10 @@ onMounted(()=>{alert(9);
   fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-  const pr=document.querySelector("#pr");
+  //const pr=document.querySelector("#pr");
   //uUrl.value="designcandy.com";
-  uUrl.value=document.querySelector("#pr").value;
-  fetchU(pr.value);
+  //uUrl.value=document.querySelector("#pr").value;
+  fetchU(t.value);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
