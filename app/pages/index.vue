@@ -83,7 +83,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      alert("Test0");
+      //alert("Test0");
       //this.send()
     //},12800);
   },
