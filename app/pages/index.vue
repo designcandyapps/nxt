@@ -8,18 +8,7 @@ async function fetchPh(query){
   const data=await response.json(); alert("RES1P: "+JSON.stringify(data));
   return data.results;
 }
-async function fetchU(query){
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  //prompt.value=document.getElementById("tr").innerText;
-  var uu=document.getElementById("et").innerText;
-  t.value=h1; //document.getElementById("et").innerText
-  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  document.getElementById("pr").value=uu;
-  return data.results;
-}
+
 
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
