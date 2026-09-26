@@ -56,11 +56,9 @@ onMounted(()=>{alert(9);
   fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-  var uu=document.getElementById("et").innerText;
-  alert("uu: "+uu);
-  //uUrl.value="designcandy.com";
+  var uu=document.getElementById("et").innerText; //alert("uu: "+uu);
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //document.getElementById("t").value=uUrl.value;
+  document.getElementById("pr").value=uu; //document.getElementById("t").value=uUrl.value;
   fetchU(uu);
   setTimeout(function(){alert(0);
     generatePalette();
