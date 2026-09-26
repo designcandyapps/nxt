@@ -64,7 +64,7 @@ onMounted(()=>{//alert(9);
   var uu=document.getElementById("et").innerText; fetchU(uu);
   setTimeout(function(){alert(0);
     generatePalette();
-  },1800);
+  },2800);
 });
 </script>
 
