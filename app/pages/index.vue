@@ -23,16 +23,13 @@ const fetchU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  prompt.value=document.getElementById("tr").innerText;
-  //pr.value=query;
+  //prompt.value=document.getElementById("tr").innerText;
   t.value=document.getElementById("tr").innerText;
-  //document.getElementById("t").value=query;
   return data.results;
 };
 
 const generatePalette=async()=>{alert(1);
-  imageUrl.value=document.getElementById("ee").src;
-  alert("IU1: "+imageUrl.value);
+  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -61,7 +58,7 @@ onMounted(()=>{alert(9);
 
   var uu=document.getElementById("et").innerText;
   alert("uu: "+uu);
-  uUrl.value="designcandy.com";
+  //uUrl.value="designcandy.com";
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //document.getElementById("t").value=uUrl.value;
   fetchU(uu);
