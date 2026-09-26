@@ -19,7 +19,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  pr.value=query;
+  //pr.value=query;
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
@@ -60,7 +60,8 @@ onMounted(()=>{alert(9);
   //const pr=document.querySelector("#pr");
   uUrl.value="designcandy.com";
   //uUrl.value=document.querySelector("#pr").value;
-  fetchU(document.querySelector("#pr").value);
+  alert("PR: "+pr.value);
+  fetchU(pr.value);
   //uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
