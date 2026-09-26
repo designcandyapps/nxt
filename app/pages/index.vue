@@ -47,7 +47,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{//alert(9);
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
-  var uu=document.getElementById("et").innerText; fetchU(uu);
+  //var uu=document.getElementById("et").innerText; fetchU(uu);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
