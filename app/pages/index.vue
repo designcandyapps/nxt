@@ -28,8 +28,8 @@ const fetchU=async(query)=>{
 };
 
 
-const generatePalette=async()=>{//alert(1);
-  imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
+const generatePalette=async()=>{alert(1);
+  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -51,13 +51,13 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{//alert(9);
+onMounted(()=>{alert(9);
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
   //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   uUrl.value="designcandy.com"; fetchU(uUrl.value);
-  setTimeout(function(){//alert(0);
+  setTimeout(function(){alert(0);
     generatePalette();
   },1800);
 });
