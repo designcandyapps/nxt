@@ -31,7 +31,6 @@ const fetchU=async(query)=>{
 };
 
 const generatePalette=async()=>{alert(1);
-  //imageUrl.value="//"+$("#et").text()+"/im/dc.png";
   imageUrl.value=document.getElementById("ee").src;
   alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -60,7 +59,8 @@ onMounted(()=>{alert(9);
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small}); /*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-  uUrl.value=document.getElementById("et").innerText;
+  uUrl.value="designcandy.com";
+  //document.getElementById("et").innerText;
   //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //document.getElementById("t").value=uUrl.value;
   fetchU(uUrl.value);
