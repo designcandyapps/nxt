@@ -61,7 +61,7 @@ onMounted(()=>{alert(9);
   uUrl.value="designcandy.com";
   //uUrl.value=document.querySelector("#pr").value;
   alert("PR: "+document.querySelector("#pr").value);
-  fetchU(document.querySelector("#pr").value);
+  fetchU(pho.value);
   //uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
