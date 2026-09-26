@@ -27,6 +27,7 @@ const fetchU=async(query)=>{
   alert("TR: "+document.getElementById("tr").innerText);
   prompt.value=document.getElementById("tr").innerText;
   t.value=document.getElementById("tr").innerText;
+  alert("T2: "+document.getElementById("t").value);
   return data.results;
 };
 
@@ -60,6 +61,8 @@ onMounted(()=>{alert(9);
 
   uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("uUrl: "+uUrl.value);
+  document.getElementById("t").value=uUrl.value;
+  alert("T1: "+document.getElementById("t").value);
   fetchU(uUrl.value);
   setTimeout(function(){alert(0);
     generatePalette();
