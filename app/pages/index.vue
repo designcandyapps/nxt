@@ -25,7 +25,7 @@ const fetchU=async(query)=>{
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   prompt.value=document.getElementById("tr").innerText;
   //pr.value=query;
-  //t.value=document.getElementById("tr").innerText;
+  t.value=document.getElementById("tr").innerText;
   //document.getElementById("t").value=query;
   return data.results;
 };
