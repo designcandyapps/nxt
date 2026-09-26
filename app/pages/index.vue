@@ -35,7 +35,7 @@ const fetchU=async(query)=>{
 };
 
 const generatePalette=async()=>{alert(1);
-  imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
+  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -62,7 +62,7 @@ onMounted(()=>{//alert(9);
   fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});/*alert("PH: "+pho.value)*/});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   var uu=document.getElementById("et").innerText; fetchU(uu);
-  setTimeout(function(){//alert(0);
+  setTimeout(function(){alert(0);
     generatePalette();
   },1800);
 });
