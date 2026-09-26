@@ -63,9 +63,9 @@ onMounted(()=>{alert(9);
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("1pUrl: "+pUrl.value);
     //fetchU(uUrl.value);
 
-  setTimeout(function(){alert(0);
+  //setTimeout(function(){alert(0);
     generatePalette();
-  },1800);
+  //},1800);
 });
 </script>
 
