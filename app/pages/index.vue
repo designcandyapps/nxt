@@ -94,7 +94,7 @@ export default{
       //document.querySelector("#tr").innerText=this.response;
       //document.querySelector("#h1n").innerText=this.response;
     },
-    async send2(){
+    async send9(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr2").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response);
       //alert("S: "+document.querySelector(".slick-slide"));
