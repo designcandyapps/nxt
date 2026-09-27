@@ -74,7 +74,7 @@ onMounted(()=>{alert(4);
   //var uu=document.getElementById("et").innerText;
   var uu="designcandy.com";
   var u="designcandy.com";
-  fetchU2(u);
+  //fetchU2(u);
 
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
