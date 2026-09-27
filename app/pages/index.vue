@@ -66,7 +66,7 @@ onMounted(()=>{alert(5);
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   var uu=document.getElementById("et").innerText;
-  //fetchU(uu);
+  fetchU(uu);
 
   //--uUrl.value="designcandy.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; fetchU(pUrl.value);
 
@@ -97,7 +97,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       //alert("Test0");
-      this.send3()
+      //this.send3()
     //},12800);
   },
   methods:{
