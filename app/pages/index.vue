@@ -1,21 +1,14 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori";
-const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
-const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]);
-const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
+const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
-async function fetchPh2(query){
-  const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
-  const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
-  return data.results;
-}
 async function fetchGetty(query){
   try{
     const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
@@ -97,7 +90,6 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      //alert("Test0");
       this.send3()
     //},12800);
   },
