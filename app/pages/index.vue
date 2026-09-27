@@ -27,7 +27,7 @@ async function fetchGetty(query){
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RESPz: "+JSON.stringify(data));
+  const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   //prompt.value=document.getElementById("tr").innerText;
   var uu=document.getElementById("et").innerText;
@@ -94,7 +94,7 @@ export default{
   mounted(){
     //setTimeout(function(){
       //alert("Test0");
-      this.send3()
+      //this.send3()
     //},12800);
   },
   methods:{
