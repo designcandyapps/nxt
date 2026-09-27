@@ -18,9 +18,9 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   //prompt.value=document.getElementById("tr").innerText;
   var uu=document.getElementById("et").innerText;
@@ -55,7 +55,10 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{alert(4);
 
-  uUrl.value="designcandy.com"; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; fetchU(pUrl.value);
+  uUrl.value="designcandy.com";
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=h1`;
+  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  fetchU(pUrl.value);
 
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
