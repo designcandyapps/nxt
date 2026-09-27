@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref("");
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 
 const fetchPh=async(query)=>{
@@ -21,6 +21,17 @@ const fetchU=async(query)=>{
   //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
+  //prompt.value=document.getElementById("tr").innerText;
+  var uu=document.getElementById("et").innerText;
+  t.value=h1; //document.getElementById("et").innerText
+  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  document.getElementById("pr").value=uu;
+  return data.results;
+};
+const fetchU2=async(query)=>{
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   //prompt.value=document.getElementById("tr").innerText;
   var uu=document.getElementById("et").innerText;
@@ -56,16 +67,20 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{alert(4);
 
   uUrl.value="designcandy.com";
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
-  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
+  pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   fetchU(pUrl.value);
+
+  //var uu=document.getElementById("et").innerText;
+  var uu="designcandy.com";
+  var u="designcandy.com";
+  fetchU2(u);
 
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-  var uu=document.getElementById("et").innerText; fetchU(uu);
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
