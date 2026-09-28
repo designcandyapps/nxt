@@ -68,10 +68,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
-  uUrl.value=document.getElementById("et").innerText;
-  //zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
-  fetchU(pUrl.value);
+
   //fetchU2(u);
 
 /*
@@ -81,6 +78,11 @@ onMounted(()=>{//alert(4);
 */
   setTimeout(function(){alert(0);
     generatePalette();
+
+  uUrl.value=document.getElementById("et").innerText;
+  //zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
+  fetchU(pUrl.value);
   },1800);
 });
 </script>
