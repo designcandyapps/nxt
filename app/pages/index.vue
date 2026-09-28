@@ -105,7 +105,7 @@ onMounted(()=>{//alert(4);
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    this.send()
+    //this.send()
   },
   methods:{
     async send(){
