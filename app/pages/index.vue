@@ -69,10 +69,8 @@ onMounted(()=>{//alert(4);
   uUrl.value=u;
   zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
-  //fetchU(pUrl.value);
-
-  //var u="designcandy.com"; var uu="designcandy.com";
-  fetchU2(u);
+  fetchU(pUrl.value);
+  //fetchU2(u);
 
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
