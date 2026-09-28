@@ -64,14 +64,13 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{alert(4);
-
+onMounted(()=>{//alert(4);
+  const u=document.getElementById("et").innerText;
   uUrl.value="designcandy.com";
   zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   //fetchU(pUrl.value);
 
-  var u=document.getElementById("et").innerText;
   //var u="designcandy.com"; var uu="designcandy.com";
   fetchU2(u);
 
