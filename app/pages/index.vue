@@ -71,16 +71,16 @@ onMounted(()=>{alert(4);
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   //fetchU(pUrl.value);
 
+  //var u=document.getElementById("et").innerText;
+  //var u="designcandy.com"; var uu="designcandy.com";
+  fetchU2(u);
+
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 */
-
   setTimeout(function(){alert(0);
-    var u=document.getElementById("et").innerText;
-    //var u="designcandy.com"; var uu="designcandy.com";
-    fetchU2(u);
     generatePalette();
   },1800);
 });
