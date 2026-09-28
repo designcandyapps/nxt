@@ -71,11 +71,6 @@ onMounted(()=>{alert(4);
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   //fetchU(pUrl.value);
 
-  //var uu=document.getElementById("et").innerText;
-  var uu="designcandy.com";
-  var u="designcandy.com";
-  fetchU2(u);
-
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
@@ -83,6 +78,9 @@ onMounted(()=>{alert(4);
 */
 
   setTimeout(function(){alert(0);
+    var u=document.getElementById("et").innerText;
+    //var u="designcandy.com"; var uu="designcandy.com";
+    fetchU2(u);
     generatePalette();
   },1800);
 });
