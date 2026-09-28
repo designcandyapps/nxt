@@ -17,8 +17,12 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  //uUrl=query.url as string;
+  ////uUrl=query.url as string;
+  //uUrl.value=document.getElementById("ee").src; alert("UU1: "+uUrl.value);
+  //isLoading.value=true; prUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU3: "+pUrl.value);
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
+  //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
@@ -44,7 +48,7 @@ const fetchU2=async(query)=>{
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
     var i=0; for(const type of Object.keys(palettesz)){
@@ -67,8 +71,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
   uUrl.value=document.getElementById("et").innerText;
-  pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
+  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   alert("pUrl.value: "+pUrl.value);
   fetchU(pUrl.value);
   fetchU2(u);
