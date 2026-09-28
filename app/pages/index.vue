@@ -18,7 +18,9 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  //uUrl=query.url as string;
+
+  //const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
@@ -66,9 +68,9 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
-  uUrl.value=u;
-  zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
-  pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`; alert("pUrl.value: "+pUrl.value);
+  uUrl.value=document.getElementById("et").innerText;
+  //zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
   fetchU(pUrl.value);
   //fetchU2(u);
 
