@@ -66,7 +66,7 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
-  uUrl.value="designcandy.com";
+  uUrl.value=u;
   zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   //fetchU(pUrl.value);
