@@ -71,7 +71,7 @@ onMounted(()=>{alert(4);
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
   //fetchU(pUrl.value);
 
-  //var u=document.getElementById("et").innerText;
+  var u=document.getElementById("et").innerText;
   //var u="designcandy.com"; var uu="designcandy.com";
   fetchU2(u);
 
