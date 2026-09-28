@@ -71,7 +71,7 @@ onMounted(()=>{//alert(4);
   //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
   alert("pUrl.value: "+pUrl.value);
   fetchU(pUrl.value);
-  //fetchU2(u);
+  fetchU2(u);
 
 
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
