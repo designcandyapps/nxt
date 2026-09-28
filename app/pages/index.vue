@@ -69,7 +69,7 @@ onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
   uUrl.value=document.getElementById("et").innerText;
   zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(zUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
   fetchU(pUrl.value);
   //fetchU2(u);
 
