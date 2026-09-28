@@ -3,7 +3,6 @@ const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
 import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
-
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
@@ -69,8 +68,8 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
   uUrl.value=document.getElementById("et").innerText;
-  //zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
+  zUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(zUrl.value)}&selector=img`; alert("pUrl.value: "+pUrl.value);
   fetchU(pUrl.value);
   //fetchU2(u);
 
