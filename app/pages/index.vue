@@ -105,34 +105,19 @@ onMounted(()=>{//alert(4);
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //setTimeout(function(){
-      //this.send3()
-    //},12800);
+    this.send()
   },
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await //response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       //document.querySelector("#tr").innerText=this.response;
-      //document.querySelector("#h1n").innerText=this.response;
+      document.querySelector("#h1n").innerText=this.response;
       //--document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
     async send2(){
       const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
       const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
-      return data.results;
-    },
-    async send3(){
-      //const response=await fetch("/api/ws",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:uUrl.value})});
-      const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-      //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-      const data=await response.json(); alert("RESPz: "+JSON.stringify(data));
-      const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-      //prompt.value=document.getElementById("tr").innerText;
-      var uu=document.getElementById("et").innerText;
-      t.value=h1; //document.getElementById("et").innerText
-      //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-      document.getElementById("pr").value=uu;
       return data.results;
     },
   },
