@@ -73,11 +73,11 @@ onMounted(()=>{//alert(4);
   fetchU(pUrl.value);
   //fetchU2(u);
 
-/*
-  const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
+
+  //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-*/
+
   setTimeout(function(){alert(0);
     generatePalette();
   },1800);
