@@ -69,12 +69,12 @@ onMounted(()=>{alert(4);
   uUrl.value="designcandy.com";
   zUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
   pUrl.value=`/api/ws?url=${encodeURIComponent(zUrl.value)}`;
-  fetchU(pUrl.value);
+  //fetchU(pUrl.value);
 
   //var uu=document.getElementById("et").innerText;
   var uu="designcandy.com";
   var u="designcandy.com";
-  //fetchU2(u);
+  fetchU2(u);
 
 /*
   const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
