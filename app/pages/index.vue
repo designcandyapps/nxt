@@ -70,19 +70,17 @@ function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{//alert(4);
   const u=document.getElementById("et").innerText;
-  uUrl.value=document.getElementById("et").innerText;
-  pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
-  //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  alert("pUrl.value: "+pUrl.value);
-  fetchU(pUrl.value);
-  fetchU2(u);
-
-
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
+  fetchU2(u);
 
   setTimeout(function(){alert(0);
+    uUrl.value=document.getElementById("et").innerText;
+    pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
+    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+    alert("pUrl.value: "+pUrl.value);
+    fetchU(pUrl.value);
     generatePalette();
   },2800);
 });
