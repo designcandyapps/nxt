@@ -84,7 +84,7 @@ onMounted(()=>{//alert(4);
 
   setTimeout(function(){alert(0);
     generatePalette();
-  },1800);
+  },2800);
 });
 </script>
 
