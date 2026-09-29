@@ -74,7 +74,7 @@ const fetchImgU=async(query)=>{
 
 
   ////////////////////////
-  //generatePalette();
+  generatePalette();
 
   /*
   alert("EE: "+document.getElementById("ee").src);
