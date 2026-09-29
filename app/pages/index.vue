@@ -54,12 +54,12 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
+  const im=data.result; //xx//alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
   return data.results;
 
   uUrl.value=im; alert("II1: "+uUrl.value);
-  document.getElementById("ee").src=im;
+  document.getElementById("ee").src=uUrl.value;
 
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //zzconst img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
