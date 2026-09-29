@@ -29,7 +29,7 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   return data.results;
-  const im=data.result.img[0]; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
+  const im=data.result.img[0]; alert(im.src); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   
   iUrl.value=document.getElementById("ee").src; alert("II1: "+iUrl.value);
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`;
