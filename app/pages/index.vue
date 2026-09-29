@@ -91,9 +91,9 @@ onMounted(()=>{
     uUrl.value=document.getElementById("et").innerText;
     fetchImgU(uUrl.value);
   //},2000);
-  setTimeout(function(){
+  //setTimeout(function(){
     generatePalette();
-  },7000);
+  //},7000);
 });
 </script>
 
