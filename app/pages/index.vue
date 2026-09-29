@@ -114,9 +114,9 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
 
-  setTimeout(function(){alert(0);
+  //setTimeout(function(){alert(0);
     //generatePalette();
-  },2000);
+  //},2000);
 });
 </script>
 
