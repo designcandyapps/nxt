@@ -31,8 +31,8 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
-  const im=data.result.img[0]; document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const im=data.result.img[0]; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
