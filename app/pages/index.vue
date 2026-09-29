@@ -115,7 +115,7 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
 
-  //generatePalette();
+  generatePalette();
   
   setTimeout(function(){alert(0);
     generatePalette();
@@ -125,7 +125,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><span id="et"></span><span id="ei"></span><span id="z"></span>
+    <span class="g"><span id="et"></span><img id="ee" class="ff" src="https://pinfluents.com/_BCK/4/im/hn.png" width="60" height="60"><span id="ei"></span><span id="z"></span>
       <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pho" v-model="pho" style="border:2px solid blue;">
       <input id="pho2" v-model="pho2" style="border:2px solid purple;"><span id="response" v-if="response">{{response}}</span>
     </span>
