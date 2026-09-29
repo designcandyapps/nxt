@@ -18,12 +18,11 @@ async function fetchGetty(query){
 }
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
   //prompt.value=document.getElementById("tr").innerText;
   var uu=document.getElementById("et").innerText;
   t.value=h1; //document.getElementById("et").innerText
-  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   document.getElementById("pr").value=uu;
   return data.results;
 };
@@ -34,19 +33,15 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  //prompt.value=document.getElementById("tr").innerText;
+  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
   var uu=document.getElementById("et").innerText;
-  t.value=h1; //document.getElementById("et").innerText
-  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   document.getElementById("pr").value=uu;
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; alert("PU2: "+proxyUrl.value);
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
     var i=0; for(const type of Object.keys(palettesz)){
@@ -55,10 +50,6 @@ const generatePalette=async()=>{alert(1);
     }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
-    const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G2: "+r0);
-    const r2=document.querySelector("#dv8").style.backgroundColor;
-    const r3=document.querySelector("#dv10").style.backgroundColor;
-    document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
