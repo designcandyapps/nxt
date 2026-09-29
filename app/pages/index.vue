@@ -19,22 +19,22 @@ async function fetchGetty(query){
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
-  const h1=data.result.h1[0];
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   return data.results;
-  document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
 };
 const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result.img[0]; alert(im.src); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
-  return data.results;
-  
-  iUrl.value=document.getElementById("ee").src; alert("II1: "+iUrl.value);
+  const im=data.result.img[0].src; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
+
+  alert(document.getElementById("ee").src);
+  iUrl.value=document.getElementById("ee").src; //alert("II1: "+iUrl.value);
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
 
+  return data.results;
 };
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
