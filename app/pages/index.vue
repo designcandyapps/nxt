@@ -18,7 +18,7 @@ async function fetchGetty(query){
 }
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
+  const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   return data.results;
 };
@@ -26,25 +26,16 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  //const f=JSON.stringify(f);
-  //const h=JSON.parse(data);
-  const im=data.result;
-  //h=JSON.stringify(data);
-  //alert("H: "+h);
-  //const im=data.result[0];
+  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
+  const im=data.result; im="https://www."+document.getElementById("et").innerText+"/"+im;
 
-
-  alert(im);
-  
-  //document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
-  iUrl.value=document.getElementById("ee").src; //alert("II1: "+iUrl.value);
-  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
-
+  document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
+  //iUrl.value=im; alert("II1: "+iUrl.value);
+  //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
+
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
