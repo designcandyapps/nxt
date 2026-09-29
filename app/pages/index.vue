@@ -64,8 +64,8 @@ onMounted(()=>{
     uUrl.value=document.getElementById("et").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    //alert("pUrl.value: "+pUrl.value);
-    //fetchImgU(pUrl.value);
+    alert("pUrl.value: "+pUrl.value);
+    fetchImgU(pUrl.value);
   
   //setTimeout(function(){alert(0);
     generatePalette();
