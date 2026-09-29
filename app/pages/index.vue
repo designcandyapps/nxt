@@ -50,32 +50,49 @@ const fetchU=async(query)=>{
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   return data.results;
 };
-const fetchImgU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
+const fetchImgU=async(query)=>{  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const im=data.result; //alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
-  //document.getElementById("ee").src=im;
-  //document.getElementsByClassName("ee").src=im;
   return data.results;
 
   uUrl.value=im; alert("II1: "+uUrl.value);
-  document.getElementById("ee").src=uUrl.value;
+
 
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //zzconst img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
-  document.getElementById("ee").src=im; alert("DD: "+document.getElementById("ee").src);
+  document.getElementById("ee").src=im; //alert("DD: "+document.getElementById("ee").src);
 
 
   ////////////////////////////////////////////////
   //GEN PALETTE:
   //generatePalette();
-  //alert("EE2: "+document.getElementById("ee").src);
+  alert("EE: "+document.getElementById("ee").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
+
+
+  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
+  isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
+
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
+  img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
+    const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
+    var i=0; for(const type of Object.keys(palettesz)){
+      const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
+      paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
+    }
+    const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
+    backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
+    const r0=document.querySelector("#dv7").style.backgroundColor; alert("G2: "+r0);
+    const r2=document.querySelector("#dv8").style.backgroundColor;
+    const r3=document.querySelector("#dv10").style.backgroundColor;
+    document.body.style.backgroundColor=r0;
+  };
+  img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
 
 
@@ -91,9 +108,9 @@ onMounted(()=>{
     uUrl.value=document.getElementById("et").innerText;
     fetchImgU(uUrl.value);
   //},2000);
-  setTimeout(function(){
+  //setTimeout(function(){
     generatePalette();
-  },1800);
+  //},1800);
 });
 </script>
 
@@ -116,13 +133,19 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //this.send()
+    //this.send3()
   },
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       document.querySelector("#h1n").innerText=this.response;
+    },
+    async send3(){
+      const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+      const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
+      const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+      return data.results;
     },
   },
 }
