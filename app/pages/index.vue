@@ -61,11 +61,12 @@ const fetchImgU=async(query)=>{
   //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
 
-  uUrl.value=im; //alert("II1: "+uUrl.value);
-  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PUI: "+pUrl.value);
+  uUrl.value=im;
+  alert("II1: "+uUrl.value);
+  //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PUI: "+pUrl.value);
   //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
 
-  document.getElementById("ee").src=uUrl.value; //alert("DD: "+document.getElementById("ee").src);
+  //////////////////////document.getElementById("ee").src=uUrl.value; //alert("DD: "+document.getElementById("ee").src);
 
 
 
@@ -73,10 +74,9 @@ const fetchImgU=async(query)=>{
 
 
 
+  ////////////////////////generatePalette();
 
   /*
-  //generatePalette();
-  */
   alert("EE: "+document.getElementById("ee").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
@@ -100,6 +100,7 @@ const fetchImgU=async(query)=>{
     document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
+  */
 };
 
 
