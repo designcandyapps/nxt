@@ -27,9 +27,12 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result.img[0]; alert(im); //document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
+  const im=data.result[0];
 
-  //alert(document.getElementById("ee").src);
+
+  alert(im);
+  
+  //document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   iUrl.value=document.getElementById("ee").src; //alert("II1: "+iUrl.value);
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
