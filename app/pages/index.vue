@@ -20,7 +20,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  prompt.value=document.getElementById("tr").innerText; //prompt.value=h1;
+  prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   return data.results;
 };
 const fetchImgU=async(query)=>{
@@ -63,8 +63,8 @@ onMounted(()=>{
     uUrl.value=document.getElementById("et").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    alert("pUrl.value: "+pUrl.value);
-    fetchImgU(pUrl.value);
+    //alert("pUrl.value: "+pUrl.value);
+    //fetchImgU(pUrl.value);
   
   //setTimeout(function(){alert(0);
     generatePalette();
