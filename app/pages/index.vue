@@ -114,6 +114,9 @@ export default{
     
       const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
 
+
+
+  
   },
 }
 </script>
