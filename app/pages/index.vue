@@ -26,15 +26,18 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; im="https://www."+document.getElementById("et").innerText+"/"+im;
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const im=data.result; im="https://www."+document.getElementById("et").innerText+"/"+im; alert(im);
 
-  document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
+  //document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
+alert(document.getElementById("ee").src); //https://www.designcandy.com/im/dc.png
+
   //iUrl.value=im; alert("II1: "+iUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
+
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -65,7 +68,7 @@ onMounted(()=>{
     fetchImgU(uUrl.value);
   
   //setTimeout(function(){alert(0);
-    generatePalette();
+    //generatePalette();
   //},2000);
 });
 </script>
