@@ -74,7 +74,7 @@ const fetchImgU=async(query)=>{
 
   ////////////////////////////////////////////////
   //GEN PALETTE:
-  //generatePalette();
+  generatePalette();
   //alert("EE2: "+document.getElementById("ee").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
