@@ -55,7 +55,7 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; document.getElementById("ee").src=im; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+  const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
   
   return data.results;
