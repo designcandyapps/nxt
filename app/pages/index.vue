@@ -28,10 +28,10 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   //const f=JSON.stringify(f);
-  const h=JSON.parse(data);
-  const im=h.result;
-  h=JSON.stringify(data);
-  alert("H: "+h);
+  //const h=JSON.parse(data);
+  const im=data.result;
+  //h=JSON.stringify(data);
+  //alert("H: "+h);
   //const im=data.result[0];
 
 
