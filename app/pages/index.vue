@@ -59,7 +59,7 @@ const fetchImgU=async(query)=>{
   return data.results;
 
   uUrl.value=im; alert("II1: "+uUrl.value);
-  document.getElementById("ee").src=im;
+  document.getElementById("ei").children("img").src=im;
 
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //zzconst img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
