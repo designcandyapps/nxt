@@ -85,10 +85,10 @@ onMounted(()=>{
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
   fetchU(document.getElementById("et").innerText);
-  setTimeout(function(){
+  //setTimeout(function(){
     uUrl.value=document.getElementById("et").innerText;
     fetchImgU(uUrl.value);
-  },2000);
+  //},2000);
   setTimeout(function(){
     generatePalette();
   },2000);
