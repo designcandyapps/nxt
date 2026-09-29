@@ -20,7 +20,7 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  ////----prompt.value=document.getElementById("tr").innerText; //prompt.value=h1;
+  prompt.value=document.getElementById("tr").innerText; //prompt.value=h1;
   //document.getElementById("pr").value=document.getElementById("et").innerText;
   return data.results;
 };
@@ -54,11 +54,11 @@ function discoverPalettes(colors){const palettes={}; for(const color of colors){
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
 onMounted(()=>{
-  const u=document.getElementById("et").innerText;
+//const u=document.getElementById("et").innerText;
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  fetchU(u);
+  fetchU(document.getElementById("et").innerText);
 
   setTimeout(function(){alert(0);
     uUrl.value=document.getElementById("et").innerText;
