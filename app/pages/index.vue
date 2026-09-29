@@ -33,10 +33,10 @@ const generatePalette=async()=>{alert(1);
     }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
-    /*const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G2: "+r0);
+    const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G2: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
-    document.body.style.backgroundColor=r0;*/
+    document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
 };
@@ -54,7 +54,7 @@ const fetchImgU=async(query)=>{  const response=await fetch(`https://web.scraper
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; //alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+  const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
   return data.results;
 
   uUrl.value=im; alert("II1: "+uUrl.value);
@@ -133,7 +133,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    this.send3()
+    //this.send3()
   },
   methods:{
     async send(){
