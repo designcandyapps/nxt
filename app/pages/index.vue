@@ -17,7 +17,7 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const generatePalette=async()=>{alert(1);
-  alert("EE: "+document.getElementById("ei img").src);
+  alert("EE: "+document.getElementById("ei").children("img").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
