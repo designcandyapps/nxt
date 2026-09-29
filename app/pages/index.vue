@@ -69,13 +69,13 @@ const fetchImgU=async(query)=>{
 
   ////////////////////////////////////////////////
   //GEN PALETTE:
-  generatePalette();
-  //alert("EE: "+document.getElementById("ee").src);
+  //generatePalette();
+  alert("EE: "+document.getElementById("ee").src);
 
-  //uUrl.value=im; alert("II1: "+uUrl.value);
-  //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
+  uUrl.value=im; alert("II1: "+uUrl.value);
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
 
-/*
+
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
 
@@ -88,13 +88,13 @@ const fetchImgU=async(query)=>{
     }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
-    const r0=document.querySelector("#dv7").style.backgroundColor; alert("G2: "+r0);
+    const r0=document.querySelector("#dv7").style.backgroundColor; alert("G3: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
     document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
-  */
+
   return data.results;
 };
 
