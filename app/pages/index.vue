@@ -91,7 +91,7 @@ onMounted(()=>{
   //},2000);
   setTimeout(function(){
     generatePalette();
-  },2000);
+  },7000);
 });
 </script>
 
