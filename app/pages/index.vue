@@ -23,7 +23,7 @@ const fetchU=async(query)=>{
   prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
   return data.results;
 };
-const fetchImgU=async(query)=>{
+const fetchImgU=async(query)=>{alert(4);
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
