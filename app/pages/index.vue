@@ -33,7 +33,7 @@ const generatePalette=async()=>{alert(1);
     }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
-    const r0=document.querySelector("#dv7").style.backgroundColor; alert("G2: "+r0);
+    const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G2: "+r0);
     const r2=document.querySelector("#dv8").style.backgroundColor;
     const r3=document.querySelector("#dv10").style.backgroundColor;
     document.body.style.backgroundColor=r0;
