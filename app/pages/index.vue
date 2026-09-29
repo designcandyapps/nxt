@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const pr=ref(""); const uUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
+import {converter,differenceEuclidean,formatHex,nearest} from "culori"; const uUrl=ref(""); const iUrl=ref(""); const pUrl=ref(""); const zUrl=ref("");
 const imageUrl=ref(""); const proxyUrl=ref(""); const palette=ref([]); const backgroundImage=ref(""); const toLCH=converter("lch"); const isLoading=ref(false);
 const fetchPh=async(query)=>{
   const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
@@ -31,9 +31,9 @@ const fetchImgU=async(query)=>{
   return data.results;
   const im=data.result.img[0]; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   
-  //uUrl.value=document.getElementById("ee").src; alert("UU1: "+uUrl.value);
-  //isLoading.value=true; prUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU3: "+pUrl.value);
+  iUrl.value=document.getElementById("ee").src; alert("II1: "+iUrl.value);
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`;
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PU3: "+pUrl.value);
 
 };
 const generatePalette=async()=>{alert(1);
@@ -63,13 +63,10 @@ onMounted(()=>{
     fetchU(document.getElementById("et").innerText);
 
     uUrl.value=document.getElementById("et").innerText;
-    //pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
-    //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-    alert("uUrl.value: "+uUrl.value);
     fetchImgU(uUrl.value);
   
   //setTimeout(function(){alert(0);
-    generatePalette();
+    //generatePalette();
   //},2000);
 });
 </script>
