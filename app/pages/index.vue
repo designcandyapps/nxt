@@ -20,10 +20,8 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  //prompt.value=document.getElementById("tr").innerText;
-  var uu=document.getElementById("et").innerText;
-  t.value=h1; //document.getElementById("et").innerText
-  document.getElementById("pr").value=uu;
+  ////----prompt.value=document.getElementById("tr").innerText; //prompt.value=h1;
+  //document.getElementById("pr").value=document.getElementById("et").innerText;
   return data.results;
 };
 const fetchImgU=async(query)=>{
@@ -34,8 +32,6 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); //alert("RESPx: "+JSON.stringify(data));
-  var uu=document.getElementById("et").innerText;
-  document.getElementById("pr").value=uu;
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
@@ -78,8 +74,8 @@ onMounted(()=>{
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
     <span class="g"><span id="et"></span><span id="z"></span>
-      <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr" v-model="pr" style="border:2px solid pink;">
-      <input id="pho" v-model="pho" style="border:2px solid green;"><input id="pho2" v-model="pho2" style="border:2px solid blue;"><span id="response" v-if="response">{{response}}</span>
+      <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pho" v-model="pho" style="border:2px solid blue;">
+      <input id="pho2" v-model="pho2" style="border:2px solid purple;"><span id="response" v-if="response">{{response}}</span>
     </span>
     <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
   </ULandingHero>
@@ -100,9 +96,7 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      //++document.querySelector("#tr").innerText=this.response;
       document.querySelector("#h1n").innerText=this.response;
-      //++document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
     async send2(){
       const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
