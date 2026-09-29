@@ -27,7 +27,11 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; alert("IM: "+im); im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+  const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+
+  iUrl.value=im; alert("II1: "+iUrl.value);
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`;
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
   //document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
   return data.results;
@@ -41,6 +45,7 @@ alert(document.getElementById("ee").src); //https://www.designcandy.com/im/dc.pn
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
+
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
