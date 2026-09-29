@@ -22,7 +22,7 @@ const generatePalette=async()=>{alert(1);
   //uUrl.value=im; alert("II1: "+uUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
 
-  imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
+  imageUrl.value=document.getElementsByClassName("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
@@ -95,7 +95,7 @@ onMounted(()=>{
     fetchImgU(uUrl.value);
   //},2000);
   setTimeout(function(){
-    generatePalette();
+    //generatePalette();
   },1800);
 });
 </script>
