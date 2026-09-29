@@ -17,7 +17,17 @@ async function fetchGetty(query){
   }catch(error){console.error("Error2:",error)}
 }
 const fetchU=async(query)=>{
-  ////uUrl=query.url as string;
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
+  //prompt.value=document.getElementById("tr").innerText;
+  var uu=document.getElementById("et").innerText;
+  t.value=h1; //document.getElementById("et").innerText
+  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  document.getElementById("pr").value=uu;
+  return data.results;
+};
+const fetchImgU=async(query)=>{
   //uUrl.value=document.getElementById("ee").src; alert("UU1: "+uUrl.value);
   //isLoading.value=true; prUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU3: "+pUrl.value);
@@ -33,18 +43,6 @@ const fetchU=async(query)=>{
   document.getElementById("pr").value=uu;
   return data.results;
 };
-const fetchU2=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); alert("RESPy: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  //prompt.value=document.getElementById("tr").innerText;
-  var uu=document.getElementById("et").innerText;
-  t.value=h1; //document.getElementById("et").innerText
-  //uUrl.value="designcandy.com"; //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  document.getElementById("pr").value=uu;
-  return data.results;
-};
-
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -54,7 +52,7 @@ const generatePalette=async()=>{alert(1);
     var i=0; for(const type of Object.keys(palettesz)){
       const paletteWrapper=document.createElement("span"); paletteWrapper.classList.add("palette-colors"); document.querySelector(".content").appendChild(paletteWrapper);
       paletteWrapper.innerHTML=palettesz[type].colors.reduce((html,color)=>{i++; html+=`<span id="dv${i}" style="background:${formatHex(color)}"></span>`;return html},"");
-    }//alert("Z: "+document.getElementById("z").innerHTML);
+    }
     const scientificColors=discoverPalettes(colors); palette.value=Object.keys(scientificColors).map((type)=>({type,colors:scientificColors[type].colors.map((color)=>({hex:formatHex(color)}))}));
     backgroundImage.value=`url('${imageUrl.value}')`; isLoading.value=false;
     const r0=document.querySelector("#dv7").style.backgroundColor; //alert("G2: "+r0);
@@ -68,19 +66,19 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-onMounted(()=>{//alert(4);
+onMounted(()=>{
   const u=document.getElementById("et").innerText;
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
-  fetchU2(u);
+  fetchU(u);
 
   setTimeout(function(){alert(0);
     uUrl.value=document.getElementById("et").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     alert("pUrl.value: "+pUrl.value);
-    fetchU(pUrl.value);
+    fetchImgU(pUrl.value);
     generatePalette();
   },2000);
 });
@@ -88,9 +86,9 @@ onMounted(()=>{//alert(4);
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><span id="et"></span><span id="z"><!--ColorThief /--></span>
-      <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr" v-model="pr" style="border:2px solid pink;"><input id="t" v-model="t" style="border:2px solid green;">
-      <input id="pho" v-model="pho"><input id="pho2" v-model="pho2"><span id="response" v-if="response">{{response}}</span>
+    <span class="g"><span id="et"></span><span id="z"></span>
+      <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pr" v-model="pr" style="border:2px solid pink;">
+      <input id="pho" v-model="pho" style="border:2px solid green;"><input id="pho2" v-model="pho2" style="border:2px solid blue;"><span id="response" v-if="response">{{response}}</span>
     </span>
     <template #title><MDC :value="page.hero.title" /></template><MDC :value="page.hero.code" class="prose prose-primary dark:prose-invert mx-auto" />
   </ULandingHero>
@@ -111,9 +109,9 @@ export default{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
       const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
-      //document.querySelector("#tr").innerText=this.response;
+      //++document.querySelector("#tr").innerText=this.response;
       document.querySelector("#h1n").innerText=this.response;
-      //--document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
+      //++document.querySelector(".slick-slide>div>div>div>div").innerText=this.response;
     },
     async send2(){
       const response=await fetch(`https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&client_id=OOBNDpH2xNShX6T9wWV_-9py3NtxfpGT2zMcashaO_o`);
