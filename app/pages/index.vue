@@ -74,7 +74,7 @@ const fetchImgU=async(query)=>{
 
 
   ////////////////////////
-  generatePalette();
+  //generatePalette();
 
   /*
   alert("EE: "+document.getElementById("ee").src);
@@ -115,7 +115,7 @@ onMounted(()=>{
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
 
-  //generatePalette();
+  generatePalette();
   
   setTimeout(function(){alert(0);
     generatePalette();
