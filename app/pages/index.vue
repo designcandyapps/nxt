@@ -61,7 +61,7 @@ onMounted(()=>{
 
 <script lang="ts">
 export default{
-  data(){return{prompt:"",response:null}},
+  data(){return{prompt:"",query:"",response:null}},
   mounted(){
     this.send3()
   },
