@@ -27,10 +27,10 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+  const im=data.result; //alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
-  iUrl.value=im; alert("II1: "+iUrl.value);
-  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`;
+  uUrl.value=im; alert("II1: "+uUrl.value);
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
   //document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
