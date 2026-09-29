@@ -133,7 +133,7 @@ onMounted(()=>{
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //this.send3()
+    this.send3()
   },
   methods:{
     async send(){
