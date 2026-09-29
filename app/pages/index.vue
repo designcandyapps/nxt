@@ -72,7 +72,7 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   //setTimeout(function(){alert(0);
-    //generatePalette();
+    generatePalette();
   //},2000);
 });
 </script>
