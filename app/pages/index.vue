@@ -60,14 +60,14 @@ onMounted(()=>{
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
   fetchU(document.getElementById("et").innerText);
 
-  setTimeout(function(){alert(0);
+  //setTimeout(function(){alert(0);
     uUrl.value=document.getElementById("et").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
     //pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
     alert("pUrl.value: "+pUrl.value);
     fetchImgU(pUrl.value);
     generatePalette();
-  },2000);
+  //},2000);
 });
 </script>
 
