@@ -20,8 +20,6 @@ const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
   const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1;
-  prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  //document.getElementById("pr").value=document.getElementById("et").innerText;
   return data.results;
 };
 const fetchImgU=async(query)=>{
@@ -59,7 +57,7 @@ onMounted(()=>{
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-    fetchU(document.getElementById("et").innerText);
+  fetchU(document.getElementById("et").innerText);
 
     uUrl.value=document.getElementById("et").innerText;
     pUrl.value=`https://web.scraper.workers.dev?url=${encodeURIComponent(uUrl.value)}&selector=img`;
@@ -67,10 +65,10 @@ onMounted(()=>{
     alert("pUrl.value: "+pUrl.value);
     fetchImgU(pUrl.value);
   
-  //setTimeout(function(){alert(0);
-
+  setTimeout(function(){alert(0);
+    prompt.value=document.getElementById("tr").innerText; //prompt.value=h1;
     generatePalette();
-  //},2000);
+  },2000);
 });
 </script>
 
