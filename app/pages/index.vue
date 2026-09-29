@@ -86,7 +86,10 @@ onMounted(()=>{
 
   fetchU(document.getElementById("et").innerText);
   uUrl.value=document.getElementById("et").innerText;
-  fetchImgU(uUrl.value);
+
+  setTimeout(function(){
+    fetchImgU(uUrl.value);
+  },2000);
 });
 </script>
 
