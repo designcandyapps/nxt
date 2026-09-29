@@ -127,7 +127,7 @@ export default{
         document.body.style.backgroundColor=r0;
       };
       img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
-    ],
+    },
   },
 }
 </script>
