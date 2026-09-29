@@ -24,16 +24,17 @@ const fetchU=async(query)=>{
   return data.results;
 };
 const fetchImgU=async(query)=>{
-  //uUrl.value=document.getElementById("ee").src; alert("UU1: "+uUrl.value);
-  //isLoading.value=true; prUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU3: "+pUrl.value);
-  
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result.img[0]; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   return data.results;
+  const im=data.result.img[0]; alert(im); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
+  
+  //uUrl.value=document.getElementById("ee").src; alert("UU1: "+uUrl.value);
+  //isLoading.value=true; prUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; //alert("PU3: "+pUrl.value);
+
 };
 const generatePalette=async()=>{alert(1);
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
