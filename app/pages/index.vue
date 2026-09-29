@@ -63,7 +63,7 @@ const fetchImgU=async(query)=>{
 
   uUrl.value=im; alert("II1: "+uUrl.value);
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
+  //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
   document.getElementById("ee").src=pUrl.value; //alert("DD: "+document.getElementById("ee").src);
 
@@ -76,6 +76,7 @@ const fetchImgU=async(query)=>{
 
   /*
   //generatePalette();
+  */
   alert("EE: "+document.getElementById("ee").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
@@ -84,8 +85,7 @@ const fetchImgU=async(query)=>{
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
-
-  img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
   img.onload=()=>{const colorThief=new ColorThief(); let colors=colorThief.getPalette(img).map((c)=>toLCH({r:c[0]/255,g:c[1]/255,b:c[2]/255,mode:"rgb"}));
     const palettesz=discoverPalettes(colors); document.getElementById("z").innerHTML=`<span id="y" class="content"></span>`;
     var i=0; for(const type of Object.keys(palettesz)){
@@ -116,7 +116,7 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   setTimeout(function(){alert(0);
-    generatePalette();
+    //generatePalette();
   },2000);
 });
 </script>
