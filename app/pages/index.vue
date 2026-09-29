@@ -44,7 +44,7 @@ const fetchImgU=async(query)=>{
 
   
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
+  //zzconst img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
   document.getElementById("ee").src=im; //alert("DD: "+document.getElementById("ee").src);
   //generatePalette();
