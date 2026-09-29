@@ -84,10 +84,12 @@ onMounted(()=>{
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
+  fetchU(document.getElementById("et").innerText);
   setTimeout(function(){
-    fetchU(document.getElementById("et").innerText);
     uUrl.value=document.getElementById("et").innerText;
     fetchImgU(uUrl.value);
+  },2000);
+  setTimeout(function(){
     generatePalette();
   },2000);
 });
