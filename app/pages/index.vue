@@ -16,7 +16,7 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-const generatePalette=async()=>{alert(1);
+const generatePalette=async()=>{//xx alert(1);
   imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=proxyUrl.value; //alert("PU2: "+proxyUrl.value);
@@ -53,7 +53,7 @@ const fetchImgU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
   //const response=await fetch(`${encodeURIComponent(query)}`);
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const data=await response.json(); //xx alert("RESPx: "+JSON.stringify(data));
   const im=data.result; document.getElementById("ee").src=im;
   return data.results;
   //alert("IM: "+im);
@@ -117,7 +117,7 @@ onMounted(()=>{
 
   generatePalette();
   
-  setTimeout(function(){alert(0);
+  setTimeout(function(){//xx alert(0);
     generatePalette();
   },2000);
 });
