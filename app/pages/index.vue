@@ -32,8 +32,8 @@ const fetchImgU=async(query)=>{
   const im=data.result.img[0]; alert(im.src); document.getElementById("ee").src=im.src; alert(document.getElementById("ee").src);
   
   iUrl.value=document.getElementById("ee").src; alert("II1: "+iUrl.value);
-  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PU3: "+pUrl.value);
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
 
 };
 const generatePalette=async()=>{alert(1);
