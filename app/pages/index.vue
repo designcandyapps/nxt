@@ -33,14 +33,14 @@ const fetchImgU=async(query)=>{
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
   const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
-  //document.getElementById("ee").src=im; alert(document.getElementById("ee").src);
+  document.getElementById("ee").src=im; alert("DD: "+document.getElementById("ee").src);
   return data.results;
 };
 const generatePalette=async()=>{alert(1);
-alert(document.getElementById("ee").src); //https://www.designcandy.com/im/dc.png
+  alert("EE: "+document.getElementById("ee").src); //https://www.designcandy.com/im/dc.png
 
-  //iUrl.value=im; alert("II1: "+iUrl.value);
-  //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(iUrl.value)}`; alert("PUI: "+pUrl.value);
+  //uUrl.value=im; alert("II1: "+uUrl.value);
+  //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
 
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
