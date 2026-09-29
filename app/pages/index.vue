@@ -114,7 +114,10 @@ onMounted(()=>{
   fetchU(document.getElementById("et").innerText);
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
-  generatePalette();
+
+  setTimeout(function(){alert(0);
+    generatePalette();
+  },2000);
 });
 </script>
 
