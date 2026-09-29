@@ -16,26 +16,10 @@ async function fetchGetty(query){
     if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
   }catch(error){console.error("Error2:",error)}
 }
-const fetchU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
-  const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
-  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
-  return data.results;
-};
-const fetchImgU=async(query)=>{
-  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
-  //const response=await fetch(`${encodeURIComponent(query)}`);
-  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
-  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
-  const im=data.result; //alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
-  uUrl.value=im; alert("II1: "+uUrl.value);
-  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
-  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
-  document.getElementById("ee").src=im; alert("DD: "+document.getElementById("ee").src);
-  return data.results;
-};
+
+
 const generatePalette=async()=>{alert(1);
   alert("EE: "+document.getElementById("ee").src); //https://www.designcandy.com/im/dc.png
 
@@ -62,6 +46,39 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
+
+
+  
+const fetchU=async(query)=>{
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
+  const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
+  const h1=data.result.h1[0]; document.getElementById("tr").innerText=h1; prompt.value=h1; //prompt.value=document.getElementById("tr").innerText;
+  return data.results;
+};
+const fetchImgU=async(query)=>{
+  const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=img&attr=src`);
+  //const response=await fetch(`${encodeURIComponent(query)}`);
+  //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
+  const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
+  const im=data.result; //alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
+
+  uUrl.value=im; alert("II1: "+uUrl.value);
+
+
+  
+  isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
+  const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
+
+  document.getElementById("ee").src=im; //alert("DD: "+document.getElementById("ee").src);
+  generatePalette();
+  return data.results;
+};
+
+
+
+
+
+
 onMounted(()=>{
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
@@ -72,7 +89,7 @@ onMounted(()=>{
   fetchImgU(uUrl.value);
 
   //setTimeout(function(){alert(0);
-    generatePalette();
+    //generatePalette();
   //},2000);
 });
 </script>
