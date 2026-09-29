@@ -70,7 +70,7 @@ onMounted(()=>{
   fetchU(document.getElementById("et").innerText);
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
-  
+
   //setTimeout(function(){alert(0);
     //generatePalette();
   //},2000);
@@ -79,7 +79,7 @@ onMounted(()=>{
 
 <template>
   <ULandingHero v-if="page.hero" v-bind="page.hero">
-    <span class="g"><span id="et"></span><span id="z"></span>
+    <span class="g"><span id="et"></span><span id="ei"></span><span id="z"></span>
       <input id="prompt" v-model="prompt" style="border:2px solid red;"><input id="pho" v-model="pho" style="border:2px solid blue;">
       <input id="pho2" v-model="pho2" style="border:2px solid purple;"><span id="response" v-if="response">{{response}}</span>
     </span>
