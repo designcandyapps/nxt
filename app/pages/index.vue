@@ -47,13 +47,17 @@ const fetchImgU=async(query)=>{
   //zzconst img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value; alert("PUI: "+pUrl.value);
 
   document.getElementById("ee").src=im; //alert("DD: "+document.getElementById("ee").src);
+
+
+
+
+
+
+
+
+  
   //generatePalette();
-
-
-
-
-
-  alert("EE: "+document.getElementById("ee").src); //https://www.designcandy.com/im/dc.png
+  alert("EE: "+document.getElementById("ee").src);
 
   //uUrl.value=im; alert("II1: "+uUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
@@ -77,7 +81,7 @@ const fetchImgU=async(query)=>{
     document.body.style.backgroundColor=r0;
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
-
+};
 
 
 
@@ -90,10 +94,6 @@ onMounted(()=>{
   fetchU(document.getElementById("et").innerText);
   uUrl.value=document.getElementById("et").innerText;
   fetchImgU(uUrl.value);
-
-  //setTimeout(function(){alert(0);
-    //generatePalette();
-  //},2000);
 });
 </script>
 
