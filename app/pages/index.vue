@@ -56,7 +56,7 @@ const fetchImgU=async(query)=>{
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const im=data.result; document.getElementById("ee").src=im;
   return data.results;
-  //alert("IM: "+im);
+  alert("IM: "+im);
 
   //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
