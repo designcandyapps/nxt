@@ -56,7 +56,7 @@ const fetchImgU=async(query)=>{
   //const response=await fetch(`/api/ws?url=${encodeURIComponent(query)}`);
   const data=await response.json(); alert("RESPx: "+JSON.stringify(data));
   const im=data.result; alert("IM: "+im); //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
-  return data.results;
+
 
   uUrl.value=im; alert("II1: "+uUrl.value);
   isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`;
@@ -92,6 +92,7 @@ const fetchImgU=async(query)=>{
   };
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
   */
+  return data.results;
 };
 
 
