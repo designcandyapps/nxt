@@ -1,19 +1,19 @@
 <template>
     <div class="news-slider ey">
-        <div class="lp-block lp-content lp-content--text-alignment lp-content--text-alignment-left">
-            <h2>Room to grow</h2>
+        <div>
+            <h2>About Us</h2>
             <p>Scale as you go with unmetered bandwidth on all plans. Zero downtime. No limits.</p>
         </div>
-        <div class="lp-block lp-content lp-content--text-alignment lp-content--text-alignment-left">
-            <h2>Seriously secure</h2>
+        <div>
+            <h2>Our Services</h2>
             <p>Firewalls, encryption, brute force, and DDoS protection. Security’s all taken care of.</p>
         </div>
-        <div class="lp-block lp-content lp-content--text-alignment lp-content--text-alignment-left">
-            <h2>Bring it with you</h2>
+        <div>
+            <h2>Our Products</h2>
             <p>Fast data transfer and performance come as standard with our global CDN—wherever your site visitors are.</p>
         </div>
-        <div class="lp-block lp-content lp-content--text-alignment lp-content--text-alignment-left">
-            <h2>Flexible storage</h2>
+        <div>
+            <h2>Contact Us</h2>
             <p>You’ll never run out of storage with WordPress.com’s plans. Photos. Audio. 4K videos. All in one place.</p>
         </div>
     </div>
