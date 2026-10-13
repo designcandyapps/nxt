@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
 useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
-onMounted(()=>{
-  //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
-  //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
-});
 </script>
 
 <template>
@@ -23,17 +19,5 @@ onMounted(()=>{
 </template>
 
 <script lang="ts">
-export default{
-  data(){return{prompt:"",response:null}},
-  mounted(){
-    //this.send()
-  },
-  methods:{
-    async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; alert("RES01: "+JSON.stringify(data)); //alert("RES01a: "+this.response); //console.log(data.message.content);
-      document.querySelector("#h1n").innerText=this.response;
-    },
-  },
-}
+
 </script>
