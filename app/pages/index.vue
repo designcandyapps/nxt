@@ -143,7 +143,7 @@ export default{
   data(){return{prompt:"",response:null}},
   mounted(){
     //setTimeout(function(){
-      this.send()
+      //this.send()
     //},7800);
   },
   methods:{
