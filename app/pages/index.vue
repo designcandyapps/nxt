@@ -1,6 +1,13 @@
 <script setup lang="ts">
-const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne());
-useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description});
+const {data:page}=await useAsyncData('index',()=>queryContent('/').findOne())
+useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,description:page.value.description,ogDescription:page.value.description})
+onMounted(()=>{
+  setTimeout(function(){
+    const pr=document.querySelector("#pr").value; const prompt=document.querySelector("#prompt").value; alert("PR: "+pr); alert("PROMPT: "+prompt);
+    //fetchPh(pr).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small})});
+    //fetchGetty(pr).then(image=>{pho2.value=image.display_sizes[0].uri});
+  },600)
+});
 </script>
 
 <template>
@@ -22,11 +29,13 @@ useSeoMeta({titleTemplate:'',title:page.value.title,ogTitle:page.value.title,des
 export default{
   data(){return{prompt:"",response:null}},
   mounted(){
-    //this.send()
+    setTimeout(function(){
+      this.send()
+    },300)
   },
   methods:{
     async send(){
-      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
+      const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#pr").value})});
       const data=await response.json(); this.response=data.reply; alert("RES01: "+JSON.stringify(data)); //alert("RES01a: "+this.response); //console.log(data.message.content);
       document.querySelector("#h1n").innerText=this.response;
     },
