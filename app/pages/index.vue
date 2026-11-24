@@ -8,14 +8,6 @@ const fetchPh=async(query)=>{
   const data=await response.json(); //alert("RES1P: "+JSON.stringify(data));
   return data.results;
 };
-async function fetchGetty(query){
-  try{
-    const response=await fetch(`https://api.gettyimages.com/v3/search/images?phrase=${encodeURIComponent(query)}&page_size=1`,{method:"GET",headers:{"Api-Key":"ep3mq3jxr4u99m7hy3gzzp3g"}});
-    if(!response.ok){throw new Error(`Error1:${response.statusText}`)}
-    const data=await response.json(); //alert("RES2P: "+JSON.stringify(data));
-    if(data.images&&data.images.length>0){const image=data.images[0];console.log("Im:",image);return image}else{console.log("No ims");return null}
-  }catch(error){console.error("Error2:",error)}
-}
 const generatePalette=async()=>{//xx alert(1);
   imageUrl.value=document.getElementById("ee").src; //alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -39,10 +31,6 @@ function createScientificPalettes(baseColor){const targetHueSteps={analogous:[0,
 function discoverPalettes(colors){const palettes={}; for(const color of colors){const targetPalettes=createScientificPalettes(color); for(const paletteType of Object.keys(targetPalettes)){const palette=[]; for(const targetColor of targetPalettes[paletteType]){const availableColors=colors.filter((c)=>!palette.some((existing)=>isColorEqual(c,existing))); const match=nearest(availableColors,differenceEuclidean("lch"))(targetColor)[0]; palette.push(match)} palettes[paletteType]={colors:palette}}} return palettes}
 function isColorEqual(c1,c2){return c1.h===c2.h&&c1.l===c2.l&&c1.c===c2.c}
 
-
-
-
-  
 const fetchU=async(query)=>{
   const response=await fetch(`https://web.scraper.workers.dev?url=${encodeURIComponent(query)}&selector=h1`);
   const data=await response.json(); //alert("RESPy: "+JSON.stringify(data));
@@ -60,7 +48,6 @@ const fetchImgU=async(query)=>{
 
   //im="https://www."+document.getElementById("et").innerText+"/"+im; alert("IM2: "+im);
 
-
   /////////////////////////uUrl.value=im; alert("II1: "+uUrl.value);
   ////////////////////////isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PUI: "+pUrl.value);
   //const img=new Image(); img.crossOrigin="Anonymous"; img.src=pUrl.value;
@@ -68,20 +55,11 @@ const fetchImgU=async(query)=>{
   //////////////////////document.getElementById("ee").src=uUrl.value; //alert("DD: "+document.getElementById("ee").src);
 
 
-
-
-
-
-
   ////////////////////////
-  generatePalette();
-
-  /*
-  alert("EE: "+document.getElementById("ee").src);
-
+  //<<generatePalette();
+  /*alert("EE: "+document.getElementById("ee").src);
   //uUrl.value=im; alert("II1: "+uUrl.value);
   //isLoading.value=true; pUrl.value=`/api/ws?url=${encodeURIComponent(uUrl.value)}`; alert("PU3: "+pUrl.value);
-
 
   imageUrl.value=document.getElementById("ee").src; alert("IU1: "+imageUrl.value);
   isLoading.value=true; proxyUrl.value=`/api/proxy?url=${encodeURIComponent(imageUrl.value)}`;
@@ -102,24 +80,13 @@ const fetchImgU=async(query)=>{
   img.onerror=()=>{console.error("Failed to Load"); isLoading.value=false}
   */
 };
-
-
-
-
 onMounted(()=>{
   //const pho=document.querySelector("#pho"); const pho2=document.querySelector("#pho2");
   //fetchPh(prompt).then(photos=>{photos.forEach(photo=>{pho.value=photo.urls.small});});
   //fetchGetty(prompt).then(image=>{pho2.value=image.display_sizes[0].uri});
 
-  fetchU(document.getElementById("et").innerText);
-  uUrl.value=document.getElementById("et").innerText;
-  fetchImgU(uUrl.value);
-
-  generatePalette();
-  
-  setTimeout(function(){//xx alert(0);
-    generatePalette();
-  },2000);
+  //<<fetchU(document.getElementById("et").innerText); uUrl.value=document.getElementById("et").innerText; fetchImgU(uUrl.value);
+  //<<generatePalette(); setTimeout(function(){generatePalette();},2000);
 });
 </script>
 
@@ -141,13 +108,11 @@ onMounted(()=>{
 <script lang="ts">
 export default{
   data(){return{prompt:"",response:null}},
-  mounted(){
-    this.send()
-  },
+  mounted(){this.send()},
   methods:{
     async send(){
       const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:document.querySelector("#prompt").value})});
-      const data=await response.json(); this.response=data.reply; //alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
+      const data=await response.json(); this.response=data.reply; alert("RES00: "+JSON.stringify(data)); alert("RES01: "+this.response); //console.log(data.message.content);
       document.querySelector("#h1n").innerText=this.response;
     },
     async send2(){
